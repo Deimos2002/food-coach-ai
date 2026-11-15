@@ -1,0 +1,225 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2027-01-18",
+    "2027-01-19",
+    "2027-01-20",
+    "2027-01-21",
+    "2027-01-22",
+    "2027-01-23",
+    "2027-01-24"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "above",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Bol Riz Poulet",
+          "share": [
+            "0.24",
+            "0.24"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Bistrot Gâteau au Chocolat",
+          "share": [
+            "0.22",
+            "0.22"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Moulin Céréales Croustillantes",
+          "share": [
+            "0.18",
+            "0.18"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 2296 kcal a day over Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan, above your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "2296",
+        "recorded_upper": "2296",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Bol Riz Poulet",
+          "share": [
+            "0.51",
+            "0.51"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Jardin Salade de Poulet",
+          "share": [
+            "0.13",
+            "0.13"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Moulin Céréales Croustillantes",
+          "share": [
+            "0.10",
+            "0.10"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F2",
+      "message": "Based on your completed log, your recorded protein averaged 90-91 g a day over Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan, below your target of 120 g.",
+      "rule": "protein_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "90",
+        "recorded_upper": "91",
+        "target": "120",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C7",
+          "name": "Bistrot Gâteau au Chocolat",
+          "share": [
+            "0.45",
+            "0.45"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C8",
+          "name": "Moulin Céréales Croustillantes",
+          "share": [
+            "0.27",
+            "0.27"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C9",
+          "name": "Sentier Barre aux Noix",
+          "share": [
+            "0.13",
+            "0.13"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO total sugars (a proxy) guideline of 50 g (at least 111 g recorded on Sat 23 Jan, the highest of 7 days: Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan).",
+      "rule": "sugars_daily",
+      "swaps": [
+        {
+          "for": "C7",
+          "id": "S1",
+          "name": "Bistrot Gâteau au Chocolat Light",
+          "values": {
+            "basis": "catalogue_per_100",
+            "from_lower": "43",
+            "to_upper": "0",
+            "unit": "g/100g"
+          }
+        }
+      ],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "111",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "within",
+      "contributors": [],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F4",
+      "message": "Based on your completed log, your recorded salt was within the WHO guideline of 5 g on each of Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan (at most 3.3 g recorded).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_upper": "3.3",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "maintain"
+  },
+  "hash": "ff8bd7128b2e7432044d27a80607e86bf54cc9f94f564533e216dbb0806aaa1f",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "90.5",
+    "kg_start": "90.1"
+  },
+  "week": "2027-W03"
+}

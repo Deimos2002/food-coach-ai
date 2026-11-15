@@ -1,0 +1,102 @@
+[
+ {
+  "tip": "Flavour the soup with herbs and spices and leave the salt out.",
+  "chunk": "who-sodium-reduction#17",
+  "supported": true
+ },
+ {
+  "tip": "Take the saltshaker off the table.",
+  "chunk": "who-sodium-reduction#17",
+  "supported": true
+ },
+ {
+  "tip": "Check the label and choose a pizza with a lower sodium content.",
+  "chunk": "who-sodium-reduction#17",
+  "supported": true
+ },
+ {
+  "tip": "Have fresh fruit in place of the cake.",
+  "chunk": "who-healthyathome#9",
+  "supported": true
+ },
+ {
+  "tip": "If you do have dessert, pick one low in sugar and keep the portion small.",
+  "chunk": "who-healthyathome#9",
+  "supported": true
+ },
+ {
+  "tip": "Snack on fresh fruit or raw vegetables instead of sugary snacks.",
+  "chunk": "who-emro-limit#13",
+  "supported": true
+ },
+ {
+  "tip": "Have sugar-sweetened drinks less often.",
+  "chunk": "who-emro-limit#13",
+  "supported": true
+ },
+ {
+  "tip": "Steam or boil it instead of frying.",
+  "chunk": "who-healthy-diet#23",
+  "supported": true
+ },
+ {
+  "tip": "Keep salty sauces off the table.",
+  "chunk": "who-healthy-diet#31",
+  "supported": true
+ },
+ {
+  "tip": "Fruit juice still carries free sugars, so keep it limited.",
+  "chunk": "who-healthy-diet#10",
+  "supported": true
+ },
+ {
+  "tip": "Drink a glass of water with every salty meal.",
+  "chunk": "who-sodium-reduction#17",
+  "supported": false
+ },
+ {
+  "tip": "Rinse canned vegetables under the tap to wash the salt off.",
+  "chunk": "who-sodium-reduction#17",
+  "supported": false
+ },
+ {
+  "tip": "Choose fresh fruit instead of sweet snacks.",
+  "chunk": "who-sodium-reduction#17",
+  "supported": false
+ },
+ {
+  "tip": "Switch to the diet version of the soda.",
+  "chunk": "who-healthyathome#9",
+  "supported": false
+ },
+ {
+  "tip": "Keep dessert for after a workout.",
+  "chunk": "who-healthyathome#9",
+  "supported": false
+ },
+ {
+  "tip": "Sweeten it with honey instead of sugar.",
+  "chunk": "who-emro-limit#13",
+  "supported": false
+ },
+ {
+  "tip": "Season with herbs and spices rather than salt.",
+  "chunk": "who-emro-limit#13",
+  "supported": false
+ },
+ {
+  "tip": "Fry it in butter for more flavour.",
+  "chunk": "who-healthy-diet#23",
+  "supported": false
+ },
+ {
+  "tip": "Add salt at the table rather than while cooking.",
+  "chunk": "who-healthy-diet#31",
+  "supported": false
+ },
+ {
+  "tip": "Fruit juice has no sugars, so drink as much as you like.",
+  "chunk": "who-healthy-diet#10",
+  "supported": false
+ }
+]

@@ -1,0 +1,182 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30",
+    "2026-10-31",
+    "2026-11-01"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Family Beef Stew",
+          "share": [
+            "0.39",
+            "0.39"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Garden Chicken Salad",
+          "share": [
+            "0.36",
+            "0.36"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Bakehouse Seeded Bread",
+          "share": [
+            "0.18",
+            "0.18"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 1535 kcal a day over Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov, below your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "1535",
+        "recorded_upper": "1535",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Garden Chicken Salad",
+          "share": [
+            "0.49",
+            "0.49"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Family Beef Stew",
+          "share": [
+            "0.38",
+            "0.38"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Bakehouse Seeded Bread",
+          "share": [
+            "0.08",
+            "0.08"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F2",
+      "message": "Based on your completed log, your recorded protein averaged 106 g a day over Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov, below your target of 120 g.",
+      "rule": "protein_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "106",
+        "recorded_upper": "106",
+        "target": "120",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "within",
+      "contributors": [],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F3",
+      "message": "Based on your completed log, your recorded total sugars (a proxy) was within the WHO guideline of 50 g on each of Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov (at most 28 g recorded).",
+      "rule": "sugars_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_upper": "28",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "cannot_tell",
+      "contributors": [],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F4",
+      "message": "Can't tell yet about your recorded salt this week: Mon 26 Oct: cooking additions not declared: Family Beef Stew; Tue 27 Oct: cooking additions not declared: Family Beef Stew; Wed 28 Oct: cooking additions not declared: Family Beef Stew; Thu 29 Oct: cooking additions not declared: Family Beef Stew; Fri 30 Oct: cooking additions not declared: Family Beef Stew; Sat 31 Oct: cooking additions not declared: Family Beef Stew; Sun 1 Nov: cooking additions not declared: Family Beef Stew.",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "gain"
+  },
+  "hash": "722f11f2cf0a333ee2132d5062677eb1ff10959ef374ca07fb6860587c14b24c",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "88.4",
+    "kg_start": "88"
+  },
+  "week": "2026-W44"
+}

@@ -1,0 +1,210 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2027-01-18",
+    "2027-01-19",
+    "2027-01-20",
+    "2027-01-21",
+    "2027-01-22",
+    "2027-01-23",
+    "2027-01-24"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Bol Riz Poulet",
+          "share": [
+            "0.24",
+            "0.24"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Sentier Barre aux Noix",
+          "share": [
+            "0.23",
+            "0.23"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Flocons d'Avoine Nature",
+          "share": [
+            "0.19",
+            "0.19"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 1699-1700 kcal a day over Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan, below your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "1699",
+        "recorded_upper": "1700",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Bol Riz Poulet",
+          "share": [
+            "0.44",
+            "0.44"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Flocons d'Avoine Nature",
+          "share": [
+            "0.13",
+            "0.13"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Fournil Pizza Surgelée",
+          "share": [
+            "0.10",
+            "0.10"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F2",
+      "message": "Based on your completed log, your recorded protein averaged 76-77 g a day over Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan, below your target of 120 g.",
+      "rule": "protein_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "76",
+        "recorded_upper": "77",
+        "target": "120",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "within",
+      "contributors": [],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F3",
+      "message": "Based on your completed log, your recorded total sugars (a proxy) was within the WHO guideline of 50 g on each of Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan (at most 49 g recorded).",
+      "rule": "sugars_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_upper": "49",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [
+        "Maison Ragoût de Bœuf"
+      ],
+      "card_id": "who_salt",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C7",
+          "name": "Fournil Pizza Surgelée",
+          "share": [
+            "0.00",
+            "0.57"
+          ]
+        },
+        {
+          "additions_undeclared": true,
+          "id": "C8",
+          "name": "Maison Ragoût de Bœuf",
+          "share": [
+            "0.00",
+            null
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C9",
+          "name": "Fournée Pain aux Graines",
+          "share": [
+            "0.00",
+            "0.17"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F4",
+      "message": "Your recorded values exceed the WHO salt guideline of 5 g (at least 6.3 g recorded on Sat 23 Jan, the highest of 2 days: Sat 23 Jan and Sun 24 Jan).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "2",
+        "recorded_lower": "6.3",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "gain"
+  },
+  "hash": "b78932a23b3ec3df41d478cc7fba8753ffd6ed28dbb78bc831ff16e9761d4482",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "94.7",
+    "kg_start": "94.2"
+  },
+  "week": "2027-W03"
+}

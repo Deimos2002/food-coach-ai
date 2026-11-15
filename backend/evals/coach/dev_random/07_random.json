@@ -1,0 +1,169 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30",
+    "2026-10-31",
+    "2026-11-01"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "above",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Garden Chicken Salad",
+          "share": [
+            "0.28",
+            "0.28"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Chicken Rice Bowl",
+          "share": [
+            "0.26",
+            "0.26"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Family Beef Stew",
+          "share": [
+            "0.20",
+            "0.20"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 2117 kcal a day over Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov, above your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "2117",
+        "recorded_upper": "2117",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Orchard Peach Drink",
+          "share": [
+            "0.77",
+            "0.77"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Family Beef Stew",
+          "share": [
+            "0.09",
+            "0.09"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Garden Chicken Salad",
+          "share": [
+            "0.09",
+            "0.09"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F2",
+      "message": "Your recorded values exceed the WHO total sugars (a proxy) guideline of 50 g (at least 56 g recorded on Mon 26 Oct, the highest of 7 days: Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov).",
+      "rule": "sugars_daily",
+      "swaps": [
+        {
+          "for": "C4",
+          "id": "S1",
+          "name": "Orchard Peach Drink Light",
+          "values": {
+            "basis": "catalogue_per_100",
+            "from_lower": "43",
+            "to_upper": "0",
+            "unit": "g/100ml"
+          }
+        }
+      ],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "56",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "cannot_tell",
+      "contributors": [],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F3",
+      "message": "Can't tell yet about your recorded salt this week: Mon 26 Oct: cooking additions not declared: Family Beef Stew; Tue 27 Oct: cooking additions not declared: Family Beef Stew; Wed 28 Oct: cooking additions not declared: Family Beef Stew; Thu 29 Oct: cooking additions not declared: Family Beef Stew; Fri 30 Oct: cooking additions not declared: Family Beef Stew; Sat 31 Oct: cooking additions not declared: Family Beef Stew; Sun 1 Nov: cooking additions not declared: Family Beef Stew.",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "c472c4e49fca16e75700124648b68440cfcdbaeda7cca9c40a1d2ea158ac227c",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "62.5",
+    "kg_start": "62.3"
+  },
+  "week": "2026-W44"
+}

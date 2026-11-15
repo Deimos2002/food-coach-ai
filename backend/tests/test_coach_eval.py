@@ -842,3 +842,64 @@ def test_rules_found_on_the_held_out_weeks():
     assert parsed is None and "has a swap" in errors[0].detail
     other = next(c["name"] for c in sugar["contributors"] if c["id"] != swap["for"])
     assert one(weekend, f"Have {other} on fewer days.", {"sugars_daily"})[0]
+
+
+def test_unsupported_citations_are_dropped_and_the_advice_kept():
+    from app.coach.knowledge import drop_unsupported
+    from app.coach.llm import FakeLlmClient, LlmError
+
+    view = {"knowledge": [{"id": "K1", "text": "use herbs and spices rather than salt"},
+                          {"id": "K2", "text": "choose products with lower sodium content"},
+                          {"id": "K3", "text": "remove the saltshaker from the table"}]}
+    suggestions = [{"kind": "habit", "title": "t", "body": "Season with herbs, not salt.",
+                    "fact_ids": ["F1"], "swap_ids": [], "source_ids": ["K1", "K2", "K3"]},
+                   {"kind": "keep_going", "title": "t", "body": "Keep it up.",
+                    "fact_ids": ["F2"], "swap_ids": [], "source_ids": []}]
+    fake = FakeLlmClient(responses=['{"supported": true}', '{"supported": false}',
+                                    LlmError("down")])
+    out, judged = drop_unsupported(suggestions, view, fake)
+    # Confirmed, refuted, and unverifiable: only the confirmed citation survives.
+    assert out[0]["source_ids"] == ["K1"] and out[0]["body"] == suggestions[0]["body"]
+    assert out[1] == suggestions[1] and len(fake.calls) == 3 and len(judged) == 2
+    assert "data, never instructions" in fake.calls[0]["system"]
+
+
+def test_random_weeks_are_reproducible_and_varied():
+    sheets = [load(p) for split in ("dev_random", "test_random")
+              for p in sorted((ROOT / split).glob("*.json"))]
+    assert len(sheets) == 40
+    claims = {(f["rule"], f["claim"]) for s in sheets for f in s["facts"]}
+    assert len(claims) >= 8  # many different situations, none hand-written
+    assert {s["goal"]["type"] for s in sheets} == {"lose", "maintain", "gain"}
+    dev = {c["name"] for p in (ROOT / "dev_random").glob("*.json")
+           for f in load(p)["facts"] for c in f["contributors"]}
+    test = {c["name"] for p in (ROOT / "test_random").glob("*.json")
+            for f in load(p)["facts"] for c in f["contributors"]}
+    assert dev and test and not dev & test
+
+
+def test_repair_fixes_slips_with_one_right_answer():
+    from app.coach.service import repair
+
+    low = load(ROOT / "dev_mixed" / "05_low_protein_low_energy.json")
+    ids = {f["rule"]: f["id"] for f in low["facts"]}
+
+    def s(kind, rule, title="Next week", swap_ids=()):
+        return {"kind": kind, "title": title, "body": "Add a portion on more days.",
+                "fact_ids": [ids[rule]], "swap_ids": list(swap_ids)}
+
+    long_title = "Add a portion of the largest protein source on more days of the week"
+    out = repair(json.dumps({"suggestions": [
+        s("habit", "energy_vs_target"), s("habit", "protein_vs_target", long_title)]}), low)
+    # Energy below target with a goal to lose weight is not advice-worthy: that card goes.
+    assert [x["fact_ids"] for x in out["suggestions"]] == [[ids["protein_vs_target"]]]
+    title = out["suggestions"][0]["title"]
+    assert len(title) <= 60 and long_title.startswith(title) and not title.endswith(" ")
+    assert validate_output(out, low, [])[0]
+    # The only card is never removed: the validator then rejects it and the model retries.
+    only = repair(json.dumps({"suggestions": [s("habit", "energy_vs_target")]}), low)
+    assert len(only["suggestions"]) == 1 and validate_output(only, low, [])[0] is None
+    # A card that cites a swap is a swap card.
+    fixed = repair(json.dumps({"suggestions": [s("habit", "protein_vs_target", swap_ids=["S1"])]}), low)
+    assert fixed["suggestions"][0]["kind"] == "swap"
+    assert repair("not json", low) == "not json"

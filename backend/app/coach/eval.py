@@ -30,7 +30,7 @@ from pathlib import Path
 from random import Random
 from typing import Any
 
-from app.coach.knowledge import Embed, attach_knowledge, query_embedder
+from app.coach.knowledge import Embed, attach_knowledge, drop_unsupported, query_embedder
 from app.coach.llm import (
     FakeLlmClient,
     LlmClient,
@@ -47,6 +47,7 @@ from app.coach.service import (
     load_prompt,
     prices_set,
     prioritise,
+    repair,
     strip_fence,
 )
 from app.config import Settings
@@ -168,7 +169,7 @@ def _complete_with_rate_limit_wait(
 def run_retrying(
     client: LlmClient, system: str, view: dict, catalogue: list[str],
     max_tokens: int = MAX_TOKENS, temperature: float = TEMPERATURE,
-    sleep_fn: Any = time.sleep,
+    sleep_fn: Any = time.sleep, judge: bool = True,
 ) -> tuple[list | None, list[Attempt], bool]:
     """Up to two attempts, exactly like the service: the second carries the first
     attempt's validator errors. Returns (suggestions or None, attempts, rate_limited).
@@ -200,11 +201,16 @@ def run_retrying(
             attempts.append(Attempt(attempt, None, None, None, None, type(exc).__name__))
             return None, attempts, False
         text = strip_fence(result.text or "")
-        parsed, errors = validate_output(text, view, catalogue)
+        parsed, errors = validate_output(repair(text, view), view, catalogue)
         err_json = [{"code": e.code, "detail": e.detail} for e in errors]
         attempts.append(Attempt(attempt, parsed is not None, result.text, result, err_json or None))
         if parsed is not None:
-            return prioritise(parsed["suggestions"], view), attempts, False
+            suggestions = prioritise(parsed["suggestions"], view)
+            if judge:
+                # The citation check is part of the product: its calls are paid for too.
+                suggestions, judged = drop_unsupported(suggestions, view, client)
+                attempts += [Attempt(attempt, None, None, r, None) for r in judged]
+            return suggestions, attempts, False
         messages = [
             *messages,
             {"role": "assistant", "content": result.text or ""},
@@ -729,7 +735,8 @@ def _print_summary(summary: dict[str, Any]) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="python -m app.coach.eval")
-    parser.add_argument("--split", choices=("dev", "test", "dev_mixed", "test_mixed"))
+    parser.add_argument("--split", choices=("dev", "test", "dev_mixed", "test_mixed",
+                                            "dev_random", "test_random"))
     parser.add_argument("--source", choices=("llm", "template"))
     parser.add_argument("--replay", action="store_true")
     parser.add_argument("--no-knowledge", action="store_true",

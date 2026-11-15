@@ -1,0 +1,225 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30",
+    "2026-10-31",
+    "2026-11-01"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Chicken Rice Bowl",
+          "share": [
+            "0.35",
+            "0.35"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Trailhead Nut Bar",
+          "share": [
+            "0.26",
+            "0.26"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Bistro Chocolate Cake",
+          "share": [
+            "0.21",
+            "0.21"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 1834 kcal a day over Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov, below your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "1834",
+        "recorded_upper": "1834",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Chicken Rice Bowl",
+          "share": [
+            "0.73",
+            "0.73"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Trailhead Nut Bar",
+          "share": [
+            "0.14",
+            "0.14"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Dairy Lane Vanilla Yogurt",
+          "share": [
+            "0.07",
+            "0.07"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F2",
+      "message": "Based on your completed log, your recorded protein averaged 71 g a day over Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov, below your target of 120 g.",
+      "rule": "protein_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "71",
+        "recorded_upper": "71",
+        "target": "120",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C7",
+          "name": "Orchard Peach Drink",
+          "share": [
+            "0.44",
+            "0.44"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C8",
+          "name": "Bistro Chocolate Cake",
+          "share": [
+            "0.28",
+            "0.28"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C9",
+          "name": "Trailhead Nut Bar",
+          "share": [
+            "0.14",
+            "0.14"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO total sugars (a proxy) guideline of 50 g (at least 113 g recorded on Mon 26 Oct, the highest of 7 days: Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov).",
+      "rule": "sugars_daily",
+      "swaps": [
+        {
+          "for": "C8",
+          "id": "S1",
+          "name": "Bistro Chocolate Cake Light",
+          "values": {
+            "basis": "catalogue_per_100",
+            "from_lower": "32",
+            "to_upper": "0",
+            "unit": "g/100g"
+          }
+        }
+      ],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "113",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "within",
+      "contributors": [],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F4",
+      "message": "Based on your completed log, your recorded salt was within the WHO guideline of 5 g on each of Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov (at most 1.6 g recorded).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_upper": "1.6",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "0bcd2009f85772a83585746413bedccf303a43f7aae605e71ed95252dd57016b",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "70.3",
+    "kg_start": "70.4"
+  },
+  "week": "2026-W44"
+}

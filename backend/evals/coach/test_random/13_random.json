@@ -1,0 +1,244 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2027-01-18",
+    "2027-01-19",
+    "2027-01-20",
+    "2027-01-21",
+    "2027-01-22",
+    "2027-01-23",
+    "2027-01-24"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Jardin Salade de Poulet",
+          "share": [
+            "0.28",
+            "0.28"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Maison Ragoût de Bœuf",
+          "share": [
+            "0.26",
+            "0.26"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Sentier Barre aux Noix",
+          "share": [
+            "0.25",
+            "0.25"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 1774 kcal a day over Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan, below your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "1774",
+        "recorded_upper": "1774",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Jardin Salade de Poulet",
+          "share": [
+            "0.46",
+            "0.46"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Maison Ragoût de Bœuf",
+          "share": [
+            "0.31",
+            "0.31"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Sentier Barre aux Noix",
+          "share": [
+            "0.10",
+            "0.10"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F2",
+      "message": "Based on your completed log, your recorded protein averaged 102 g a day over Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan, below your target of 120 g.",
+      "rule": "protein_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "102",
+        "recorded_upper": "102",
+        "target": "120",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C7",
+          "name": "Laiterie Yaourt Vanille",
+          "share": [
+            "0.31",
+            "0.31"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C8",
+          "name": "Sentier Barre aux Noix",
+          "share": [
+            "0.29",
+            "0.29"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C9",
+          "name": "Marmite Soupe Tomate",
+          "share": [
+            "0.22",
+            "0.22"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO total sugars (a proxy) guideline of 50 g (at least 51 g recorded on Mon 18 Jan, the highest of 7 days: Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan).",
+      "rule": "sugars_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "51",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [
+        "Maison Ragoût de Bœuf"
+      ],
+      "card_id": "who_salt",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C10",
+          "name": "Marmite Soupe Tomate",
+          "share": [
+            "0.00",
+            "0.58"
+          ]
+        },
+        {
+          "additions_undeclared": true,
+          "id": "C11",
+          "name": "Maison Ragoût de Bœuf",
+          "share": [
+            "0.00",
+            null
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C12",
+          "name": "Jardin Salade de Poulet",
+          "share": [
+            "0.00",
+            "0.15"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F4",
+      "message": "Your recorded values exceed the WHO salt guideline of 5 g (at least 6.6 g recorded on Mon 18 Jan, the highest of 7 days: Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "6.6",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "c127ed039414dfcd91b8e4eef3d14cd51cb20749aa1d9b2b8e659ba4773d8882",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "65.9",
+    "kg_start": "65.9"
+  },
+  "week": "2027-W03"
+}

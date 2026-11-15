@@ -1,0 +1,211 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2027-01-18",
+    "2027-01-19",
+    "2027-01-20",
+    "2027-01-21",
+    "2027-01-22",
+    "2027-01-23",
+    "2027-01-24"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "above",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Maison Ragoût de Bœuf",
+          "share": [
+            "0.30",
+            "0.30"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Bol Riz Poulet",
+          "share": [
+            "0.26",
+            "0.26"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Bistrot Gâteau au Chocolat",
+          "share": [
+            "0.21",
+            "0.21"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 2179 kcal a day over Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan, above your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "2179",
+        "recorded_upper": "2179",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Bol Riz Poulet",
+          "share": [
+            "0.44",
+            "0.44"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Maison Ragoût de Bœuf",
+          "share": [
+            "0.41",
+            "0.41"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Flocons d'Avoine Nature",
+          "share": [
+            "0.11",
+            "0.11"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F2",
+      "message": "Based on your completed log, your recorded protein averaged 108 g a day over Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan, below your target of 120 g.",
+      "rule": "protein_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "108",
+        "recorded_upper": "108",
+        "target": "120",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C7",
+          "name": "Bistrot Gâteau au Chocolat",
+          "share": [
+            "0.44",
+            "0.44"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C8",
+          "name": "Rivage Abricot Drink",
+          "share": [
+            "0.43",
+            "0.43"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C9",
+          "name": "Maison Ragoût de Bœuf",
+          "share": [
+            "0.09",
+            "0.09"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO total sugars (a proxy) guideline of 50 g (at least 86 g recorded on Mon 18 Jan, the highest of 7 days: Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan).",
+      "rule": "sugars_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "86",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "cannot_tell",
+      "contributors": [],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F4",
+      "message": "Can't tell yet about your recorded salt this week: Mon 18 Jan: cooking additions not declared: Maison Ragoût de Bœuf; Tue 19 Jan: cooking additions not declared: Maison Ragoût de Bœuf; Wed 20 Jan: cooking additions not declared: Maison Ragoût de Bœuf; Thu 21 Jan: cooking additions not declared: Maison Ragoût de Bœuf; Fri 22 Jan: cooking additions not declared: Maison Ragoût de Bœuf; Sat 23 Jan: cooking additions not declared: Maison Ragoût de Bœuf; Sun 24 Jan: cooking additions not declared: Maison Ragoût de Bœuf.",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "gain"
+  },
+  "hash": "ac1b3646945bec9fb11d066a2d6090b90c5a4cec0464f58e3bf33418d75994aa",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "67.3",
+    "kg_start": "67.9"
+  },
+  "week": "2027-W03"
+}

@@ -1,0 +1,218 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2027-01-18",
+    "2027-01-19",
+    "2027-01-20",
+    "2027-01-21",
+    "2027-01-22",
+    "2027-01-23",
+    "2027-01-24"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Jardin Salade de Poulet",
+          "share": [
+            "0.32",
+            "0.32"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Moulin Céréales Croustillantes",
+          "share": [
+            "0.23",
+            "0.23"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Sentier Barre aux Noix",
+          "share": [
+            "0.16",
+            "0.16"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 1575-1576 kcal a day over Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan, below your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "1575",
+        "recorded_upper": "1576",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Jardin Salade de Poulet",
+          "share": [
+            "0.61",
+            "0.61"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Maison Ragoût de Bœuf",
+          "share": [
+            "0.10",
+            "0.10"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Moulin Céréales Croustillantes",
+          "share": [
+            "0.10",
+            "0.10"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F2",
+      "message": "Based on your completed log, your recorded protein averaged 77-78 g a day over Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan, below your target of 120 g.",
+      "rule": "protein_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "77",
+        "recorded_upper": "78",
+        "target": "120",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C7",
+          "name": "Bistrot Gâteau au Chocolat",
+          "share": [
+            "0.40",
+            "0.40"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C8",
+          "name": "Moulin Céréales Croustillantes",
+          "share": [
+            "0.29",
+            "0.29"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C9",
+          "name": "Laiterie Yaourt Vanille",
+          "share": [
+            "0.19",
+            "0.19"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO total sugars (a proxy) guideline of 50 g (at least 80 g recorded on Sat 23 Jan, the highest of 2 days: Sat 23 Jan and Sun 24 Jan).",
+      "rule": "sugars_daily",
+      "swaps": [
+        {
+          "for": "C8",
+          "id": "S1",
+          "name": "Moulin Céréales Croustillantes Light",
+          "values": {
+            "basis": "catalogue_per_100",
+            "from_lower": "23",
+            "to_upper": "0",
+            "unit": "g/100g"
+          }
+        }
+      ],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "2",
+        "recorded_lower": "80",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "cannot_tell",
+      "contributors": [],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F4",
+      "message": "Can't tell yet about your recorded salt this week: Sat 23 Jan: cooking additions not declared: Maison Ragoût de Bœuf; Sun 24 Jan: cooking additions not declared: Maison Ragoût de Bœuf.",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "a498c93a5bd7ad21da8ead2dbe26e9ab2f91d73767ceebec52d5f616a9c7f18d",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "71.5",
+    "kg_start": "71.1"
+  },
+  "week": "2027-W03"
+}

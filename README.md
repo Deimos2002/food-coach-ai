@@ -67,7 +67,9 @@ flowchart LR
    additions nobody left undeclared, a nutrient the week has no fact about) and claim direction. Advice
    may not treat energy that is in line with the goal as a problem, and a swap on offer for the named
    food must be used. A cited passage must belong to a cited fact; one
-   the text does not draw on is dropped. A failed output is retried once with the validator errors.
+   the text does not draw on is dropped, and a second model call withdraws any citation the passage
+   does not actually support. Slips with one right answer are repaired first; a failed output is
+   retried once with the validator errors.
 6. **Ordering.** The model words the advice; code decides the order (energy working against the goal,
    then the limit exceeded on the most days) and drops the "keep going" card once two problems are shown.
 7. **No static fallback.** If both attempts fail, Azure blocks the request, or a gate is closed, the user
@@ -137,6 +139,39 @@ written from the rule definitions and tested on dev weeks, not tuned on the held
 states them. With the stricter rules, first-try pass on dev is 0.90 / 0.67 with no review lost: every
 rejected first attempt passed on the retry. v7 has not been run on the held-out weeks.
 
+**Unseen random weeks** (current code, prompt v7). The hand-designed weeks above are few and the prompt
+was tuned around them, so 20 dev and 20 held-out weeks were generated with menus, portions, swaps, goals
+and weight trends drawn at random. Held-out weeks, three live runs:
+
+| | Before repairs (3 runs) | After repairs (3 runs) |
+|---|---:|---:|
+| Hard failures after validation | 0, 0, 0 | 0, 0, 0 |
+| First-try pass rate | 0.50, 0.45, 0.40 | 0.85, 0.90, 0.95 |
+| Weeks left with no review (of 20) | 0, 2, 4 | 0, 0, 0 |
+| Problem comes first | 0.95, 0.94, 0.87 | 0.95, 0.95, 0.95 |
+| Largest source named | 1.00 | 1.00 |
+| Advice citing a guideline passage | 0.06, 0.12, 0.15 | 0.09, 0.04, 0.13 |
+| Cost per review | about €0.0039 | about €0.0027 |
+
+Two things this showed. First, on weeks nobody designed, the prompt that scored 1.00 first-try on its own
+dev set scored 0.40 to 0.50, and up to 4 weeks in 20 got no review. Most rejections were slips with a
+single right answer (a title a few characters too long, a card citing a swap but not marked as one,
+advice about energy already in line with the goal), so [`service.repair`](backend/app/coach/service.py)
+now fixes those before validation instead of spending a retry. The fixes were chosen from the dev weeks'
+errors; the held-out tallies had been seen and showed the same categories. Second, most citations were
+decoration: see the next paragraph.
+
+**Are the citations true?** Word overlap cannot tell whether a passage supports the advice, so a second
+model call now checks each cited passage and withdraws the citation when it does not
+([`knowledge.drop_unsupported`](backend/app/coach/knowledge.py)); the advice stays. On 20 labelled pairs
+([`evals/knowledge/faithfulness.json`](backend/evals/knowledge/faithfulness.json): 10 supported, 10 not,
+including contradictions and wrong-topic passages) the check got 20 right. Applied to the coach, it cut
+advice citing a passage from about 0.65 to about 0.10: the model was usually giving a plain action
+("have it on fewer days") and attaching a passage that says nothing of the sort. Retrieval therefore
+adds a verified source to roughly one suggestion in ten today, which is the honest size of its
+contribution. These runs used the non-EU deployment of the same model for its higher rate limit; the
+weeks are synthetic.
+
 **The original release gate** was passed by prompt v4, with thresholds
 [fixed before the test split was run](docs/evals/coach-gate-frozen.md):
 
@@ -156,7 +191,7 @@ the product never shows it.
 
 Limits: the rubric was scored by two AI raters with the author settling disagreements; all data is
 synthetic; the dev figures are single runs at temperature 0.3; and a paraphrase of a passage cannot be
-proven faithful, only checked for overlap with it. CI replays recorded model responses on every push, so
+proven faithful: it is checked by a second model call, which was itself measured on only 20 pairs. CI replays recorded model responses on every push, so
 a validator change that breaks them fails the build without a paid call.
 
 ## Architecture

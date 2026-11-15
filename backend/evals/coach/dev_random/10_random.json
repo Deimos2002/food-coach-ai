@@ -1,0 +1,247 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30",
+    "2026-10-31",
+    "2026-11-01"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "above",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Hearthstone Frozen Pizza",
+          "share": [
+            "0.29",
+            "0.29"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Millbrook Crunchy Cereal",
+          "share": [
+            "0.20",
+            "0.20"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Garden Chicken Salad",
+          "share": [
+            "0.14",
+            "0.14"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 2104 kcal a day over Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov, above your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "2104",
+        "recorded_upper": "2104",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Garden Chicken Salad",
+          "share": [
+            "0.31",
+            "0.31"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Hearthstone Frozen Pizza",
+          "share": [
+            "0.26",
+            "0.26"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Chicken Rice Bowl",
+          "share": [
+            "0.16",
+            "0.16"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F2",
+      "message": "Based on your completed log, your recorded protein averaged 91-92 g a day over Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov, below your target of 120 g.",
+      "rule": "protein_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "91",
+        "recorded_upper": "92",
+        "target": "120",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C7",
+          "name": "Bistro Chocolate Cake",
+          "share": [
+            "0.42",
+            "0.42"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C8",
+          "name": "Millbrook Crunchy Cereal",
+          "share": [
+            "0.33",
+            "0.33"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C9",
+          "name": "Trailhead Nut Bar",
+          "share": [
+            "0.19",
+            "0.19"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO total sugars (a proxy) guideline of 50 g (at least 81 g recorded on Sat 31 Oct, the highest of 2 days: Sat 31 Oct and Sun 1 Nov).",
+      "rule": "sugars_daily",
+      "swaps": [
+        {
+          "for": "C7",
+          "id": "S1",
+          "name": "Bistro Chocolate Cake Light",
+          "values": {
+            "basis": "catalogue_per_100",
+            "from_lower": "34",
+            "to_upper": "0",
+            "unit": "g/100g"
+          }
+        }
+      ],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "2",
+        "recorded_lower": "81",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C10",
+          "name": "Hearthstone Frozen Pizza",
+          "share": [
+            "0.74",
+            "0.74"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C11",
+          "name": "Garden Chicken Salad",
+          "share": [
+            "0.16",
+            "0.16"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C12",
+          "name": "Millbrook Crunchy Cereal",
+          "share": [
+            "0.11",
+            "0.11"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30"
+      ],
+      "id": "F4",
+      "message": "Your recorded values exceed the WHO salt guideline of 5 g (at least 5.7 g recorded on Mon 26 Oct, the highest of 5 days: Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct and Fri 30 Oct).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "5",
+        "recorded_lower": "5.7",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "98f5da3873bf07e53180b0e3d68796177328935b4b0eac67ee11ede47225b4a4",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "73.1",
+    "kg_start": "72.8"
+  },
+  "week": "2026-W44"
+}

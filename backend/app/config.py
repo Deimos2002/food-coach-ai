@@ -35,6 +35,8 @@ class Settings(BaseSettings):
     azure_openai_embedding_deployment: str = ""
     # False = the coach gets no guideline passages (the retrieval-off arm of the eval).
     coach_knowledge_enabled: bool = True
+    # False = cited passages are kept without the second model call that checks them.
+    coach_judge_sources: bool = True
     coach_monthly_cap_eur: Decimal = Decimal(2)
     coach_price_in_per_1k: Decimal = Decimal(0)
     coach_price_out_per_1k: Decimal = Decimal(0)

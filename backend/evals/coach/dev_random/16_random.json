@@ -1,0 +1,188 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30",
+    "2026-10-31",
+    "2026-11-01"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "above",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Hearthstone Frozen Pizza",
+          "share": [
+            "0.29",
+            "0.29"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Chicken Rice Bowl",
+          "share": [
+            "0.22",
+            "0.22"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Garden Chicken Salad",
+          "share": [
+            "0.18",
+            "0.18"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 3141 kcal a day over Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov, above your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "3141",
+        "recorded_upper": "3141",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Bistro Chocolate Cake",
+          "share": [
+            "0.60",
+            "0.60"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Copper Pot Tomato Soup",
+          "share": [
+            "0.15",
+            "0.15"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Hearthstone Frozen Pizza",
+          "share": [
+            "0.13",
+            "0.13"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F2",
+      "message": "Your recorded total sugars (a proxy) reached at least 68 g on Mon 26 Oct, the highest of 7 days: Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov.",
+      "rule": "sugars_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "68",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C7",
+          "name": "Hearthstone Frozen Pizza",
+          "share": [
+            "0.42",
+            "0.42"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C8",
+          "name": "Copper Pot Tomato Soup",
+          "share": [
+            "0.34",
+            "0.34"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C9",
+          "name": "Garden Chicken Salad",
+          "share": [
+            "0.12",
+            "0.12"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO salt guideline of 5 g (at least 10.4 g recorded on Mon 26 Oct, the highest of 7 days: Mon 26 Oct, Tue 27 Oct, Wed 28 Oct, Thu 29 Oct, Fri 30 Oct, Sat 31 Oct and Sun 1 Nov).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "10.4",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "5d1105722d69df84683152bc2d01a23f878f1337ffd57b8d26233f0bd6495bc9",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "94.6",
+    "kg_start": "94.7"
+  },
+  "week": "2026-W44"
+}

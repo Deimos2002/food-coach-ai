@@ -44,7 +44,12 @@ from sqlalchemy.engine import Connection, Engine
 
 from app.coach import budget
 from app.coach.factsheet import build_fact_sheet, complete_days, llm_view
-from app.coach.knowledge import attach_knowledge, query_embedder, with_sources
+from app.coach.knowledge import (
+    attach_knowledge,
+    drop_unsupported,
+    query_embedder,
+    with_sources,
+)
 from app.coach.llm import LlmClient, LlmError, LlmResult, cost_eur
 from app.config import BACKEND_DIR, Settings
 from app.domain.coach_validator import (
@@ -71,6 +76,8 @@ TEMPERATURE = 0.3
 _RETRY_EXTRA_TOKENS = MAX_TOKENS + 500
 # Upper bound on the guideline passages added to the prompt (3 facts x 2 passages).
 _KNOWLEDGE_MAX_CHARS = 8000
+# Upper bound on the citation checks: 3 suggestions x 2 passages, each a short prompt.
+_JUDGE_MAX_CHARS = 6 * 2500
 REGION_NOTE = "AI suggestions are off: EU-only processing isn't available yet."
 # Shown instead of suggestions when the model produced no valid review. There is no static
 # fallback text: a week either gets AI suggestions that passed the checker, or none.
@@ -150,6 +157,36 @@ def prices_set(settings: Settings) -> bool:
 def strip_fence(text: str) -> str:
     m = _FENCE.match(text)
     return m.group(1) if m else text
+
+
+def repair(text: str, sheet: dict) -> str | dict:
+    """Fix three slips that have one right answer, before validation, so they do not cost a
+    retry or the whole review: an over-long title, a card that cites a swap but is not
+    marked as one, and advice about energy that is already in line with the goal (that card
+    is removed when another remains). Anything else is left for the validator to judge."""
+    try:
+        data = json.loads(text)
+        suggestions = [dict(s) for s in data["suggestions"]]
+    except (ValueError, TypeError, KeyError):
+        return text
+    if not all(isinstance(s.get(k), list) for s in suggestions for k in ("fact_ids", "swap_ids")):
+        return text
+    facts = {f["id"]: f for f in sheet.get("facts", [])}
+    goal = (sheet.get("goal") or {}).get("type")
+    aligned = {
+        fid for fid, f in facts.items() if f.get("rule") == "energy_vs_target"
+        and (f.get("claim"), goal) in {("below", "lose"), ("above", "gain")}
+    }
+    kept = []
+    for s in suggestions:
+        if isinstance(s.get("title"), str) and len(s["title"]) > 60:
+            s["title"] = s["title"][:61].rsplit(" ", 1)[0].rstrip(" ,;:-")
+        if s["swap_ids"] and s.get("kind") == "habit":
+            s["kind"] = "swap"
+        if s.get("kind") != "keep_going" and aligned & set(s["fact_ids"]):
+            continue
+        kept.append(s)
+    return {**data, "suggestions": kept or suggestions}
 
 
 def prioritise(suggestions: list[dict], sheet: dict) -> list[dict]:
@@ -296,7 +333,7 @@ def _reservation(settings: Settings, sheet: dict) -> Decimal:
     """The amount reserved for ``sheet``; deterministic so a stale placeholder's reservation
     can be recomputed from its stored fact sheet (same prompt file and prices)."""
     chars = (len(load_prompt()) + len(json.dumps(llm_view(sheet), ensure_ascii=False))
-             + _KNOWLEDGE_MAX_CHARS)
+             + _KNOWLEDGE_MAX_CHARS + _JUDGE_MAX_CHARS)
     return _max_cost(settings, chars)
 
 
@@ -359,14 +396,18 @@ def _call_llm(
         text = strip_fence(result.text or "")
         with engine.connect() as conn:
             names = catalogue_names_for(conn, text)
-        parsed, errors = validate_output(text, view, names)
+        parsed, errors = validate_output(repair(text, view), view, names)
         err_json = [{"code": e.code, "detail": e.detail} for e in errors]
         rows.append(_attempt_row(
             settings, attempt, result, None, parsed is not None, err_json or None,
             prompt_text, result.text,
         ))
         if parsed is not None:
-            return with_sources(prioritise(parsed["suggestions"], view), view), None
+            suggestions = prioritise(parsed["suggestions"], view)
+            if settings.coach_judge_sources:
+                suggestions, judged = drop_unsupported(suggestions, view, client)
+                acc.eur += sum((cost_eur(r, settings) for r in judged), Decimal(0))
+            return with_sources(suggestions, view), None
         messages = [
             *messages,
             {"role": "assistant", "content": result.text or ""},

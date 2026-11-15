@@ -127,7 +127,10 @@ def create_demo_app(client: LlmClient | None = None, settings: Settings | None =
                 else UNAVAILABLE["validation" if attempts and attempts[-1].ok is False
                                  else "llm_error"]),
             "attempts": [{"attempt": a.attempt, "passed": a.ok, "errors": a.errors or [],
-                          "blocked": a.error == "LlmContentFiltered"} for a in attempts],
+                          "blocked": a.error == "LlmContentFiltered"}
+                         for a in attempts if a.text is not None or a.error],
+            # Second model calls that checked each cited passage against the advice.
+            "citations_checked": sum(a.text is None and not a.error for a in attempts),
             "passages": [{k: p[k] for k in ("id", "for", "source", "locator", "text")}
                          for p in view["knowledge"]],
             "latency_ms": sum(a.result.latency_ms for a in attempts if a.result),

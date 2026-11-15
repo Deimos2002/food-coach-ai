@@ -1,0 +1,213 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2027-01-18",
+    "2027-01-19",
+    "2027-01-20",
+    "2027-01-21",
+    "2027-01-22",
+    "2027-01-23",
+    "2027-01-24"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "above",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Fournil Pizza Surgelée",
+          "share": [
+            "0.29",
+            "0.29"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Jardin Salade de Poulet",
+          "share": [
+            "0.21",
+            "0.21"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Maison Ragoût de Bœuf",
+          "share": [
+            "0.20",
+            "0.20"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 2800 kcal a day over Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan, above your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "2800",
+        "recorded_upper": "2800",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Bistrot Gâteau au Chocolat",
+          "share": [
+            "0.49",
+            "0.49"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Laiterie Yaourt Vanille",
+          "share": [
+            "0.22",
+            "0.22"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Fournil Pizza Surgelée",
+          "share": [
+            "0.11",
+            "0.11"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F2",
+      "message": "Your recorded values exceed the WHO total sugars (a proxy) guideline of 50 g (at least 72 g recorded on Mon 18 Jan, the highest of 7 days: Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan).",
+      "rule": "sugars_daily",
+      "swaps": [
+        {
+          "for": "C4",
+          "id": "S1",
+          "name": "Bistrot Gâteau au Chocolat Light",
+          "values": {
+            "basis": "catalogue_per_100",
+            "from_lower": "35",
+            "to_upper": "0",
+            "unit": "g/100g"
+          }
+        },
+        {
+          "for": "C5",
+          "id": "S2",
+          "name": "Laiterie Yaourt Vanille Light",
+          "values": {
+            "basis": "catalogue_per_100",
+            "from_lower": "16",
+            "to_upper": "0",
+            "unit": "g/100g"
+          }
+        }
+      ],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "72",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [
+        "Maison Ragoût de Bœuf"
+      ],
+      "card_id": "who_salt",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C7",
+          "name": "Fournil Pizza Surgelée",
+          "share": [
+            "0.00",
+            "0.53"
+          ]
+        },
+        {
+          "additions_undeclared": true,
+          "id": "C8",
+          "name": "Maison Ragoût de Bœuf",
+          "share": [
+            "0.00",
+            null
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C9",
+          "name": "Jardin Salade de Poulet",
+          "share": [
+            "0.00",
+            "0.16"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-18",
+        "2027-01-19",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO salt guideline of 5 g (at least 7.3 g recorded on Mon 18 Jan, the highest of 7 days: Mon 18 Jan, Tue 19 Jan, Wed 20 Jan, Thu 21 Jan, Fri 22 Jan, Sat 23 Jan and Sun 24 Jan).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "7.3",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "b68ade0f45a7439ddc8c79866f3b8a24aed1f944597f1fa01375a2ea83315016",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "62.7",
+    "kg_start": "63.2"
+  },
+  "week": "2027-W03"
+}

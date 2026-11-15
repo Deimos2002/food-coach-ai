@@ -236,6 +236,73 @@ def make_mixed_sheet(split: str, index: int) -> dict:
     ))
 
 
+# --- random weeks: menus nobody designed, so results are not tuned to them ---------------------
+RANDOM_WEEKS = 20
+RANDOM_SEEDS = {"dev_random": 6151, "test_random": 12007}
+
+
+def make_random_sheet(split: str, index: int) -> dict:
+    """A week whose weekday and weekend menus, swaps, goal and trend are drawn at random.
+    Whatever facts the domain rules produce are the case: nothing is steered."""
+    rng = Random(RANDOM_SEEDS[split] + index)
+    is_test = split == "test_random"
+    keys = list(FOODS)
+    weekday = tuple(rng.sample(keys, rng.randrange(4, 7)))
+    weekend = tuple(rng.sample(keys, rng.randrange(4, 7))) if rng.random() < 0.6 else weekday
+    swap_for = set(rng.sample(["drink", "cereal", "yogurt", "cake"], rng.randrange(0, 3)))
+    week = "2026-W44" if not is_test else "2027-W03"
+    dates = iso_week_days(week)
+    foods = {}
+    for i, (key, (dev_name, test_name, brand, unit, *amounts)) in enumerate(FOODS.items()):
+        scale = Decimal(rng.randrange(80, 126)) / 100  # portion size differs week to week
+        nutrient_order = (Nutrient.ENERGY_KCAL, Nutrient.PROTEIN, Nutrient.SUGARS, Nutrient.SALT)
+        values = {n: (Decimal(a) * scale).quantize(Decimal("0.1") if n is Nutrient.SALT
+                                                   else Decimal(1))
+                  for n, a in zip(nutrient_order, amounts, strict=True)}
+        foods[key] = {"pid": (20000 if is_test else 12000) + index * 100 + i * 2,
+                      "name": test_name if is_test else dev_name,
+                      # A swap needs a brand; give one to the foods drawn for a swap.
+                      "brand": brand or ("Maison" if key in swap_for else None),
+                      "unit": unit, "values": values}
+    days, items = [], []
+    for i, d in enumerate(dates):
+        day_items = []
+        for j, key in enumerate(weekday if i < 5 else weekend):
+            food = foods[key]
+            nutrients = {n: ItemNutrient(True, Range.point(v), Qualifier.NONE)
+                         for n, v in food["values"].items()}
+            unresolved = (frozenset({Nutrient.SALT, Nutrient.FAT}) if key == "stew"
+                          else frozenset())
+            day_items.append(DayItem(food["name"], nutrients, unresolved))
+            items.append({"day": d, "product_id": food["pid"], "name": food["name"],
+                          "nutrients": nutrients, "unresolved_for": unresolved,
+                          "meal_id": i + 1, "item_id": i * 10 + j + 1})
+        days.append(WeekDay(d, DayStatus.COMPLETE, tuple(day_items), 2000, 120))
+    swap_cache = {}
+    for key, food in foods.items():
+        for nutrient, amount in food["values"].items():
+            def candidate(pid, name, value, food=food):
+                return SwapCandidate(pid, name, food["brand"], food["unit"], NutrientValue(
+                    True, Range.point(value), Qualifier.NONE, Source.MANUAL))
+
+            target = candidate(food["pid"], food["name"], amount)
+            offered = [candidate(food["pid"] + 1, food["name"] + " Light", Decimal(0))
+                       ] if nutrient == Nutrient.SUGARS and key in swap_for else []
+            swap_cache[food["pid"], nutrient] = target, find_swaps(target, offered)
+    counters = {"C": 0, "S": 0}
+    cards = [Card(cid, None, rng.random() < 0.85) for cid in ("who_free_sugars", "who_salt")]
+    facts = [_fact_json(None, rule, items, counters, swap_cache)
+             for rule in evaluate_week(week, days, cards)]
+    start = Decimal(rng.randrange(600, 950)) / 10
+    return llm_view(assemble_sheet(
+        week=week, days_included=[d.isoformat() for d in dates], days_missing=[],
+        coverage=week_coverage(week, days), facts=facts,
+        goal={"type": rng.choice(["lose", "lose", "maintain", "gain"]),
+              "pace_pct_per_week": "0.5"},
+        trend={"kg_start": str(start), "kg_end": str(start + Decimal(rng.randrange(-8, 6)) / 10)},
+    ))
+
+
 def write_sheets(root: Path = ROOT):
     for split, count in (("dev", 25), ("test", 15)):
         (root / split).mkdir(parents=True, exist_ok=True)
@@ -248,6 +315,11 @@ def write_sheets(root: Path = ROOT):
         for index, case in enumerate(MIXED):
             path = root / split / f"{index + 1:02d}_{case}.json"
             path.write_text(dumps(make_mixed_sheet(split, index)), encoding="utf-8")
+    for split in RANDOM_SEEDS:
+        (root / split).mkdir(parents=True, exist_ok=True)
+        for index in range(RANDOM_WEEKS):
+            path = root / split / f"{index + 1:02d}_random.json"
+            path.write_text(dumps(make_random_sheet(split, index)), encoding="utf-8")
 
 
 def write_seeded_bad(root: Path = ROOT):
