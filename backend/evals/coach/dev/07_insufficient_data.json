@@ -1,0 +1,103 @@
+{
+  "coverage": "2 complete days; Wed 14 Oct not logged; Thu 15 Oct not logged; Fri 16 Oct not logged; Sat 17 Oct not logged; Sun 18 Oct not logged.",
+  "days_included": [
+    "2026-10-12",
+    "2026-10-13"
+  ],
+  "days_missing": [
+    "2026-10-14",
+    "2026-10-15",
+    "2026-10-16",
+    "2026-10-17",
+    "2026-10-18"
+  ],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "cannot_tell",
+      "contributors": [],
+      "days": [
+        "2026-10-12",
+        "2026-10-13"
+      ],
+      "id": "F1",
+      "message": "Can't tell yet how your recorded energy compares with your target: only 2 complete day(s) with every energy value known, 3 needed.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "full_coverage_days": "2"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "cannot_tell",
+      "contributors": [],
+      "days": [
+        "2026-10-12",
+        "2026-10-13"
+      ],
+      "id": "F2",
+      "message": "Can't tell yet how your recorded protein compares with your target: only 2 complete day(s) with every protein value known, 3 needed.",
+      "rule": "protein_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "full_coverage_days": "2"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "within",
+      "contributors": [],
+      "days": [
+        "2026-10-12",
+        "2026-10-13"
+      ],
+      "id": "F3",
+      "message": "Based on your completed log, your recorded total sugars (a proxy) was within the WHO guideline of 50 g on each of Mon 12 Oct and Tue 13 Oct (at most 29 g recorded).",
+      "rule": "sugars_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_upper": "29",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "within",
+      "contributors": [],
+      "days": [
+        "2026-10-12",
+        "2026-10-13"
+      ],
+      "id": "F4",
+      "message": "Based on your completed log, your recorded salt was within the WHO guideline of 5 g on each of Mon 12 Oct and Tue 13 Oct (at most 3 g recorded).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_upper": "3",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "8e564ed388b072d9045736d13c6597109f8ff713dd48d399702de886e7cb61fc",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "72.1",
+    "kg_start": "72.6"
+  },
+  "week": "2026-W42"
+}

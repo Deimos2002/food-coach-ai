@@ -1,0 +1,19 @@
+{
+  "expected_codes": [
+    "wording"
+  ],
+  "output": {
+    "suggestions": [
+      {
+        "body": "Yоu аte too much sugar.",
+        "fact_ids": [
+          "F2"
+        ],
+        "kind": "habit",
+        "swap_ids": [],
+        "title": "Review your log"
+      }
+    ]
+  },
+  "sheet_ref": "dev/01_sugar_swap.json"
+}

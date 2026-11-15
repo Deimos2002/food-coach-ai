@@ -1,0 +1,34 @@
+.restyle-page, .restyle-dialog, .restyle-panel { min-width: 0; overflow-wrap: anywhere; }
+.restyle-page { display: grid; gap: 24px; }
+.restyle-page .ui-page-header h1 { margin: 0; }
+.restyle-form { display: grid; gap: 16px; min-width: 0; }
+.restyle-form label:not(.restyle-check) { display: grid; gap: 8px; font-weight: 500; }
+.restyle-control, .restyle-form input:not([type="checkbox"]), .restyle-form select {
+  width: 100%; min-width: 0; min-height: 44px; padding: 10px 12px;
+  border: 1px solid var(--border); border-radius: 10px;
+  color: var(--text); background: var(--surface); font: inherit;
+}
+.restyle-form fieldset, .restyle-fieldset {
+  min-width: 0; margin: 0; padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-card);
+}
+.restyle-form legend, .restyle-fieldset legend { padding: 0 8px; color: var(--text-h); font-weight: 600; }
+.restyle-check { display: flex; align-items: center; gap: 8px; min-height: 44px; }
+.restyle-check input[type="checkbox"] { flex: 0 0 24px; width: 24px; min-height: 24px; height: 24px; margin: 0 4px; accent-color: var(--accent-text); }
+.restyle-nutrient { display: grid; gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.restyle-nutrient:last-child { border-bottom: 0; }
+.restyle-nutrient > span, .restyle-description, .restyle-page dt, .restyle-panel dt { color: var(--text-secondary); }
+.restyle-value { display: grid; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.restyle-description { margin: 0; }
+.restyle-page dl, .restyle-panel dl { margin: 0; }
+.restyle-panel dl { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 16px; }
+.restyle-panel dd { margin: 0; color: var(--text-h); font-weight: 600; }
+.restyle-page > ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.restyle-page > ul > li { padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-card); }
+.restyle-page li .ui-button { margin: 8px; }
+.restyle-page li ul { padding-left: 20px; margin-top: 8px; color: var(--text-secondary); }
+.restyle-dialog { margin-top: 16px; border: 1px solid var(--border); }
+.restyle-panel { margin-top: 8px; }
+.restyle-link { display: inline-flex; align-items: center; min-height: 44px; width: fit-content; font-weight: 600; }
+.restyle-wrap { overflow-wrap: anywhere; }
+.restyle-form [role="alert"], .restyle-page > [role="alert"] { color: var(--danger); }
+.restyle-control:disabled, .restyle-form :disabled { cursor: not-allowed; }

@@ -1,0 +1,11 @@
+﻿.coach-page, .coach-review { display: grid; gap: 24px; min-width: 0; }
+.coach-week-nav { display: flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
+.coach-review { text-align: left; overflow-wrap: anywhere; }
+.coach-review h2, .coach-suggestion h3 { margin-top: 0; }
+.coach-review > h2, .coach-review > p { margin-bottom: 0; }
+.coach-review > p { margin-top: 0; }
+.coach-suggestion p { line-height: 1.6; }
+.coach-suggestion summary { min-height: 44px; min-width: 44px; cursor: pointer; align-content: center; color: var(--accent-text); }
+.coach-suggestion summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.coach-feedback { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.coach-review > .ui-button { justify-self: start; }

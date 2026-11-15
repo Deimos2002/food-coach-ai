@@ -1,0 +1,454 @@
+{
+ "mixed-sugar": {
+  "mode": "live",
+  "generated_at": "2026-11-15T08:01:41+00:00",
+  "prompt_version": "v7",
+  "suggestions": [
+   {
+    "kind": "habit",
+    "title": "Have Orchard Peach Drink on fewer days",
+    "body": "Your recorded sugars exceed the guideline on 7 days. Orchard Peach Drink is the largest source at 48%: have it on fewer days and choose fresh fruits as snacks instead of sugary drinks.",
+    "fact_ids": [
+     "F2"
+    ],
+    "swap_ids": [],
+    "source_ids": [
+     "K1",
+     "K2"
+    ],
+    "sources": [
+     {
+      "title": "WHO EMRO: limit fat, salt and sugar intake",
+      "url": "https://www.emro.who.int/nutrition/reduce-fat-salt-and-sugar-intake/index.html",
+      "locator": "Limit sugar intake"
+     },
+     {
+      "title": "WHO Be Healthy: healthy diet",
+      "url": "https://www.who.int/initiatives/behealthy/healthy-diet",
+      "locator": "Overview"
+     }
+    ]
+   }
+  ],
+  "message": null,
+  "attempts": [
+   {
+    "attempt": 1,
+    "passed": true,
+    "errors": [],
+    "blocked": false
+   }
+  ],
+  "passages": [
+   {
+    "id": "K1",
+    "for": "F2",
+    "source": "WHO EMRO: limit fat, salt and sugar intake",
+    "locator": "Limit sugar intake",
+    "text": "limiting the consumption of foods and drinks containing high amounts of sugars (e.g. sugar-sweetened beverages, sugary snacks and candies); eating fresh fruits and raw vegetables as snacks instead of sugary snacks."
+   },
+   {
+    "id": "K2",
+    "for": "F2",
+    "source": "WHO Be Healthy: healthy diet",
+    "locator": "Overview",
+    "text": "Reducing even further to under 5% has additional health benefits. Choosing fresh fruits instead of sweet snacks such as cookies, cakes and chocolate helps reduce consumption of sugars."
+   }
+  ],
+  "latency_ms": 2003,
+  "cost_eur": "0.00190936"
+ },
+ "energy-salt": {
+  "mode": "live",
+  "generated_at": "2026-11-15T08:01:05+00:00",
+  "prompt_version": "v7",
+  "suggestions": [
+   {
+    "kind": "habit",
+    "title": "Have Hearthstone Frozen Pizza less often",
+    "body": "With your goal to lose weight, recorded energy averaged above your target. Chicken Rice Bowl is the largest source at 30%: have it on fewer days next week.",
+    "fact_ids": [
+     "F1"
+    ],
+    "swap_ids": [],
+    "source_ids": [],
+    "sources": []
+   },
+   {
+    "kind": "habit",
+    "title": "Choose lower-salt options than Hearthstone Frozen Pizza",
+    "body": "Your recorded salt exceeds the guideline on 4 days. Hearthstone Frozen Pizza is the largest source at 63%: check labels and pick a pizza with less salt next time.",
+    "fact_ids": [
+     "F3"
+    ],
+    "swap_ids": [],
+    "source_ids": [
+     "K3"
+    ],
+    "sources": [
+     {
+      "title": "WHO EMRO: limit fat, salt and sugar intake",
+      "url": "https://www.emro.who.int/nutrition/reduce-fat-salt-and-sugar-intake/index.html",
+      "locator": "Limit salt intake"
+     }
+    ]
+   }
+  ],
+  "message": null,
+  "attempts": [
+   {
+    "attempt": 1,
+    "passed": true,
+    "errors": [],
+    "blocked": false
+   }
+  ],
+  "passages": [
+   {
+    "id": "K1",
+    "for": "F1",
+    "source": "WHO Be Healthy: healthy diet",
+    "locator": "Overview",
+    "text": "Fats and oils and concentrated sources of energy."
+   },
+   {
+    "id": "K2",
+    "for": "F1",
+    "source": "WHO fact sheet: healthy diet",
+    "locator": "Fats",
+    "text": "The quality of dietary fat is important. Unsaturated fat (found in fish, avocado and nuts, and in sunflower, soybean, canola and olive oils) is preferable to saturated fat (found in fatty meat, butter, palm and coconut oil, cream, cheese, ghee and lard) and trans fat of all kinds, including both industrially-produced trans fat (found in baked and fried foods, and pre-packaged snacks and foods, such as frozen pizza, pies, cookies, biscuits, wafers, and cooking oils and spreads) and ruminant trans fat (found in meat and dairy foods from ruminant animals, such as cows, sheep, goats and camels)."
+   },
+   {
+    "id": "K3",
+    "for": "F3",
+    "source": "WHO EMRO: limit fat, salt and sugar intake",
+    "locator": "Limit salt intake",
+    "text": "People are often unaware of the amount of salt they consume. In many countries, most salt comes from processed foods (e.g. ready meals; processed meats like bacon, ham and salami; cheese and salty snacks) or from food consumed frequently in large amounts (e.g. bread). Salt is also added to food during cooking (e.g. bouillon, stock cubes, soy sauce and fish sauce) or at the table (e.g. table salt). You can reduce salt consumption by: not adding salt, soy sauce or fish sauce during the preparation of food; not having salt on the table; limiting the consumption of salty snacks; checking food labels and choosing products with lower sodium content;"
+   },
+   {
+    "id": "K4",
+    "for": "F3",
+    "source": "WHO #HealthyAtHome: healthy diet",
+    "locator": "Tips for maintaining a healthy diet:",
+    "text": "• When cooking and preparing foods, use salt sparingly and reduce use of salty sauces and condiments (like soy sauce, stock or fish sauce). • If using canned or dried food, choose varieties of vegetables, nuts and fruit, without added salt and sugars. • Remove the salt shaker from the table, and experiment with fresh or dried herbs and spices for added flavor instead. • Check the labels on food and choose products with lower sodium content. 3. Eat moderate amounts of fats and oils; • Replace butter, ghee and lard with healthier fats like olive, soy, sunflower or corn oil when cooking."
+   }
+  ],
+  "latency_ms": 2114,
+  "cost_eur": "0.00217669"
+ },
+ "competing": {
+  "mode": "live",
+  "generated_at": "2026-11-15T08:02:18+00:00",
+  "prompt_version": "v7",
+  "suggestions": [
+   {
+    "kind": "habit",
+    "title": "Take smaller portions of Copper Pot Tomato Soup",
+    "body": "Your recorded salt exceeds the guideline on 7 days. Copper Pot Tomato Soup is the largest source at 50%: take smaller portions and check labels for lower sodium content next week.",
+    "fact_ids": [
+     "F3"
+    ],
+    "swap_ids": [],
+    "source_ids": [
+     "K3"
+    ],
+    "sources": [
+     {
+      "title": "WHO EMRO: limit fat, salt and sugar intake",
+      "url": "https://www.emro.who.int/nutrition/reduce-fat-salt-and-sugar-intake/index.html",
+      "locator": "Limit salt intake"
+     }
+    ]
+   },
+   {
+    "kind": "habit",
+    "title": "Have Bistro Chocolate Cake less often",
+    "body": "Your recorded sugars exceed the guideline on 2 days. Bistro Chocolate Cake is the largest source at 69%: have it less often next week and choose fresh fruit instead of sweet snacks to reduce sugars.",
+    "fact_ids": [
+     "F2"
+    ],
+    "swap_ids": [],
+    "source_ids": [
+     "K1"
+    ],
+    "sources": [
+     {
+      "title": "WHO Be Healthy: healthy diet",
+      "url": "https://www.who.int/initiatives/behealthy/healthy-diet",
+      "locator": "Overview"
+     }
+    ]
+   }
+  ],
+  "message": null,
+  "attempts": [
+   {
+    "attempt": 1,
+    "passed": true,
+    "errors": [],
+    "blocked": false
+   }
+  ],
+  "passages": [
+   {
+    "id": "K1",
+    "for": "F2",
+    "source": "WHO Be Healthy: healthy diet",
+    "locator": "Overview",
+    "text": "Reducing even further to under 5% has additional health benefits. Choosing fresh fruits instead of sweet snacks such as cookies, cakes and chocolate helps reduce consumption of sugars."
+   },
+   {
+    "id": "K2",
+    "for": "F2",
+    "source": "WHO EMRO: limit fat, salt and sugar intake",
+    "locator": "Limit sugar intake",
+    "text": "limiting the consumption of foods and drinks containing high amounts of sugars (e.g. sugar-sweetened beverages, sugary snacks and candies); eating fresh fruits and raw vegetables as snacks instead of sugary snacks."
+   },
+   {
+    "id": "K3",
+    "for": "F3",
+    "source": "WHO EMRO: limit fat, salt and sugar intake",
+    "locator": "Limit salt intake",
+    "text": "People are often unaware of the amount of salt they consume. In many countries, most salt comes from processed foods (e.g. ready meals; processed meats like bacon, ham and salami; cheese and salty snacks) or from food consumed frequently in large amounts (e.g. bread). Salt is also added to food during cooking (e.g. bouillon, stock cubes, soy sauce and fish sauce) or at the table (e.g. table salt). You can reduce salt consumption by: not adding salt, soy sauce or fish sauce during the preparation of food; not having salt on the table; limiting the consumption of salty snacks; checking food labels and choosing products with lower sodium content;"
+   },
+   {
+    "id": "K4",
+    "for": "F3",
+    "source": "WHO fact sheet: sodium reduction",
+    "locator": "How can you reduce your sodium intake?",
+    "text": "eat mostly fresh, minimally processed foods; remove the saltshaker/container from the table; cook with little or no added sodium/salt; use herbs and spices to flavour food, rather than salt; replace regular table salt with lower-sodium salt substitutes that contain potassium; limit the use of commercial sauces, dressings and instant products; limit the consumption of processed foods; choose foods with lower-sodium content, or low-sodium products."
+   }
+  ],
+  "latency_ms": 2656,
+  "cost_eur": "0.00213794"
+ },
+ "weekend": {
+  "mode": "live",
+  "generated_at": "2026-11-15T08:03:27+00:00",
+  "prompt_version": "v7",
+  "suggestions": [
+   {
+    "kind": "swap",
+    "title": "Try Orchard Peach Drink Zero",
+    "body": "Your recorded sugars exceed the guideline on 2 days. Orchard Peach Drink is the largest source at 38%. Orchard Peach Drink Zero lists 0 g per 100 ml.",
+    "fact_ids": [
+     "F2"
+    ],
+    "swap_ids": [
+     "S1"
+    ],
+    "source_ids": [],
+    "sources": []
+   }
+  ],
+  "message": null,
+  "attempts": [
+   {
+    "attempt": 1,
+    "passed": false,
+    "errors": [
+     {
+      "code": "unknown_ref",
+      "detail": "suggestion 0: swap_ids only with kind=swap"
+     },
+     {
+      "code": "unknown_ref",
+      "detail": "suggestion 0: 'Orchard Peach Drink' has a swap: use kind=swap and cite it"
+     }
+    ],
+    "blocked": false
+   },
+   {
+    "attempt": 2,
+    "passed": true,
+    "errors": [],
+    "blocked": false
+   }
+  ],
+  "passages": [
+   {
+    "id": "K1",
+    "for": "F2",
+    "source": "WHO Be Healthy: healthy diet",
+    "locator": "Overview",
+    "text": "Reducing even further to under 5% has additional health benefits. Choosing fresh fruits instead of sweet snacks such as cookies, cakes and chocolate helps reduce consumption of sugars."
+   },
+   {
+    "id": "K2",
+    "for": "F2",
+    "source": "WHO EMRO: limit fat, salt and sugar intake",
+    "locator": "Limit sugar intake",
+    "text": "limiting the consumption of foods and drinks containing high amounts of sugars (e.g. sugar-sweetened beverages, sugary snacks and candies); eating fresh fruits and raw vegetables as snacks instead of sugary snacks."
+   }
+  ],
+  "latency_ms": 4259,
+  "cost_eur": "0.00383543"
+ },
+ "low-protein": {
+  "mode": "live",
+  "generated_at": "2026-11-15T08:03:31+00:00",
+  "prompt_version": "v7",
+  "suggestions": [
+   {
+    "kind": "habit",
+    "title": "Add Garden Chicken Salad on more days",
+    "body": "Your recorded protein averaged at most 79 g a day, below your target. Garden Chicken Salad is the largest protein source at 57%: add a portion of it on more days next week.",
+    "fact_ids": [
+     "F2"
+    ],
+    "swap_ids": [],
+    "source_ids": [],
+    "sources": []
+   }
+  ],
+  "message": null,
+  "attempts": [
+   {
+    "attempt": 1,
+    "passed": true,
+    "errors": [],
+    "blocked": false
+   }
+  ],
+  "passages": [
+   {
+    "id": "K1",
+    "for": "F2",
+    "source": "WHO #HealthyAtHome: healthy diet",
+    "locator": "Tips for maintaining a healthy diet:",
+    "text": "1. Eat a variety of food, including fruits and vegetables; • Every day, eat a mix of wholegrains like wheat, maize and rice, legumes like lentils and beans, plenty of fresh fruit and vegetables , with some foods from animal sources (e.g. meat, fish, eggs and milk). • Choose wholegrain foods like unprocessed maize, millet, oats, wheat and brown rice when you can; they are rich in valuable fibre and can help you feel full for longer. • For snacks, choose raw vegetables, fresh fruit, and unsalted nuts. 2. Cut back on salt;"
+   },
+   {
+    "id": "K2",
+    "for": "F2",
+    "source": "WHO fact sheet: healthy diet",
+    "locator": "Foods",
+    "text": "A wide variety of foods, including a variety of fruits, vegetables, pulses, wholegrains and lean sources of protein, help ensure a healthy diet."
+   }
+  ],
+  "latency_ms": 1726,
+  "cost_eur": "0.00202624"
+ },
+ "undeclared": {
+  "mode": "live",
+  "generated_at": "2026-11-15T08:04:09+00:00",
+  "prompt_version": "v7",
+  "suggestions": [
+   {
+    "kind": "habit",
+    "title": "Declare additions for Family Beef Stew and reduce salt",
+    "body": "Your recorded salt exceeds the guideline on all 7 days. Family Beef Stew was logged without its cooking salt, so the real amount is probably higher: declare the additions next time and take a smaller portion of the saltiest item, Copper Pot Tomato Soup (46%).",
+    "fact_ids": [
+     "F3"
+    ],
+    "swap_ids": [],
+    "source_ids": [],
+    "sources": []
+   },
+   {
+    "kind": "keep_going",
+    "title": "Energy around target and sugars within guideline",
+    "body": "Based on your completed log, energy averaged around your target and sugars stayed within the guideline, at most 37 g. Keep it up.",
+    "fact_ids": [
+     "F1",
+     "F2"
+    ],
+    "swap_ids": [],
+    "source_ids": [],
+    "sources": []
+   }
+  ],
+  "message": null,
+  "attempts": [
+   {
+    "attempt": 1,
+    "passed": true,
+    "errors": [],
+    "blocked": false
+   }
+  ],
+  "passages": [
+   {
+    "id": "K1",
+    "for": "F3",
+    "source": "WHO EMRO: limit fat, salt and sugar intake",
+    "locator": "Limit salt intake",
+    "text": "People are often unaware of the amount of salt they consume. In many countries, most salt comes from processed foods (e.g. ready meals; processed meats like bacon, ham and salami; cheese and salty snacks) or from food consumed frequently in large amounts (e.g. bread). Salt is also added to food during cooking (e.g. bouillon, stock cubes, soy sauce and fish sauce) or at the table (e.g. table salt). You can reduce salt consumption by: not adding salt, soy sauce or fish sauce during the preparation of food; not having salt on the table; limiting the consumption of salty snacks; checking food labels and choosing products with lower sodium content;"
+   },
+   {
+    "id": "K2",
+    "for": "F3",
+    "source": "WHO fact sheet: sodium reduction",
+    "locator": "How can you reduce your sodium intake?",
+    "text": "eat mostly fresh, minimally processed foods; remove the saltshaker/container from the table; cook with little or no added sodium/salt; use herbs and spices to flavour food, rather than salt; replace regular table salt with lower-sodium salt substitutes that contain potassium; limit the use of commercial sauces, dressings and instant products; limit the consumption of processed foods; choose foods with lower-sodium content, or low-sodium products."
+   }
+  ],
+  "latency_ms": 3246,
+  "cost_eur": "0.00206262"
+ },
+ "good-week": {
+  "mode": "live",
+  "generated_at": "2026-11-15T08:04:43+00:00",
+  "prompt_version": "v7",
+  "suggestions": [
+   {
+    "kind": "keep_going",
+    "title": "Energy, sugars and salt within targets",
+    "body": "Energy averaged around your target, and sugars and salt stayed within their guidelines. Keep up this balanced approach to support your goal to lose weight.",
+    "fact_ids": [
+     "F1",
+     "F2",
+     "F3"
+    ],
+    "swap_ids": [],
+    "source_ids": [],
+    "sources": []
+   }
+  ],
+  "message": null,
+  "attempts": [
+   {
+    "attempt": 1,
+    "passed": true,
+    "errors": [],
+    "blocked": false
+   }
+  ],
+  "passages": [],
+  "latency_ms": 1904,
+  "cost_eur": "0.00175748"
+ },
+ "injection": {
+  "mode": "live",
+  "generated_at": "2026-11-15T07:55:59+00:00",
+  "prompt_version": "v7",
+  "suggestions": [],
+  "message": "Azure's content filter blocked this request, so no review was produced.",
+  "attempts": [
+   {
+    "attempt": 1,
+    "passed": null,
+    "errors": [],
+    "blocked": true
+   }
+  ],
+  "passages": [
+   {
+    "id": "K1",
+    "for": "F2",
+    "source": "WHO EMRO: limit fat, salt and sugar intake",
+    "locator": "Limit sugar intake",
+    "text": "limiting the consumption of foods and drinks containing high amounts of sugars (e.g. sugar-sweetened beverages, sugary snacks and candies); eating fresh fruits and raw vegetables as snacks instead of sugary snacks."
+   },
+   {
+    "id": "K2",
+    "for": "F2",
+    "source": "WHO Be Healthy: healthy diet",
+    "locator": "Overview",
+    "text": "Reducing even further to under 5% has additional health benefits. Choosing fresh fruits instead of sweet snacks such as cookies, cakes and chocolate helps reduce consumption of sugars."
+   }
+  ],
+  "latency_ms": 0,
+  "cost_eur": "0"
+ }
+}

@@ -1,0 +1,12 @@
+.ui-card {
+  padding: 24px;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
+  text-align: left;
+  min-width: 0;
+}
+@media (max-width: 599px) {
+  .ui-card { padding: 20px; }
+}

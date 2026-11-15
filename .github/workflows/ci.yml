@@ -1,0 +1,165 @@
+name: CI
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      infra: ${{ steps.filter.outputs.infra }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: filter
+        shell: bash
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [[ -z "$BASE" || "$BASE" =~ ^0+$ ]]; then
+            echo 'infra=true' >> "$GITHUB_OUTPUT"
+          elif git diff --name-only "$BASE" HEAD -- 'infra/**' | grep -q .; then
+            echo 'infra=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'infra=false' >> "$GITHUB_OUTPUT"
+          fi
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: dev
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready --health-interval 10s
+          --health-timeout 5s --health-retries 5
+    env:
+      TEST_DATABASE_URL: postgresql+psycopg://postgres:dev@localhost:5432/postgres
+      # Same major version as the server: a newer pg_dump writes settings 16 rejects.
+      PG_BIN_DIR: /usr/lib/postgresql/16/bin
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -e '.[dev]'
+      # The runner's own repositories no longer carry the version 16 client.
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-common
+          sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+          sudo apt-get install -y postgresql-client-16
+        working-directory: .
+      - run: ruff check .
+      - run: pytest -v
+  eval:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    env:
+      COACH_PRICE_IN_PER_1K: '0.001'
+      COACH_PRICE_OUT_PER_1K: '0.001'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -e '.[dev]'
+      - run: |
+          python -m app.coach.eval --split dev --source llm --replay > dev-summary.txt
+          python -m app.coach.eval --split test --source llm --replay > test-summary.txt
+          python - <<'PY'
+          import json
+          from decimal import Decimal
+          from pathlib import Path
+          for split in ('dev', 'test'):
+              output = Path(f'{split}-summary.txt').read_text()
+              summary = json.loads(output.split('\n', 1)[1])
+              assert summary['hard_failures'] == 0, summary
+              assert Decimal(summary['seeded_catch_rate']) == Decimal('1.00'), summary
+              assert Decimal(summary['first_try_pass_rate']) >= Decimal('0.90'), summary
+              print(split, summary)
+          PY
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'  # jsdom 30 needs APIs Node 20 lacks
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run build
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t foodcoach:ci .
+  infra:
+    needs: changes
+    if: needs.changes.outputs.infra == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -e './backend[dev]'
+      - run: cd backend && pytest -m infra
+      - run: |
+          az bicep build --file infra/bootstrap.bicep
+          az bicep build --file infra/main.bicep
+      - uses: azure/login@v2
+        if: github.event_name == 'pull_request'
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - if: github.event_name == 'pull_request'
+        shell: bash
+        env:
+          BOOTSTRAP_ID_API_CLIENT_ID: ${{ vars.BOOTSTRAP_ID_API_CLIENT_ID }}
+          BOOTSTRAP_ID_OPS_CLIENT_ID: ${{ vars.BOOTSTRAP_ID_OPS_CLIENT_ID }}
+          BOOTSTRAP_BACKUP_ACCOUNT_NAME: ${{ vars.BOOTSTRAP_BACKUP_ACCOUNT_NAME }}
+          BOOTSTRAP_LEDGER_ACCOUNT_NAME: ${{ vars.BOOTSTRAP_LEDGER_ACCOUNT_NAME }}
+        run: |
+          for name in BOOTSTRAP_ID_API_CLIENT_ID BOOTSTRAP_ID_OPS_CLIENT_ID \
+            BOOTSTRAP_BACKUP_ACCOUNT_NAME BOOTSTRAP_LEDGER_ACCOUNT_NAME; do
+            if [[ -z "${!name//[[:space:]]/}" ]]; then
+              echo "::error::Required bootstrap variable $name is empty"
+              exit 1
+            fi
+          done
+          count=$(az containerapp list -g rg-foodcoach-prod \
+            --query "length([?name=='ca-foodcoach-api'])" -o tsv)
+          if [[ "$count" == 0 ]]; then
+            echo '::notice::Skipping what-if: ca-foodcoach-api does not exist yet'
+            exit 0
+          fi
+          API_IMAGE_DIGEST=$(az containerapp show -g rg-foodcoach-prod -n ca-foodcoach-api \
+            --query "properties.template.containers[0].image" -o tsv)
+          JOB_IMAGE_DIGEST=$(az containerapp job show -g rg-foodcoach-prod -n job-migrate \
+            --query "properties.template.containers[0].image" -o tsv)
+          export API_IMAGE_DIGEST JOB_IMAGE_DIGEST
+          for name in API_IMAGE_DIGEST JOB_IMAGE_DIGEST; do
+            if [[ -z "${!name//[[:space:]]/}" ]]; then
+              echo "::error::Azure returned an empty $name"
+              exit 1
+            fi
+          done
+          az deployment group what-if --resource-group rg-foodcoach-prod --parameters infra/prod.bicepparam

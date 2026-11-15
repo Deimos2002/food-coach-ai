@@ -1,0 +1,133 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2027-01-11",
+    "2027-01-12",
+    "2027-01-13",
+    "2027-01-14",
+    "2027-01-15",
+    "2027-01-16",
+    "2027-01-17"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "around",
+      "contributors": [],
+      "days": [
+        "2027-01-11",
+        "2027-01-12",
+        "2027-01-13",
+        "2027-01-14",
+        "2027-01-15",
+        "2027-01-16",
+        "2027-01-17"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 2060 kcal a day over Mon 11 Jan, Tue 12 Jan, Wed 13 Jan, Thu 14 Jan, Fri 15 Jan, Sat 16 Jan and Sun 17 Jan, around your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "2060",
+        "recorded_upper": "2060",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "within",
+      "contributors": [],
+      "days": [
+        "2027-01-11",
+        "2027-01-12",
+        "2027-01-13",
+        "2027-01-14",
+        "2027-01-15",
+        "2027-01-16",
+        "2027-01-17"
+      ],
+      "id": "F2",
+      "message": "Based on your completed log, your recorded total sugars (a proxy) was within the WHO guideline of 50 g on each of Mon 11 Jan, Tue 12 Jan, Wed 13 Jan, Thu 14 Jan, Fri 15 Jan, Sat 16 Jan and Sun 17 Jan (at most 37 g recorded).",
+      "rule": "sugars_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_upper": "37",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [
+        "Maison Ragoût de Bœuf"
+      ],
+      "card_id": "who_salt",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Marmite Soupe Tomate",
+          "share": [
+            "0.00",
+            "0.48"
+          ]
+        },
+        {
+          "additions_undeclared": true,
+          "id": "C2",
+          "name": "Maison Ragoût de Bœuf",
+          "share": [
+            "0.00",
+            null
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Fournée Pain aux Graines",
+          "share": [
+            "0.00",
+            "0.17"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-11",
+        "2027-01-12",
+        "2027-01-13",
+        "2027-01-14",
+        "2027-01-15",
+        "2027-01-16",
+        "2027-01-17"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO salt guideline of 5 g (at least 7.5 g recorded on Mon 11 Jan, the highest of 7 days: Mon 11 Jan, Tue 12 Jan, Wed 13 Jan, Thu 14 Jan, Fri 15 Jan, Sat 16 Jan and Sun 17 Jan).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "7.5",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "2ca97df58b42188b05559ad11ab54fefc9893c0fa15628a72c88bee8ccc7e0db",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "72.1",
+    "kg_start": "72.6"
+  },
+  "week": "2027-W02"
+}

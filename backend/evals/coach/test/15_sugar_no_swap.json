@@ -1,0 +1,113 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2027-01-04",
+    "2027-01-05",
+    "2027-01-06",
+    "2027-01-07",
+    "2027-01-08",
+    "2027-01-09",
+    "2027-01-10"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "around",
+      "contributors": [],
+      "days": [
+        "2027-01-04",
+        "2027-01-05",
+        "2027-01-06",
+        "2027-01-07",
+        "2027-01-08",
+        "2027-01-09",
+        "2027-01-10"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 2000 kcal a day over Mon 4 Jan, Tue 5 Jan, Wed 6 Jan, Thu 7 Jan, Fri 8 Jan, Sat 9 Jan and Sun 10 Jan, around your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "2000",
+        "recorded_upper": "2000",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Rivage Abricot Drink",
+          "share": [
+            "1.00",
+            "1.00"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-04",
+        "2027-01-05",
+        "2027-01-06",
+        "2027-01-07",
+        "2027-01-08",
+        "2027-01-09",
+        "2027-01-10"
+      ],
+      "id": "F2",
+      "message": "Your recorded values exceed the WHO total sugars (a proxy) guideline of 50 g (at least 86 g recorded on Mon 4 Jan, the highest of 7 days: Mon 4 Jan, Tue 5 Jan, Wed 6 Jan, Thu 7 Jan, Fri 8 Jan, Sat 9 Jan and Sun 10 Jan).",
+      "rule": "sugars_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "86",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "within",
+      "contributors": [],
+      "days": [
+        "2027-01-04",
+        "2027-01-05",
+        "2027-01-06",
+        "2027-01-07",
+        "2027-01-08",
+        "2027-01-09",
+        "2027-01-10"
+      ],
+      "id": "F3",
+      "message": "Based on your completed log, your recorded salt was within the WHO guideline of 5 g on each of Mon 4 Jan, Tue 5 Jan, Wed 6 Jan, Thu 7 Jan, Fri 8 Jan, Sat 9 Jan and Sun 10 Jan (at most 3 g recorded).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_upper": "3",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "beb3fecf7d24068cbe51a4af1e56174379228bed303c2a613fe7682962efb0dd",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "72.1",
+    "kg_start": "72.6"
+  },
+  "week": "2027-W01"
+}

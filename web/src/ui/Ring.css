@@ -1,0 +1,23 @@
+.ui-ring {
+  width: 168px;
+  height: 168px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-variant-numeric: tabular-nums;
+}
+.ui-ring-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--surface);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.ui-ring-content strong { color: var(--text-h); font-size: 32px; line-height: 1.2; letter-spacing: -1px; }

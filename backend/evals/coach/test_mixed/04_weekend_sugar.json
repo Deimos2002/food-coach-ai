@@ -1,0 +1,138 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2027-01-11",
+    "2027-01-12",
+    "2027-01-13",
+    "2027-01-14",
+    "2027-01-15",
+    "2027-01-16",
+    "2027-01-17"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "around",
+      "contributors": [],
+      "days": [
+        "2027-01-11",
+        "2027-01-12",
+        "2027-01-13",
+        "2027-01-14",
+        "2027-01-15",
+        "2027-01-16",
+        "2027-01-17"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 2020 kcal a day over Mon 11 Jan, Tue 12 Jan, Wed 13 Jan, Thu 14 Jan, Fri 15 Jan, Sat 16 Jan and Sun 17 Jan, around your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "2020",
+        "recorded_upper": "2020",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Bistrot Gâteau au Chocolat",
+          "share": [
+            "0.38",
+            "0.38"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Rivage Abricot Drink",
+          "share": [
+            "0.37",
+            "0.37"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Laiterie Yaourt Vanille",
+          "share": [
+            "0.16",
+            "0.16"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-16",
+        "2027-01-17"
+      ],
+      "id": "F2",
+      "message": "Your recorded values exceed the WHO total sugars (a proxy) guideline of 50 g (at least 103 g recorded on Sat 16 Jan, the highest of 2 days: Sat 16 Jan and Sun 17 Jan).",
+      "rule": "sugars_daily",
+      "swaps": [
+        {
+          "for": "C2",
+          "id": "S1",
+          "name": "Rivage Abricot Drink Zero",
+          "values": {
+            "basis": "catalogue_per_100",
+            "from_lower": "38",
+            "to_upper": "0",
+            "unit": "g/100ml"
+          }
+        }
+      ],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "2",
+        "recorded_lower": "103",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "within",
+      "contributors": [],
+      "days": [
+        "2027-01-11",
+        "2027-01-12",
+        "2027-01-13",
+        "2027-01-14",
+        "2027-01-15",
+        "2027-01-16",
+        "2027-01-17"
+      ],
+      "id": "F3",
+      "message": "Based on your completed log, your recorded salt was within the WHO guideline of 5 g on each of Mon 11 Jan, Tue 12 Jan, Wed 13 Jan, Thu 14 Jan, Fri 15 Jan, Sat 16 Jan and Sun 17 Jan (at most 3.8 g recorded).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_upper": "3.8",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "b1e8aa270a78958fb36e5b72e1d10ef4ee379f98e05d838553ff3267f1338995",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "72.1",
+    "kg_start": "72.6"
+  },
+  "week": "2027-W02"
+}

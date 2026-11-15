@@ -1,0 +1,163 @@
+name: Deploy
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      digest:
+        description: 'Rollback image: full ghcr.io image@sha256 digest reference'
+        required: true
+        type: string
+permissions:
+  contents: read
+  id-token: write
+  packages: write
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false
+jobs:
+  deploy:
+    # Skipped until the Azure deploy identity is configured for this repository.
+    if: >-
+      vars.AZURE_CLIENT_ID != '' && (
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' &&
+      inputs.digest != '') ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_repository.full_name == github.repository &&
+      github.event.workflow_run.head_branch == 'main'))
+    environment: prod
+    runs-on: ubuntu-latest
+    env:
+      RESOURCE_GROUP: rg-foodcoach-prod
+      BOOTSTRAP_ID_API_CLIENT_ID: ${{ vars.BOOTSTRAP_ID_API_CLIENT_ID }}
+      BOOTSTRAP_ID_OPS_CLIENT_ID: ${{ vars.BOOTSTRAP_ID_OPS_CLIENT_ID }}
+      BOOTSTRAP_BACKUP_ACCOUNT_NAME: ${{ vars.BOOTSTRAP_BACKUP_ACCOUNT_NAME }}
+      BOOTSTRAP_LEDGER_ACCOUNT_NAME: ${{ vars.BOOTSTRAP_LEDGER_ACCOUNT_NAME }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -e './backend[dev]'
+      - id: registry
+        env:
+          REPOSITORY: ${{ github.repository }}
+          SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+        run: |
+          echo "name=ghcr.io/${REPOSITORY,,}" >> "$GITHUB_OUTPUT"
+          echo "tag=ghcr.io/${REPOSITORY,,}:sha-$SHA" >> "$GITHUB_OUTPUT"
+      - id: registry-login
+        uses: docker/login-action@v3
+        if: github.event_name == 'workflow_run'
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: build
+        uses: docker/build-push-action@v6
+        if: github.event_name == 'workflow_run'
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.registry.outputs.tag }}
+          build-args: |
+            VITE_ENTRA_CLIENT_ID=${{ vars.VITE_ENTRA_CLIENT_ID }}
+            VITE_ENTRA_TENANT_ID=${{ vars.VITE_ENTRA_TENANT_ID }}
+            VITE_API_SCOPE=${{ vars.VITE_API_SCOPE }}
+            GIT_SHA=${{ github.event.workflow_run.head_sha || github.sha }}
+      - id: image
+        env:
+          ROLLBACK: ${{ inputs.digest }}
+          NAME: ${{ steps.registry.outputs.name }}
+          DIGEST: ${{ steps.build.outputs.digest }}
+        run: |
+          image="${ROLLBACK:-$NAME@$DIGEST}"
+          if [[ ! "$image" =~ ^ghcr\.io/[a-z0-9._/-]+@sha256:[a-f0-9]{64}$ ]]; then
+            echo '::error::Expected a full GHCR image digest reference'
+            exit 1
+          fi
+          echo "image=$image" >> "$GITHUB_OUTPUT"
+      - id: login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - id: model
+        run: |
+          az cognitiveservices account deployment show \
+            --resource-group rg-foodcoach --name foodcoach-aoai-0000 \
+            --deployment-name coach-mini-eu --output json \
+            | python backend/scripts/check_model_deployment.py
+      - id: current
+        env:
+          NEW_IMAGE: ${{ steps.image.outputs.image }}
+        run: |
+          count=$(az containerapp list --resource-group "$RESOURCE_GROUP" \
+            --query "length([?name=='ca-foodcoach-api'])" -o tsv)
+          if [[ "$count" == 0 ]]; then
+            image="$NEW_IMAGE"
+          else
+            image=$(az containerapp show --resource-group "$RESOURCE_GROUP" \
+              --name ca-foodcoach-api --query "properties.template.containers[0].image" -o tsv)
+          fi
+          echo "image=$image" >> "$GITHUB_OUTPUT"
+      - id: preflight
+        env:
+          API_IMAGE_DIGEST: ${{ steps.current.outputs.image }}
+          JOB_IMAGE_DIGEST: ${{ steps.image.outputs.image }}
+        run: |
+          for name in BOOTSTRAP_ID_API_CLIENT_ID BOOTSTRAP_ID_OPS_CLIENT_ID \
+            BOOTSTRAP_BACKUP_ACCOUNT_NAME BOOTSTRAP_LEDGER_ACCOUNT_NAME \
+            API_IMAGE_DIGEST JOB_IMAGE_DIGEST; do
+            if [[ -z "${!name//[[:space:]]/}" ]]; then
+              echo "::error::Required deployment variable $name is empty"
+              exit 1
+            fi
+          done
+      - id: deploy
+        env:
+          API_IMAGE_DIGEST: ${{ steps.current.outputs.image }}
+          JOB_IMAGE_DIGEST: ${{ steps.image.outputs.image }}
+        run: |
+          az deployment group create --resource-group "$RESOURCE_GROUP" \
+            --template-file infra/main.bicep --parameters infra/prod.bicepparam \
+            --parameters apiImageDigest="$API_IMAGE_DIGEST" jobImageDigest="$JOB_IMAGE_DIGEST" \
+            --output none
+      - id: migrate
+        if: github.event_name == 'workflow_run'
+        run: |
+          execution=$(az containerapp job start --resource-group "$RESOURCE_GROUP" \
+            --name job-migrate --query name -o tsv)
+          if [[ -z "$execution" ]]; then
+            echo '::error::Migration start returned no execution name'
+            exit 1
+          fi
+          deadline=$((SECONDS + 900))
+          while (( SECONDS < deadline )); do
+            status=$(az containerapp job execution show --resource-group "$RESOURCE_GROUP" \
+              --name job-migrate --job-execution-name "$execution" --query properties.status -o tsv)
+            case "$status" in
+              Succeeded) exit 0 ;;
+              Running|Pending|Processing) sleep 10 ;;
+              *) echo "::error::Migration ended with status $status"; exit 1 ;;
+            esac
+          done
+          echo '::error::Migration timed out after 15 minutes'
+          exit 1
+      - id: update
+        env:
+          IMAGE: ${{ steps.image.outputs.image }}
+        run: |
+          az containerapp update --resource-group "$RESOURCE_GROUP" \
+            --name ca-foodcoach-api --image "$IMAGE" --output none
+      - id: smoke
+        run: |
+          fqdn=$(az containerapp show --resource-group "$RESOURCE_GROUP" --name ca-foodcoach-api \
+            --query properties.configuration.ingress.fqdn -o tsv)
+          python backend/scripts/smoke.py "https://$fqdn"

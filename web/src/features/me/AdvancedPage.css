@@ -1,0 +1,7 @@
+@import './MePage.css';
+.advanced-page section { overflow-wrap: anywhere; }
+.advanced-page section > h2 { margin-bottom: 16px; }
+.advanced-page dl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px 24px; }
+.advanced-page dt { color: var(--text-secondary); }
+.advanced-page dd { margin: 0; font-variant-numeric: tabular-nums; }
+.advanced-page ul { padding-left: 24px; line-height: 1.8; }

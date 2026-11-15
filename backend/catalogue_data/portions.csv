@@ -1,0 +1,158 @@
+alim_code,label_en,grams,source
+13039,1 medium apple,182,https://fdc.nal.usda.gov/food-details/171688/nutrients
+13005,1 medium banana,118,https://fdc.nal.usda.gov/food-details/173944/nutrients
+13034,1 medium orange,131,https://fdc.nal.usda.gov/food-details/169097/nutrients
+13037,1 medium pear,178,https://fdc.nal.usda.gov/food-details/169118/nutrients
+13043,1 medium peach,150,https://fdc.nal.usda.gov/food-details/169928/nutrients
+13100,1 medium plum,66,https://fdc.nal.usda.gov/food-details/169949/nutrients
+13000,1 apricot,35,https://fdc.nal.usda.gov/food-details/171697/nutrients
+13021,1 kiwi,69,https://fdc.nal.usda.gov/food-details/168153/nutrients
+13395,1 cup grapes,151,https://fdc.nal.usda.gov/food-details/174683/nutrients
+13014,1 cup strawberries,144,https://fdc.nal.usda.gov/food-details/167762/nutrients
+13028,1 cup blueberries,148,https://fdc.nal.usda.gov/food-details/171711/nutrients
+13015,1 cup raspberries,123,https://fdc.nal.usda.gov/food-details/167755/nutrients
+13036,1 slice watermelon,286,https://fdc.nal.usda.gov/food-details/167765/nutrients
+13002,1 slice pineapple,166,https://fdc.nal.usda.gov/food-details/169124/nutrients
+13025,1 mango,336,https://fdc.nal.usda.gov/food-details/169910/nutrients
+13024,1 tangerine or clementine,88,https://fdc.nal.usda.gov/food-details/169105/nutrients
+13009,1 lemon,58,https://fdc.nal.usda.gov/food-details/167746/nutrients
+13004,1 avocado,136,https://fdc.nal.usda.gov/food-details/171706/nutrients
+13011,1 Medjool date,24,https://fdc.nal.usda.gov/food-details/168191/nutrients
+15000,1 oz (28 g) almonds,28.35,https://fdc.nal.usda.gov/food-details/170567/nutrients
+15005,1 oz (28 g) walnuts,28.35,https://fdc.nal.usda.gov/food-details/170187/nutrients
+15002,1 oz (28 g) peanuts,28.35,https://fdc.nal.usda.gov/food-details/174262/nutrients
+15019,1 oz (28 g) cashews,28.35,https://fdc.nal.usda.gov/food-details/169421/nutrients
+15004,1 oz (28 g) hazelnuts,28.35,https://fdc.nal.usda.gov/food-details/170581/nutrients
+20385,1 medium tomato,123,https://fdc.nal.usda.gov/food-details/170457/nutrients
+20172,1 cherry tomato (17 g),17,https://fdc.nal.usda.gov/food-details/170457/nutrients
+20019,1 medium cucumber,104,https://fdc.nal.usda.gov/food-details/168409/nutrients
+20009,1 medium carrot,61,https://fdc.nal.usda.gov/food-details/170393/nutrients
+20034,1 medium onion,110,https://fdc.nal.usda.gov/food-details/170000/nutrients
+4008,1 medium potato,213,https://fdc.nal.usda.gov/food-details/170026/nutrients
+4101,1 medium sweet potato,130,https://fdc.nal.usda.gov/food-details/168482/nutrients
+20087,1 medium bell pepper,119,https://fdc.nal.usda.gov/food-details/170108/nutrients
+20020,1 medium zucchini,196,https://fdc.nal.usda.gov/food-details/169291/nutrients
+20057,1 cup broccoli,91,https://fdc.nal.usda.gov/food-details/170379/nutrients
+20016,1 cup cauliflower,107,https://fdc.nal.usda.gov/food-details/169986/nutrients
+20031,1 cup lettuce,47,https://fdc.nal.usda.gov/food-details/169247/nutrients
+20059,1 cup spinach,30,https://fdc.nal.usda.gov/food-details/168462/nutrients
+20056,1 cup mushrooms,70,https://fdc.nal.usda.gov/food-details/169251/nutrients
+20049,1 medium ear of corn,103,https://fdc.nal.usda.gov/food-details/169999/nutrients
+20061,1 cup green beans,100,https://fdc.nal.usda.gov/food-details/169961/nutrients
+11000,1 garlic clove,3,https://fdc.nal.usda.gov/food-details/169230/nutrients
+20116,1 cup shredded cabbage,70,https://fdc.nal.usda.gov/food-details/169975/nutrients
+20039,1 leek,89,https://fdc.nal.usda.gov/food-details/169246/nutrients
+22000,1 large egg,50,https://fdc.nal.usda.gov/food-details/171287/nutrients
+19016,1 cup whole milk,244,https://fdc.nal.usda.gov/food-details/171265/nutrients
+19033,1 cup semi-skimmed milk,245,https://fdc.nal.usda.gov/food-details/170870/nutrients
+19593,1 pot plain yogurt (170 g),170,https://fdc.nal.usda.gov/food-details/171284/nutrients
+12726,1 slice cheddar,21,https://fdc.nal.usda.gov/food-details/170899/nutrients
+12099,1 slice Emmental,28,https://fdc.nal.usda.gov/food-details/171251/nutrients
+12120,1 tbsp grated Parmesan,5,https://fdc.nal.usda.gov/food-details/171247/nutrients
+16400,1 tbsp butter,14.2,https://fdc.nal.usda.gov/food-details/173430/nutrients
+7000,1 slice white bread,29,https://fdc.nal.usda.gov/food-details/174924/nutrients
+7110,1 slice wholemeal bread,32,https://fdc.nal.usda.gov/food-details/172688/nutrients
+7620,1 croissant,57,https://fdc.nal.usda.gov/food-details/174987/nutrients
+9811,1 cup cooked spaghetti,124,https://fdc.nal.usda.gov/food-details/169737/nutrients
+9104,1 cup cooked white rice,158,https://fdc.nal.usda.gov/food-details/168878/nutrients
+32140,1 cup rolled oats dry,81,https://fdc.nal.usda.gov/food-details/173904/nutrients
+32005,1 cup cornflakes,28,https://fdc.nal.usda.gov/food-details/174648/nutrients
+9683,1 cup cooked couscous,157,https://fdc.nal.usda.gov/food-details/169700/nutrients
+9341,1 cup cooked quinoa,185,https://fdc.nal.usda.gov/food-details/168917/nutrients
+7815,1 flour tortilla,49,https://fdc.nal.usda.gov/food-details/167535/nutrients
+36018,1 cooked chicken breast (172 g),172,https://fdc.nal.usda.gov/food-details/171477/nutrients
+6255,1 beef burger patty cooked,77,https://fdc.nal.usda.gov/food-details/174032/nutrients
+28900,1 slice ham,28,https://fdc.nal.usda.gov/food-details/173864/nutrients
+30701,1 pork sausage link cooked,23,https://fdc.nal.usda.gov/food-details/174578/nutrients
+25996,1/2 cooked salmon fillet (178 g),178,https://fdc.nal.usda.gov/food-details/175168/nutrients
+26039,1 can tuna drained (165 g),165,https://fdc.nal.usda.gov/food-details/173709/nutrients
+10007,1 large cooked shrimp,5.5,https://fdc.nal.usda.gov/food-details/171971/nutrients
+20360,1 cup cooked lentils,198,https://fdc.nal.usda.gov/food-details/172421/nutrients
+20507,1 cup cooked chickpeas,164,https://fdc.nal.usda.gov/food-details/173757/nutrients
+20503,1 cup cooked kidney beans,177,https://fdc.nal.usda.gov/food-details/175194/nutrients
+25621,1 tbsp hummus,15,https://fdc.nal.usda.gov/food-details/174289/nutrients
+20904,1/4 block firm tofu (81 g),81,https://fdc.nal.usda.gov/food-details/172475/nutrients
+17270,1 tbsp olive oil,13.5,https://fdc.nal.usda.gov/food-details/171413/nutrients
+11008,1 tbsp ketchup,17,https://fdc.nal.usda.gov/food-details/168556/nutrients
+11054,1 tbsp mayonnaise,13.8,https://fdc.nal.usda.gov/food-details/171009/nutrients
+11013,1 tsp mustard,5,https://fdc.nal.usda.gov/food-details/172234/nutrients
+31008,1 tbsp honey,21,https://fdc.nal.usda.gov/food-details/169640/nutrients
+31016,1 tsp sugar,4.2,https://fdc.nal.usda.gov/food-details/169655/nutrients
+15202,1 tbsp peanut butter,16,https://fdc.nal.usda.gov/food-details/174266/nutrients
+11104,1 tbsp soy sauce,16,https://fdc.nal.usda.gov/food-details/174277/nutrients
+2070,1 glass orange juice,248,https://fdc.nal.usda.gov/food-details/169098/nutrients
+18004,1 cup coffee,237,https://fdc.nal.usda.gov/food-details/171890/nutrients
+18018,1 can cola,370,https://fdc.nal.usda.gov/food-details/174852/nutrients
+5001,1 can beer (356 g),356,https://fdc.nal.usda.gov/food-details/168746/nutrients
+5214,1 glass red wine (147 g),147,https://fdc.nal.usda.gov/food-details/171872/nutrients
+31004,1 milk chocolate bar (44 g),44,https://fdc.nal.usda.gov/food-details/167587/nutrients
+39527,1/2 cup vanilla ice cream (66 g),66,https://fdc.nal.usda.gov/food-details/167575/nutrients
+13039,1 small apple,149,https://fdc.nal.usda.gov/food-details/171688/nutrients
+13039,1 large apple,223,https://fdc.nal.usda.gov/food-details/171688/nutrients
+13039,1 cup sliced apple,109,https://fdc.nal.usda.gov/food-details/171688/nutrients
+13005,1 small banana,101,https://fdc.nal.usda.gov/food-details/173944/nutrients
+13005,1 large banana,136,https://fdc.nal.usda.gov/food-details/173944/nutrients
+13005,1 cup sliced banana,150,https://fdc.nal.usda.gov/food-details/173944/nutrients
+13034,1 large orange,184,https://fdc.nal.usda.gov/food-details/169097/nutrients
+13034,1 cup orange sections,180,https://fdc.nal.usda.gov/food-details/169097/nutrients
+13043,1 small peach,130,https://fdc.nal.usda.gov/food-details/169928/nutrients
+13043,1 large peach,175,https://fdc.nal.usda.gov/food-details/169928/nutrients
+13043,1 cup sliced peaches,154,https://fdc.nal.usda.gov/food-details/169928/nutrients
+13002,1 cup chopped pineapple,165,https://fdc.nal.usda.gov/food-details/169124/nutrients
+13036,1 cup diced watermelon,152,https://fdc.nal.usda.gov/food-details/167765/nutrients
+13021,1 cup sliced kiwi,180,https://fdc.nal.usda.gov/food-details/168153/nutrients
+13025,1 cup mango pieces,165,https://fdc.nal.usda.gov/food-details/169910/nutrients
+13014,1 cup sliced strawberries,152,https://fdc.nal.usda.gov/food-details/167762/nutrients
+20385,1 small tomato,91,https://fdc.nal.usda.gov/food-details/170457/nutrients
+20385,1 large tomato,182,https://fdc.nal.usda.gov/food-details/170457/nutrients
+20385,1 cup chopped tomato,180,https://fdc.nal.usda.gov/food-details/170457/nutrients
+20034,1 small onion,70,https://fdc.nal.usda.gov/food-details/170000/nutrients
+20034,1 large onion,150,https://fdc.nal.usda.gov/food-details/170000/nutrients
+20034,1 cup chopped onion,160,https://fdc.nal.usda.gov/food-details/170000/nutrients
+20009,1 small carrot,50,https://fdc.nal.usda.gov/food-details/170393/nutrients
+20009,1 large carrot,72,https://fdc.nal.usda.gov/food-details/170393/nutrients
+4008,1 small potato,170,https://fdc.nal.usda.gov/food-details/170026/nutrients
+4008,1 large potato,369,https://fdc.nal.usda.gov/food-details/170026/nutrients
+4101,1 cup cubed sweet potato,133,https://fdc.nal.usda.gov/food-details/168482/nutrients
+20020,1 small zucchini,118,https://fdc.nal.usda.gov/food-details/169291/nutrients
+20020,1 cup sliced zucchini,113,https://fdc.nal.usda.gov/food-details/169291/nutrients
+20087,1 cup chopped bell pepper,149,https://fdc.nal.usda.gov/food-details/170108/nutrients
+20057,1 cup chopped broccoli,91,https://fdc.nal.usda.gov/food-details/170379/nutrients
+20056,1 cup sliced mushrooms,70,https://fdc.nal.usda.gov/food-details/169251/nutrients
+22000,1 medium egg,44,https://fdc.nal.usda.gov/food-details/171287/nutrients
+22000,1 extra large egg,56,https://fdc.nal.usda.gov/food-details/171287/nutrients
+22010,1 hard-boiled egg,50,https://fdc.nal.usda.gov/food-details/173424/nutrients
+22505,1 fried egg,46,https://fdc.nal.usda.gov/food-details/173423/nutrients
+22502,1 scrambled egg,61,https://fdc.nal.usda.gov/food-details/172187/nutrients
+12726,1 cup shredded cheddar,113,https://fdc.nal.usda.gov/food-details/173414/nutrients
+12726,1 oz (28 g) cheddar,28.35,https://fdc.nal.usda.gov/food-details/173414/nutrients
+19590,1 oz (28 g) mozzarella,28.35,https://fdc.nal.usda.gov/food-details/170845/nutrients
+12060,1 oz (28 g) feta,28.35,https://fdc.nal.usda.gov/food-details/173420/nutrients
+12001,1 oz (28 g) camembert,28.35,https://fdc.nal.usda.gov/food-details/172178/nutrients
+9103,1 cup cooked brown rice,202,https://fdc.nal.usda.gov/food-details/169704/nutrients
+9871,1 cup cooked whole wheat pasta,117,https://fdc.nal.usda.gov/food-details/168910/nutrients
+7258,1 bagel,105,https://fdc.nal.usda.gov/food-details/174899/nutrients
+7180,1 pita bread,60,https://fdc.nal.usda.gov/food-details/174915/nutrients
+26040,1 can sardines drained,92,https://fdc.nal.usda.gov/food-details/175139/nutrients
+20506,1 cup cooked split peas,196,https://fdc.nal.usda.gov/food-details/172429/nutrients
+17270,1 tsp olive oil,4.5,https://fdc.nal.usda.gov/food-details/171413/nutrients
+16400,1 pat butter,5,https://fdc.nal.usda.gov/food-details/173430/nutrients
+31034,1 tbsp maple syrup,20,https://fdc.nal.usda.gov/food-details/169661/nutrients
+31005,1 oz (28 g) dark chocolate,28.35,https://fdc.nal.usda.gov/food-details/167976/nutrients
+18020,1 cup tea,237,https://fdc.nal.usda.gov/food-details/173227/nutrients
+18900,1 cup soy drink,243,https://fdc.nal.usda.gov/food-details/172446/nutrients
+20068,1 tbsp tomato paste,16,https://fdc.nal.usda.gov/food-details/170459/nutrients
+15010,1 tbsp sesame seeds,9,https://fdc.nal.usda.gov/food-details/170150/nutrients
+18100,1 tbsp cocoa powder,5,https://fdc.nal.usda.gov/food-details/168774/nutrients
+20009,1 cup chopped carrots,128,https://fdc.nal.usda.gov/food-details/170393/nutrients
+9435,1 cup all-purpose flour,125,https://fdc.nal.usda.gov/food-details/168894/nutrients
+20336,1 cup cooked spinach,180,https://fdc.nal.usda.gov/food-details/168463/nutrients
+4026,1 medium baked potato,173,https://fdc.nal.usda.gov/food-details/170093/nutrients
+4026,1 small baked potato,138,https://fdc.nal.usda.gov/food-details/170093/nutrients
+4026,1 large baked potato,299,https://fdc.nal.usda.gov/food-details/170093/nutrients
+20053,1 cup cubed eggplant,82,https://fdc.nal.usda.gov/food-details/169228/nutrients
+20279,1 asparagus spear (medium),16,https://fdc.nal.usda.gov/food-details/168389/nutrients
+20023,1 cup chopped celery,101,https://fdc.nal.usda.gov/food-details/169988/nutrients
+20023,1 medium celery stalk,40,https://fdc.nal.usda.gov/food-details/169988/nutrients
+20091,1 beet (2 in),82,https://fdc.nal.usda.gov/food-details/169145/nutrients
+20091,1 cup raw beets,136,https://fdc.nal.usda.gov/food-details/169145/nutrients

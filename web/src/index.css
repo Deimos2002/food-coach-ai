@@ -1,0 +1,180 @@
+/* One forest palette, paired by role for both appearances. */
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#f2f5f3, #111a16);
+  --surface: light-dark(#ffffff, #1b2821);
+  --text-h: light-dark(#192e24, #edf5f0);
+  --text: light-dark(#344b3e, #d5e3da);
+  --muted: light-dark(#596e60, #a6bcad);
+  --text-secondary: var(--muted);
+  --accent: light-dark(#23634f, #84c5ab);
+  --accent-on: light-dark(#ffffff, #11291e);
+  --accent-text: light-dark(#205e49, #9bd9be);
+  --accent-bg: light-dark(#e6f0ea, #263e31);
+  --protein: var(--accent);
+  --carbs: light-dark(#56816b, #69a88b);
+  --fat: light-dark(#7d9d89, #507e67);
+  --danger: light-dark(#bb2929, #f79999);
+  --danger-on: light-dark(#ffffff, #321414);
+  --border: light-dark(#d5e1d9, #3b5042);
+  --track: light-dark(#dce7df, #344a3c);
+  --nav-bg: light-dark(#e4ece7, #17251d);
+  --radius-card: 20px;
+  --radius-pill: 999px;
+  --shadow-card: 0 4px 20px rgb(20 45 30 / .05);
+  --code-bg: var(--track);
+  --accent-border: var(--accent-text);
+  --social-bg: var(--surface);
+  --shadow: var(--shadow-card);
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: Georgia, 'Times New Roman', serif;
+  --mono: ui-monospace, Consolas, monospace;
+  font: 16px/1.5 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: tabular-nums;
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+*, *::before, *::after { box-sizing: border-box; }
+button, input, select, textarea { font-family: inherit; }
+a { color: var(--accent-text); }
+:focus-visible { outline: 3px solid var(--accent-text); outline-offset: 3px; }
+
+#root {
+  width: 1440px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: -.6px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 28px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+/* --- Phone layout pass (Task 10) --- */
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* 16px inputs everywhere, so iOS Safari never zooms on focus. */
+input,
+select,
+textarea,
+button {
+  font-size: 16px;
+}
+
+/* Tap targets at least 44px, repo-wide floor for interactive controls. */
+button,
+a,
+input,
+select {
+  min-height: 44px;
+}
+
+/* Content area leaves room for the fixed bottom tab bar, plus its safe-area inset. */
+.app-content {
+  padding-bottom: calc(56px + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.app-content * {
+  max-width: 100%;
+}
+
+.tab-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 20;
+}
+
+.tab-bar-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 4px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.tab-bar-link.active {
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+    margin: 16px 0;
+  }
+}

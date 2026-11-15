@@ -1,0 +1,27 @@
+import { defineConfig, devices } from '@playwright/test'
+
+/**
+ * Runs against a REAL, already-running backend + web dev server (see docs/dev-setup.md).
+ * PLAYWRIGHT_BASE_URL defaults to the Vite dev server origin.
+ */
+const baseURL = process.env.PLAYWRIGHT_BASE_URL ?? 'http://localhost:5173'
+
+export default defineConfig({
+  testDir: './e2e',
+  timeout: 30_000,
+  expect: { timeout: 10_000 },
+  fullyParallel: false,
+  retries: 0,
+  reporter: 'list',
+  use: {
+    baseURL,
+    viewport: { width: 390, height: 844 },
+    trace: 'retain-on-failure',
+  },
+  projects: [
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+  ],
+})

@@ -1,0 +1,14 @@
+.worktrees/
+.superpowers/
+.venv/
+backend/data/
+backend/data/dev_auth/
+backend/evals/coach/recorded_runs/
+backups/
+__pycache__/
+.env
+*.egg-info/
+web/node_modules/
+web/dist/
+web/.env.local
+web/test-results/

@@ -1,0 +1,28 @@
+item,specificity,actionability,goal_fit,tone,note
+1,2,2,2,4,Skips the energy-above fact that matters most for a lose goal; no food named; restates numbers
+2,2,1,2,4,Ignores the undeclared homemade stew; no concrete action
+3,2,1,2,4,Restates the sugar number only; no food or action
+4,2,2,3,4,Protein gap stated; the title is the only action
+5,4,3,3,5,Names the drink but says mostly from it while its share is open (0-100%); calm
+6,2,1,2,4,Restates the sugar number; no action
+7,3,1,2,5,Accurate keep-going but silent on energy being unknown and on logging more
+8,4,4,3,4,Concrete swap; flat restated numbers
+9,1,1,1,4,Generic; energy cannot be judged yet but it says nothing stood out
+10,4,4,3,5,Names the item and gives portion or frequency options
+11,5,5,3,5,Concrete swap with values; per-100 basis not stated
+12,4,3,3,5,Names the drink; reduce is a little vague
+13,3,3,3,5,Generic salt advice; misses that the homemade stew additions are undeclared
+14,2,1,2,4,Restates the sugar number only
+15,5,4,3,5,Concrete swap; the body has no explicit try
+16,4,2,3,5,Correct on the single day; reduce salt on that day next week is odd advice
+17,4,4,5,5,Covers energy for the weight-loss goal plus protein, sugar and salt with a named item
+18,4,3,3,5,Same as 12
+19,4,4,3,4,Concrete swap; flat restated numbers
+20,3,3,4,5,Protein advice is generic
+21,2,1,2,4,1 day(s) phrasing; no action; does not mention the partial day
+22,4,3,3,5,Names the drink; correctly avoids guideline wording
+23,2,1,2,4,Restates the sugar number only
+24,2,1,2,4,Restates the sugar number only
+25,3,2,3,5,Specific keep-going with numbers
+26,2,1,2,4,Restates the sugar number only
+27,1,1,2,4,Generic keep logging

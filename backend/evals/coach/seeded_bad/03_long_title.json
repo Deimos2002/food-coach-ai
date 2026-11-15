@@ -1,0 +1,19 @@
+{
+  "expected_codes": [
+    "schema"
+  ],
+  "output": {
+    "suggestions": [
+      {
+        "body": "Consider changing your recorded choices.",
+        "fact_ids": [
+          "F2"
+        ],
+        "kind": "habit",
+        "swap_ids": [],
+        "title": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      }
+    ]
+  },
+  "sheet_ref": "dev/01_sugar_swap.json"
+}

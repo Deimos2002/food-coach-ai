@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Food Coach playground</title>
+<style>
+:root{--bg:#f6f5f1;--panel:#fff;--ink:#1c1b19;--dim:#6b6861;--line:#e2dfd6;--accent:#1f6f54;--warn:#a05a00;--bad:#a32d2d;--ok:#1f6f54}
+@media (prefers-color-scheme:dark){:root{--bg:#161614;--panel:#1f1f1c;--ink:#ecebe6;--dim:#a3a097;--line:#34332e;--accent:#6fcfaa;--warn:#e0a458;--bad:#ee8a8a;--ok:#6fcfaa}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,Segoe UI,sans-serif}
+header{padding:20px 16px 8px;max-width:1180px;margin:auto}h1{font-size:22px;margin:0}header p{margin:4px 0 0;color:var(--dim);max-width:70ch}
+main{display:grid;grid-template-columns:260px 1fr 1fr;gap:16px;max-width:1180px;margin:auto;padding:12px 16px 40px}
+@media (max-width:900px){main{grid-template-columns:1fr}}
+section{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;min-width:0}
+h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin:0 0 10px}
+button{font:inherit;cursor:pointer}
+.week{display:block;width:100%;text-align:left;background:none;border:1px solid transparent;border-radius:8px;padding:8px 10px;color:inherit}
+.week:hover{border-color:var(--line)}.week[aria-pressed=true]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,transparent)}
+.week small{display:block;color:var(--dim)}
+.fact{border-top:1px solid var(--line);padding:10px 0}.fact:first-of-type{border-top:0;padding-top:0}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;border:1px solid currentColor;margin-right:6px}
+.exceeds,.above{color:var(--bad)}.below{color:var(--warn)}.within,.around{color:var(--ok)}.cannot_tell{color:var(--dim)}
+.bar{display:grid;grid-template-columns:1fr 44px;gap:8px;align-items:center;font-size:13px;margin-top:4px}
+.bar i{display:block;height:6px;border-radius:3px;background:var(--accent)}.bar span{color:var(--dim);text-align:right}
+.go{background:var(--accent);color:var(--panel);border:0;border-radius:8px;padding:10px 14px;font-weight:600;width:100%}
+.go:disabled{opacity:.6;cursor:progress}
+.card{border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:10px}.card h3{margin:0 0 4px;font-size:16px}
+.card p{margin:0}.src{font-size:12.5px;color:var(--dim);margin-top:8px}.src a{color:var(--accent)}
+.meta{font-size:12.5px;color:var(--dim);margin-top:10px}.note{color:var(--warn);margin-top:10px}
+details{margin-top:12px;font-size:13px}summary{cursor:pointer;color:var(--dim)}
+.err{color:var(--bad)}.pass{color:var(--ok)}blockquote{margin:8px 0;padding-left:10px;border-left:3px solid var(--line);color:var(--dim)}
+</style></head><body>
+<header><h1>Food Coach playground</h1>
+<p>A weekly AI food coach that may only say what its data supports. Pick a sample week: the backend has already computed the facts; the model words the advice from retrieved WHO guidance, and a deterministic checker accepts or rejects it. All weeks are synthetic.</p></header>
+<main>
+<section><h2>Sample weeks</h2><div id="weeks"></div><p class="meta" id="left"></p></section>
+<section><h2>What the backend computed</h2><div id="facts">Pick a week.</div></section>
+<section><h2>AI review</h2><button class="go" id="go" disabled>Generate review</button><div id="out"></div></section>
+</main>
+<script>
+const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let current=null;
+async function loadWeeks(){
+  const d=await (await fetch('api/weeks')).json();
+  $('left').textContent=d.live_left>0?`${d.live_left} live reviews left today · prompt ${d.prompt_version}`:'Live reviews are used up for today: stored reviews are shown.';
+  $('weeks').innerHTML=d.weeks.map(w=>`<button class="week" data-id="${w.id}" aria-pressed="false">${esc(w.title)}<small>${esc(w.about)}</small></button>`).join('');
+  document.querySelectorAll('.week').forEach(b=>b.onclick=()=>pick(b.dataset.id));
+}
+async function pick(id){
+  current=id;document.querySelectorAll('.week').forEach(b=>b.setAttribute('aria-pressed',b.dataset.id===id));
+  const s=await (await fetch('api/weeks/'+id)).json();
+  $('facts').innerHTML=`<p class="meta">Goal: ${esc(s.goal?.type??'none')} · ${esc(s.coverage)}</p>`+s.facts.map(f=>`<div class="fact"><span class="tag ${f.claim}">${f.claim.replace('_',' ')}</span><b>${f.id}</b> ${esc(f.message)}`+
+    f.contributors.map(c=>{const p=Math.round(100*(c.share[1]??c.share[0]));return `<div class="bar"><div>${esc(c.name)}${c.additions_undeclared?' (cooking additions not declared)':''}<i style="width:${p}%"></i></div><span>${c.share[1]===null?'?':p+'%'}</span></div>`}).join('')+
+    f.swaps.map(w=>`<p class="src">Swap on offer: ${esc(w.name)}</p>`).join('')+`</div>`).join('');
+  $('out').innerHTML='';$('go').disabled=false;
+}
+$('go').onclick=async()=>{
+  $('go').disabled=true;$('go').textContent='Generating…';$('out').innerHTML='';
+  try{
+    const r=await fetch('api/weeks/'+current+'/review',{method:'POST'});const d=await r.json();
+    if(!r.ok) throw new Error(d.detail||'Request failed');
+    $('out').innerHTML=(d.mode==='cached'?`<p class="note">Stored review from ${esc(d.generated_at)} (today's live calls are used up).</p>`:'')+
+      (d.message?`<p class="note">${esc(d.message)}</p>`:'')+
+      d.suggestions.map(s=>`<div class="card"><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p>`+
+        `<p class="src">Based on ${s.fact_ids.join(', ')}`+(s.sources.length?' · '+s.sources.map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noreferrer">${esc(x.title)}</a> (${esc(x.locator)})`).join('; '):'')+`</p></div>`).join('')+
+      `<p class="meta">${d.attempts.length} model call(s) · ${(d.latency_ms/1000).toFixed(1)} s · €${Number(d.cost_eur).toFixed(4)} · prompt ${esc(d.prompt_version)}</p>`+
+      `<details open><summary>Checker verdict</summary>`+d.attempts.map(a=>a.blocked?`<p class="err">Attempt ${a.attempt}: blocked by Azure's content filter.</p>`:a.passed?`<p class="pass">Attempt ${a.attempt}: passed every check.</p>`:`<p class="err">Attempt ${a.attempt}: rejected</p><ul>${a.errors.map(e=>`<li><b>${esc(e.code)}</b> ${esc(e.detail)}</li>`).join('')}</ul>`).join('')+`</details>`+
+      `<details><summary>Guidance retrieved for this week (${d.passages.length})</summary>`+d.passages.map(p=>`<blockquote><b>${p.id}</b> for ${p.for} · ${esc(p.source)}, ${esc(p.locator)}<br>${esc(p.text)}</blockquote>`).join('')+`</details>`;
+  }catch(e){$('out').innerHTML=`<p class="note">${esc(e.message)}</p>`}
+  $('go').disabled=false;$('go').textContent='Generate review';loadWeeks().then(()=>document.querySelector(`.week[data-id="${current}"]`)?.setAttribute('aria-pressed',true));
+};
+loadWeeks();
+</script></body></html>

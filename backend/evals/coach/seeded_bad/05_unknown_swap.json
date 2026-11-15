@@ -1,0 +1,21 @@
+{
+  "expected_codes": [
+    "unknown_ref"
+  ],
+  "output": {
+    "suggestions": [
+      {
+        "body": "Consider changing your recorded choices.",
+        "fact_ids": [
+          "F2"
+        ],
+        "kind": "swap",
+        "swap_ids": [
+          "S999"
+        ],
+        "title": "Review your log"
+      }
+    ]
+  },
+  "sheet_ref": "dev/01_sugar_swap.json"
+}

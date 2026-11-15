@@ -1,0 +1,133 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24",
+    "2026-10-25"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "around",
+      "contributors": [],
+      "days": [
+        "2026-10-19",
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22",
+        "2026-10-23",
+        "2026-10-24",
+        "2026-10-25"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 2060 kcal a day over Mon 19 Oct, Tue 20 Oct, Wed 21 Oct, Thu 22 Oct, Fri 23 Oct, Sat 24 Oct and Sun 25 Oct, around your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "2060",
+        "recorded_upper": "2060",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "within",
+      "contributors": [],
+      "days": [
+        "2026-10-19",
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22",
+        "2026-10-23",
+        "2026-10-24",
+        "2026-10-25"
+      ],
+      "id": "F2",
+      "message": "Based on your completed log, your recorded total sugars (a proxy) was within the WHO guideline of 50 g on each of Mon 19 Oct, Tue 20 Oct, Wed 21 Oct, Thu 22 Oct, Fri 23 Oct, Sat 24 Oct and Sun 25 Oct (at most 37 g recorded).",
+      "rule": "sugars_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_upper": "37",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [
+        "Family Beef Stew"
+      ],
+      "card_id": "who_salt",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Copper Pot Tomato Soup",
+          "share": [
+            "0.00",
+            "0.46"
+          ]
+        },
+        {
+          "additions_undeclared": true,
+          "id": "C2",
+          "name": "Family Beef Stew",
+          "share": [
+            "0.00",
+            null
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Bakehouse Seeded Bread",
+          "share": [
+            "0.00",
+            "0.18"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-19",
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22",
+        "2026-10-23",
+        "2026-10-24",
+        "2026-10-25"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO salt guideline of 5 g (at least 7.2 g recorded on Mon 19 Oct, the highest of 7 days: Mon 19 Oct, Tue 20 Oct, Wed 21 Oct, Thu 22 Oct, Fri 23 Oct, Sat 24 Oct and Sun 25 Oct).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "7.2",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "1953ef4b8176d9a4d8b7eb0fde5533253ffb8422804ebe6e249b4c63ebb55570",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "72.1",
+    "kg_start": "72.6"
+  },
+  "week": "2026-W43"
+}

@@ -1,0 +1,155 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24",
+    "2026-10-25"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "around",
+      "contributors": [],
+      "days": [
+        "2026-10-19",
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22",
+        "2026-10-23",
+        "2026-10-24",
+        "2026-10-25"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 2020 kcal a day over Mon 19 Oct, Tue 20 Oct, Wed 21 Oct, Thu 22 Oct, Fri 23 Oct, Sat 24 Oct and Sun 25 Oct, around your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "2020",
+        "recorded_upper": "2020",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Bistro Chocolate Cake",
+          "share": [
+            "0.69",
+            "0.69"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Copper Pot Tomato Soup",
+          "share": [
+            "0.16",
+            "0.16"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Garden Chicken Salad",
+          "share": [
+            "0.07",
+            "0.07"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-24",
+        "2026-10-25"
+      ],
+      "id": "F2",
+      "message": "Your recorded values exceed the WHO total sugars (a proxy) guideline of 50 g (at least 58 g recorded on Sat 24 Oct, the highest of 2 days: Sat 24 Oct and Sun 25 Oct).",
+      "rule": "sugars_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "2",
+        "recorded_lower": "58",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Copper Pot Tomato Soup",
+          "share": [
+            "0.50",
+            "0.50"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Bakehouse Seeded Bread",
+          "share": [
+            "0.19",
+            "0.19"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Garden Chicken Salad",
+          "share": [
+            "0.14",
+            "0.14"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-19",
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22",
+        "2026-10-23",
+        "2026-10-24",
+        "2026-10-25"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO salt guideline of 5 g (at least 7.1 g recorded on Sat 24 Oct, the highest of 7 days: Mon 19 Oct, Tue 20 Oct, Wed 21 Oct, Thu 22 Oct, Fri 23 Oct, Sat 24 Oct and Sun 25 Oct).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "7.1",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "25e1d7fb7249858073813e0f1361bd46edce835f8b46cec61b7482ca0d315f72",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "72.1",
+    "kg_start": "72.6"
+  },
+  "week": "2026-W43"
+}

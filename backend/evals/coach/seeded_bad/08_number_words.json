@@ -1,0 +1,19 @@
+{
+  "expected_codes": [
+    "number"
+  ],
+  "output": {
+    "suggestions": [
+      {
+        "body": "Recorded sugar reached eighty grams.",
+        "fact_ids": [
+          "F2"
+        ],
+        "kind": "habit",
+        "swap_ids": [],
+        "title": "Review your log"
+      }
+    ]
+  },
+  "sheet_ref": "dev/01_sugar_swap.json"
+}

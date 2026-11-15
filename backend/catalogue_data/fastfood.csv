@@ -1,0 +1,61 @@
+chain,item,grams,kcal,protein_g,carbs_g,sugars_g,fat_g,sat_fat_g,fibre_g,salt_g,source_url,checked_on
+McDonald's,Big Mac,232,530,27,42,7.8,27,9.6,3.8,2.3,https://www.mcdonalds.fr/nos-produits/nos-burgers/big-mac,2026-10-14
+McDonald's,Big Tasty (1 patty),300,706,37,46,9.4,41,17,2.6,2.8,https://www.mcdonalds.fr/nos-produits/nos-burgers/big-tasty-1-viande,2026-10-14
+McDonald's,Cheeseburger,119,300,16,30,7.4,13,5.6,2.1,1.5,https://www.mcdonalds.fr/nos-produits/nos-burgers/cheeseburger,2026-10-14
+McDonald's,McChicken,189,434,19,45,6.3,19,2.2,3.3,2,https://www.mcdonalds.fr/nos-produits/nos-burgers/mcchicken,2026-10-14
+McDonald's,Filet-O-Fish,131,329,15,36,5.1,14,2.4,2.2,1.4,https://www.mcdonalds.fr/nos-produits/nos-burgers/filet-o-fish,2026-10-14
+McDonald's,Royal Cheese,208,525,31,39,10,27,12,2.6,2.5,https://www.mcdonalds.fr/nos-produits/nos-burgers/royalcheese,2026-10-14
+McDonald's,Double Cheese,172,442,27,31,8,23,11,2.2,2.2,https://www.mcdonalds.fr/nos-produits/nos-burgers/double-cheese,2026-10-14
+McDonald's,20 Chicken McNuggets,356,872,51,65,1.4,45,5,2.8,3.8,https://www.mcdonalds.fr/nos-produits/nos-burgers/20-chicken-mcnuggets,2026-10-14
+McDonald's,4 Chicken McNuggets,71,174,10,13,0.3,9,1,0.6,0.77,https://www.mcdonalds.fr/nos-produits/petite-faim/chicken-mcnuggetstm,2026-10-14
+McDonald's,Fries (medium),114,328,3.9,41,0.3,16,1.5,4,0.53,https://www.mcdonalds.fr/nos-produits/nos-frites-et-sauces/frite,2026-10-14
+McDonald's,Fries (large),150,434,5.1,54,0.5,21,2,5.3,0.71,https://www.mcdonalds.fr/nos-produits/nos-frites-et-sauces/grande-frite,2026-10-14
+McDonald's,Fries (small),80,231,2.7,29,0.2,11,1,2.8,0.38,https://www.mcdonalds.fr/nos-produits/nos-frites-et-sauces/petite-frite,2026-10-14
+McDonald's,Hamburger,105,253,13,29,6.6,8.9,3.5,2.1,1.2,https://www.mcdonalds.fr/nos-produits/nos-burgers/hamburger,2026-10-14
+McDonald's,Egg & Cheese McMuffin,130,263,16,27,2.1,10,4.2,1.9,1.1,https://www.mcdonalds.fr/nos-produits/nos-burgers/mcmuffin-egg-et-cheese,2026-10-14
+McDonald's,Classic Caesar Salad,209,402,25,27,8.9,21,8,2.3,1.7,https://www.mcdonalds.fr/nos-produits/nos-salades-du-jour/salade-classic-caesar,2026-10-14
+Burger King,Whopper,278,629,28,49,12,35,9.4,,2.5,https://www.burgerking.fr/produit/whopper,2026-10-14
+Burger King,Cheeseburger,118,305,16,29,6.2,13,5.9,,1.7,https://www.burgerking.fr/produit/cheeseburger-cc,2026-10-14
+Burger King,Double Whopper Cheese,380,934,52,49,12,58,21,,3.5,https://www.burgerking.fr/produit/double-whopper-cheese,2026-10-14
+Burger King,Steakhouse,282,829,37,54,15,51,21,,3.3,https://www.burgerking.fr/produit/steakhouse,2026-10-14
+Burger King,Big King,179,482,27,30,6.3,28,12,,2.4,https://www.burgerking.fr/produit/big-king,2026-10-14
+Burger King,Hamburger,106,266,14,29,5.8,10,3.9,,1.3,https://www.burgerking.fr/produit/hamburger,2026-10-14
+Burger King,Big Fish,194,484,20,41,8.1,26,4.3,,2.5,https://www.burgerking.fr/produit/big-fish,2026-10-14
+KFC,Colonel Original,240,607.2,29.5,56.4,8.4,30.0,6.3,3.8,4.3,https://www.kfc.fr/notre-carte/produits-a-l-unite/colonel,2026-10-14
+KFC,Colonel Original Bacon,247,698.3,33.6,77.1,9.6,27.4,5.9,4.4,4.1,https://www.kfc.fr/notre-carte/produits-a-l-unite/colonel-bacon,2026-10-14
+KFC,5 Tenders,265,730.3,50.6,35.0,,42.4,4.8,3.2,3.4,https://www.kfc.fr/notre-carte/produits-a-l-unite/5-tenders,2026-10-14
+Quick,Méga Giant,291,859,46,38,4.7,58,17.4,2.4,3.12,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Suprême Bacon (chicken bacon),287,882,45,55,7.8,57,19.4,4.0,4.34,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Suprême Spicy Chicken,297,758,31,71,7.4,38,8.6,5.9,4.49,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Suprême ClassiQ,302,808,43,48,6.7,52,17.7,3.8,2.52,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Giant Max,215,657,28,38,4.7,43,11.2,2.4,2.53,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Giant Max Chicken,230,700,23,54,5.5,42,6.9,4.0,2.95,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Long Bacon (chicken bacon),196,574,33,39,5.5,32,12.5,1.9,3.12,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Long Chicken,204,528,22,50,4.7,26,5.6,4.2,3.04,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Long Fish,203,503,25,45,4.3,24,4.8,2.7,2.39,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Giant Original,184,545,27,27,3.7,36,10.9,2.0,1.75,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Cheeseburger,111,279,15,28,5.3,11,5.1,1.9,1.37,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Junior Giant,122,352,16,26,3.4,20,6.5,1.9,1.53,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Hamburger,111,271,15,28,4.9,10,3.8,1.9,0.96,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Wrap Giant Veggie,148,462,13,40,2.7,27,5.6,3.9,2.17,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Wrap Cheese and Bacon (chicken bacon),215,542,22,46,3.7,30,8.2,4.4,3.20,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Fries (small),65,172,2,23,0.2,8,0.7,2.2,1.35,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Fries (medium),111,296,4,39,0.3,13,1.1,3.7,1.61,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Fries (large),151,404,5,53,0.4,18,1.6,5.1,1.83,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Chicken Wings (5),140,294,29,2,1.0,18,4.3,0,1.68,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Chicken Dips (7),133,311,19,26,0.9,14,1.4,2.7,1.26,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Quick,Cheesy Rolls (3),62,217,7,11,0.6,16,5.9,0.6,0.45,https://assets.quick.fr/Declaration_Nutritionnelle_QUICK_2025_FRANCE_TF_10_2025_9a1bffa965.pdf,2026-10-14
+Five Guys,Hamburger,212,666,42,35,6.8,39,16,3.4,1.14,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Little Hamburger,145,457,24,35,6.2,24,9.4,2.0,0.99,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Cheeseburger,252,801,50,39,8.6,49,22,2.8,3.01,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Little Cheeseburger,159,506,27,39,7.0,27,12,2.7,1.72,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Bacon Burger,225,734,49,36,7.2,43,17,3.2,2.23,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Little Bacon Burger,159,510,28,36,6.5,27,11,1.7,1.73,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Bacon Cheeseburger,266,870,56,37,8.8,55,24,3.5,4.07,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Little Bacon Cheeseburger,173,566,32,36,7.3,32,13,2.4,2.44,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Fries (mini),129,350,5.0,37,0.5,21,2.84,3.4,0.56,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Fries (small),243,659,10,70,1.0,39,5.4,6.3,1.1,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Fries (medium),396,1073,16,115,1.6,63,8.7,10,1.7,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Fries (large),557,1509,23,162,2.2,89,12,14,2.4,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Loaded Fries,331,751,14,77,4.3,41,8.9,8.9,3.97,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14
+Five Guys,Loaded Cajun Fries,331,771,15,79,4.0,42,9.1,9,3.81,https://www.fiveguys.fr/wp-content/uploads/sites/32/2026/09/FGFR_FOH_allergen_ingredient_nutrition_LF_LW_A4_20260922-2.pdf,2026-10-14

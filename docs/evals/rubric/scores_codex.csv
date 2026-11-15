@@ -1,0 +1,28 @@
+item,specificity,actionability,goal_fit,tone,note
+1,3,1,2,4,Omits above-target energy and offers no concrete food change
+2,3,1,3,4,Reports salt excess but omits undeclared additions and a concrete action
+3,3,1,4,4,Uses sugar figures but gives no food or portion change
+4,3,1,5,4,Identifies the protein gap but gives no concrete food action
+5,2,3,2,5,Claims the drink is the main sugar source despite open share bounds
+6,3,1,4,4,Uses sugar figures but gives no concrete next-week action
+7,4,1,2,5,Supported praise omits the inability to assess energy
+8,4,5,4,4,Names a grounded swap but omits the total-sugars proxy caveat
+9,1,1,3,5,Generic reassurance gives no target detail or assessment caveats
+10,4,4,4,5,Names a portion or frequency change but overstates daily energy evidence
+11,4,5,4,5,Grounded drink swap omits the per-100ml basis of its numbers
+12,4,3,4,5,Targets the supported sugar source but leaves the reduction vague
+13,4,3,3,5,Suggests lower-salt options but omits undeclared-addition uncertainty
+14,3,1,4,4,Uses sugar figures but gives no concrete next-week action
+15,4,5,4,5,Grounded named swap omits the per-100ml comparison basis
+16,5,2,4,5,Uses the correct days and source but gives a vague salt action
+17,5,4,4,5,Addresses all fired concerns with portions and protein additions but omits sugar proxy
+18,5,3,4,5,Grounds advice in the drink and targets but leaves the reduction vague
+19,4,5,4,4,Names a grounded swap but omits the total-sugars proxy caveat
+20,4,3,4,5,Suggests adding protein-rich foods but leaves amounts and foods unspecified
+21,3,1,4,4,Reports the one-day salt excess without a concrete change
+22,4,3,5,5,Targets the supported drink source but leaves the reduction vague
+23,3,1,4,4,Uses sugar figures but gives no concrete next-week action
+24,3,1,4,4,Avoids unsupported source attribution but gives no concrete change
+25,4,1,4,5,Grounded encouragement gives no next-week action and omits sugar proxy
+26,3,1,4,4,Uses sugar figures but gives no concrete next-week action
+27,1,1,3,5,Generic reassurance gives no target detail or assessment caveats

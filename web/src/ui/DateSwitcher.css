@@ -1,0 +1,2 @@
+.date-switcher { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.date-switcher input { min-height: 44px; max-width: 100%; border: 1px solid var(--border); border-radius: var(--radius-card); padding: 8px; background: var(--surface); color: var(--text); }

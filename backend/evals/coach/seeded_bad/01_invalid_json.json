@@ -1,0 +1,7 @@
+{
+  "expected_codes": [
+    "schema"
+  ],
+  "output": "{broken",
+  "sheet_ref": "dev/01_sugar_swap.json"
+}

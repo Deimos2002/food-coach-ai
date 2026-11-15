@@ -1,0 +1,4 @@
+[
+  "{\"suggestions\":[{\"kind\":\"swap\",\"title\":\"Try a lower-salt drink than Orchard Peach Drink\",\"body\":\"Your recorded salt exceeded the WHO guideline on Sun 18 Oct, mostly from Orchard Peach Drink which lists at least 7 g. Consider a lower-salt alternative to reduce salt on that day.\",\"fact_ids\":[\"F3\"],\"swap_ids\":[]}]}",
+  "{\"suggestions\":[{\"kind\":\"habit\",\"title\":\"Reduce salt on Sun 18 Oct\",\"body\":\"Your recorded salt exceeded the WHO guideline on Sun 18 Oct, mostly from Orchard Peach Drink which lists at least 7 g. Consider reducing this to stay within the guideline.\",\"fact_ids\":[\"F3\"],\"swap_ids\":[]}]}"
+]

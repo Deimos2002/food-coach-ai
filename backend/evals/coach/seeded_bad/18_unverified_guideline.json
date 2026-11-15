@@ -1,0 +1,19 @@
+{
+  "expected_codes": [
+    "wording"
+  ],
+  "output": {
+    "suggestions": [
+      {
+        "body": "Follow the WHO guideline.",
+        "fact_ids": [
+          "F2"
+        ],
+        "kind": "habit",
+        "swap_ids": [],
+        "title": "Review your log"
+      }
+    ]
+  },
+  "sheet_ref": "dev/13_unverified_card.json"
+}

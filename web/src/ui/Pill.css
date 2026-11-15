@@ -1,0 +1,16 @@
+.ui-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+}
+button.ui-pill { min-height: 44px; min-width: 44px; cursor: pointer; }
+.ui-pill--selected { background: var(--accent-bg); color: var(--accent-text); border-color: var(--accent-text); font-weight: 600; }
+button.ui-pill:hover { border-color: var(--accent-text); }

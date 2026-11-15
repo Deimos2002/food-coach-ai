@@ -1,0 +1,1168 @@
+- name: Ratatouille
+  name_en: Ratatouille
+  cuisine: French
+  source_url: https://www.bbcgoodfood.com/recipes/ratatouille
+  ingredients:
+  - alim_code: 20053
+    grams: 150.0
+  - alim_code: 20020
+    grams: 118.0
+  - alim_code: 20041
+    grams: 59.5
+  - alim_code: 20385
+    grams: 182.0
+  - alim_code: 17270
+    grams: 16.9
+  - alim_code: 20034
+    grams: 27.5
+  - alim_code: 11000
+    grams: 2.2
+- name: Boeuf bourguignon
+  name_en: Beef bourguignon
+  cuisine: French
+  source_url: https://www.bbcgoodfood.com/recipes/beef-bourguignon
+  ingredients:
+  - alim_code: 6003
+    grams: 266.7
+  - alim_code: 5214
+    grams: 250.0
+  - alim_code: 17440
+    grams: 4.5
+  - alim_code: 20009
+    grams: 36.0
+  - alim_code: 20034
+    grams: 120.0
+  - alim_code: 9435
+    grams: 4.0
+  - alim_code: 20068
+    grams: 2.7
+  - alim_code: 16400
+    grams: 1.7
+  - alim_code: 28727
+    grams: 50.0
+  - alim_code: 20010
+    grams: 66.7
+- name: Coq au vin
+  name_en: Coq au vin
+  cuisine: French
+  source_url: https://www.bbcgoodfood.com/recipes/coq-au-vin
+  ingredients:
+  - alim_code: 17270
+    grams: 10.2
+  - alim_code: 28727
+    grams: 16.7
+  - alim_code: 20034
+    grams: 50.0
+  - alim_code: 36002
+    grams: 185.0
+  - alim_code: 36017
+    grams: 46.7
+  - alim_code: 11000
+    grams: 1.5
+  - alim_code: 5214
+    grams: 100.0
+  - alim_code: 25947
+    grams: 25.0
+  - alim_code: 20068
+    grams: 1.7
+  - alim_code: 20010
+    grams: 41.7
+  - alim_code: 9435
+    grams: 2.7
+  - alim_code: 16400
+    grams: 0.8
+- name: Quiche lorraine
+  name_en: Quiche Lorraine
+  cuisine: French
+  source_url: https://www.bbcgoodfood.com/recipes/ultimate-quiche-lorraine
+  ingredients:
+  - alim_code: 9435
+    grams: 21.9
+  - alim_code: 16400
+    grams: 12.5
+  - alim_code: 22000
+    grams: 39.8
+  - alim_code: 28727
+    grams: 25.0
+  - alim_code: 12113
+    grams: 6.2
+  - alim_code: 19417
+    grams: 50.0
+- name: Croque-monsieur
+  name_en: Croque monsieur
+  cuisine: French
+  source_url: https://www.bbcgoodfood.com/recipes/perfect-croque-monsieur
+  ingredients:
+  - alim_code: 7000
+    grams: 60.0
+  - alim_code: 16400
+    grams: 20.0
+  - alim_code: 12113
+    grams: 50.0
+  - alim_code: 28900
+    grams: 56.0
+  - alim_code: 19016
+    grams: 64.5
+  - alim_code: 19417
+    grams: 62.5
+  - alim_code: 9435
+    grams: 10.0
+  - alim_code: 11054
+    grams: 7.0
+- name: Gratin dauphinois
+  name_en: Dauphinoise potatoes
+  cuisine: French
+  source_url: https://www.bbcgoodfood.com/recipes/dauphinoise-potatoes
+  ingredients:
+  - alim_code: 19417
+    grams: 62.5
+  - alim_code: 19016
+    grams: 64.4
+  - alim_code: 11000
+    grams: 1.1
+  - alim_code: 4008
+    grams: 250.0
+  - alim_code: 12113
+    grams: 12.5
+- name: Soupe a l'oignon
+  name_en: French onion soup
+  cuisine: French
+  source_url: https://www.bbcgoodfood.com/recipes/french-onion-soup
+  ingredients:
+  - alim_code: 16400
+    grams: 12.5
+  - alim_code: 17270
+    grams: 3.4
+  - alim_code: 20034
+    grams: 250.0
+  - alim_code: 31016
+    grams: 1.1
+  - alim_code: 11000
+    grams: 3.0
+  - alim_code: 9435
+    grams: 4.0
+  - alim_code: 5215
+    grams: 62.5
+  - alim_code: 25930
+    grams: 325.0
+  - alim_code: 7001
+    grams: 37.5
+  - alim_code: 12113
+    grams: 35.0
+- name: Salade nicoise
+  name_en: Nicoise salad
+  cuisine: French
+  source_url: https://www.bbcgoodfood.com/recipes/salade-nicoise
+  ingredients:
+  - alim_code: 4008
+    grams: 200.0
+  - alim_code: 20061
+    grams: 25.0
+  - alim_code: 22000
+    grams: 75.0
+  - alim_code: 20031
+    grams: 100.0
+  - alim_code: 13033
+    grams: 25.0
+  - alim_code: 20385
+    grams: 123.0
+  - alim_code: 26039
+    grams: 52.5
+  - alim_code: 17270
+    grams: 27.0
+- name: Moules marinieres
+  name_en: Mussels in white wine
+  cuisine: French
+  source_url: https://www.bbcgoodfood.com/recipes/moules-mariniere
+  ingredients:
+  - alim_code: 10013
+    grams: 150.0
+  - alim_code: 16400
+    grams: 6.2
+  - alim_code: 20034
+    grams: 12.5
+  - alim_code: 5215
+    grams: 62.5
+- name: Poulet tikka masala
+  name_en: Chicken tikka masala
+  cuisine: Indian
+  source_url: https://www.bbcgoodfood.com/recipes/chicken-tikka-masala
+  ingredients:
+  - alim_code: 17440
+    grams: 5.4
+  - alim_code: 16400
+    grams: 2.5
+  - alim_code: 20034
+    grams: 44.0
+  - alim_code: 20041
+    grams: 23.8
+  - alim_code: 36017
+    grams: 140.0
+  - alim_code: 20048
+    grams: 80.0
+  - alim_code: 20068
+    grams: 6.4
+  - alim_code: 19417
+    grams: 15.0
+  - alim_code: 19593
+    grams: 15.0
+- name: Poutine
+  name_en: Poutine
+  cuisine: Canadian
+  source_url: https://www.bbcgoodfood.com/recipes/poutine
+  ingredients:
+  - alim_code: 19590
+    grams: 20.8
+  - alim_code: 9435
+    grams: 6.7
+  - alim_code: 17440
+    grams: 2.2
+  - alim_code: 16400
+    grams: 8.3
+  - alim_code: 20034
+    grams: 18.3
+  - alim_code: 20009
+    grams: 10.2
+  - alim_code: 25947
+    grams: 83.3
+  - alim_code: 25930
+    grams: 83.3
+  - alim_code: 11000
+    grams: 2.0
+  - alim_code: 4032
+    grams: 150.0
+- name: Curry vert thai
+  name_en: Thai green chicken curry
+  cuisine: Thai
+  source_url: https://www.bbcgoodfood.com/recipes/thai-green-chicken-curry
+  ingredients:
+  - alim_code: 4008
+    grams: 37.5
+  - alim_code: 20061
+    grams: 16.7
+  - alim_code: 17440
+    grams: 2.2
+  - alim_code: 11000
+    grams: 0.5
+  - alim_code: 18041
+    grams: 66.7
+  - alim_code: 11194
+    grams: 2.0
+  - alim_code: 31016
+    grams: 0.7
+  - alim_code: 36017
+    grams: 75.0
+- name: Pad thai
+  name_en: Pad Thai
+  cuisine: Thai
+  source_url: https://www.bbcgoodfood.com/recipes/pad-thai
+  ingredients:
+  - alim_code: 9900
+    grams: 62.5
+  - alim_code: 11194
+    grams: 13.5
+  - alim_code: 31016
+    grams: 2.1
+  - alim_code: 11000
+    grams: 0.8
+  - alim_code: 17440
+    grams: 6.8
+  - alim_code: 22000
+    grams: 12.5
+  - alim_code: 10007
+    grams: 50.0
+  - alim_code: 20183
+    grams: 18.8
+  - alim_code: 15002
+    grams: 7.0
+- name: Lasagnes
+  name_en: Lasagne
+  cuisine: Italian
+  source_url: https://www.bbcgoodfood.com/recipes/classic-lasagne
+  ingredients:
+  - alim_code: 17270
+    grams: 2.2
+  - alim_code: 28727
+    grams: 6.7
+  - alim_code: 20034
+    grams: 18.3
+  - alim_code: 20023
+    grams: 6.7
+  - alim_code: 20009
+    grams: 10.2
+  - alim_code: 11000
+    grams: 1.0
+  - alim_code: 6254
+    grams: 83.3
+  - alim_code: 20068
+    grams: 2.7
+  - alim_code: 20048
+    grams: 133.3
+  - alim_code: 31008
+    grams: 3.5
+  - alim_code: 9815
+    grams: 83.3
+  - alim_code: 19417
+    grams: 66.7
+  - alim_code: 19590
+    grams: 20.8
+  - alim_code: 12120
+    grams: 8.3
+- name: Spaghetti bolognaise
+  name_en: Spaghetti bolognese
+  cuisine: Italian
+  source_url: https://www.bbcgoodfood.com/recipes/spaghetti-bolognese
+  ingredients:
+  - alim_code: 17270
+    grams: 2.2
+  - alim_code: 28727
+    grams: 13.3
+  - alim_code: 20034
+    grams: 36.7
+  - alim_code: 20009
+    grams: 20.3
+  - alim_code: 20023
+    grams: 13.3
+  - alim_code: 11000
+    grams: 1.0
+  - alim_code: 6254
+    grams: 83.3
+  - alim_code: 20048
+    grams: 133.3
+  - alim_code: 20068
+    grams: 5.3
+  - alim_code: 5214
+    grams: 20.8
+  - alim_code: 12120
+    grams: 12.5
+  - alim_code: 9810
+    grams: 66.7
+- name: Spaghetti carbonara
+  name_en: Spaghetti carbonara
+  cuisine: Italian
+  source_url: https://www.bbcgoodfood.com/recipes/ultimate-spaghetti-carbonara-recipe
+  ingredients:
+  - alim_code: 28727
+    grams: 25.0
+  - alim_code: 12120
+    grams: 25.0
+  - alim_code: 22000
+    grams: 37.5
+  - alim_code: 9810
+    grams: 87.5
+  - alim_code: 11000
+    grams: 1.5
+  - alim_code: 16400
+    grams: 12.5
+- name: Riz cantonais
+  name_en: Egg fried rice
+  cuisine: Chinese
+  source_url: https://www.bbcgoodfood.com/recipes/egg-fried-rice
+  ingredients:
+  - alim_code: 9100
+    grams: 62.5
+  - alim_code: 17440
+    grams: 10.1
+  - alim_code: 20034
+    grams: 27.5
+  - alim_code: 22000
+    grams: 50.0
+- name: Chakchouka
+  name_en: Shakshuka
+  cuisine: Middle Eastern
+  source_url: https://www.bbcgoodfood.com/recipes/shakshuka
+  ingredients:
+  - alim_code: 17270
+    grams: 6.8
+  - alim_code: 20034
+    grams: 110.0
+  - alim_code: 11000
+    grams: 1.5
+  - alim_code: 20048
+    grams: 400.0
+  - alim_code: 31016
+    grams: 2.1
+  - alim_code: 22000
+    grams: 100.0
+- name: Fajitas au poulet
+  name_en: Chicken fajitas
+  cuisine: Mexican
+  source_url: https://www.bbcgoodfood.com/recipes/chicken-fajitas
+  ingredients:
+  - alim_code: 7815
+    grams: 147.0
+  - alim_code: 36017
+    grams: 131.2
+  - alim_code: 17270
+    grams: 10.1
+  - alim_code: 11000
+    grams: 0.8
+  - alim_code: 20034
+    grams: 18.8
+  - alim_code: 20041
+    grams: 59.5
+  - alim_code: 20385
+    grams: 25.0
+- name: Salade grecque
+  name_en: Greek salad
+  cuisine: Greek
+  source_url: https://www.bbcgoodfood.com/recipes/greek-salad
+  ingredients:
+  - alim_code: 20385
+    grams: 182.0
+  - alim_code: 20019
+    grams: 75.0
+  - alim_code: 20034
+    grams: 13.8
+  - alim_code: 13033
+    grams: 16.0
+  - alim_code: 12060
+    grams: 21.2
+  - alim_code: 17270
+    grams: 13.5
+- name: Moussaka
+  name_en: Moussaka
+  cuisine: Greek
+  source_url: https://www.bbcgoodfood.com/recipes/moussaka
+  ingredients:
+  - alim_code: 17270
+    grams: 10.1
+  - alim_code: 20053
+    grams: 112.5
+  - alim_code: 21502
+    grams: 100.0
+  - alim_code: 20034
+    grams: 13.8
+  - alim_code: 11000
+    grams: 0.8
+  - alim_code: 5214
+    grams: 25.0
+  - alim_code: 20048
+    grams: 50.0
+  - alim_code: 20068
+    grams: 4.0
+  - alim_code: 31016
+    grams: 0.8
+  - alim_code: 4008
+    grams: 68.8
+  - alim_code: 16400
+    grams: 5.0
+  - alim_code: 9435
+    grams: 5.0
+  - alim_code: 19016
+    grams: 58.0
+  - alim_code: 12120
+    grams: 5.0
+  - alim_code: 22000
+    grams: 8.5
+- name: Paella
+  name_en: Paella with seafood
+  cuisine: Spanish
+  source_url: https://www.bbcgoodfood.com/recipes/easy-paella
+  ingredients:
+  - alim_code: 17270
+    grams: 3.4
+  - alim_code: 20034
+    grams: 27.5
+  - alim_code: 9100
+    grams: 75.0
+  - alim_code: 5215
+    grams: 11.2
+  - alim_code: 20048
+    grams: 100.0
+  - alim_code: 25947
+    grams: 225.0
+  - alim_code: 10007
+    grams: 100.0
+- name: Poulet au beurre
+  name_en: Butter chicken
+  cuisine: Indian
+  source_url: https://www.bbcgoodfood.com/recipes/butter-chicken
+  ingredients:
+  - alim_code: 16400
+    grams: 6.2
+  - alim_code: 20034
+    grams: 27.5
+  - alim_code: 36017
+    grams: 175.0
+  - alim_code: 11000
+    grams: 2.2
+  - alim_code: 20260
+    grams: 125.0
+  - alim_code: 19417
+    grams: 12.5
+- name: Poulet katsu
+  name_en: Healthy chicken katsu curry
+  cuisine: Japanese
+  source_url: https://www.bbcgoodfood.com/recipes/chicken-katsu-curry
+  ingredients:
+  - alim_code: 36017
+    grams: 150.0
+  - alim_code: 17270
+    grams: 6.5
+  - alim_code: 20034
+    grams: 55.0
+  - alim_code: 11000
+    grams: 3.0
+  - alim_code: 9435
+    grams: 4.0
+  - alim_code: 9102
+    grams: 50.0
+  - alim_code: 20009
+    grams: 30.5
+  - alim_code: 20019
+    grams: 50.0
+  - alim_code: 15000
+    grams: 12.5
+- name: Bibimbap
+  name_en: Bibimbap
+  cuisine: Korean
+  source_url: https://www.bbcgoodfood.com/recipes/bibimbap
+  ingredients:
+  - alim_code: 20010
+    grams: 37.5
+  - alim_code: 20009
+    grams: 18.0
+  - alim_code: 20020
+    grams: 49.0
+  - alim_code: 20183
+    grams: 75.0
+  - alim_code: 17440
+    grams: 9.0
+  - alim_code: 9104
+    grams: 150.0
+  - alim_code: 20059
+    grams: 25.0
+  - alim_code: 22000
+    grams: 50.0
+  - alim_code: 15010
+    grams: 5.0
+- name: Salade Caesar au poulet
+  name_en: Chicken Caesar salad
+  cuisine: American
+  source_url: https://www.bbcgoodfood.com/recipes/chicken-caesar-salad
+  ingredients:
+  - alim_code: 7000
+    grams: 40.0
+  - alim_code: 17270
+    grams: 10.0
+  - alim_code: 36017
+    grams: 87.5
+  - alim_code: 20031
+    grams: 75.0
+  - alim_code: 11000
+    grams: 0.8
+  - alim_code: 11054
+    grams: 17.5
+- name: Overnight oats
+  name_en: Overnight oats
+  cuisine: Gym staple
+  source_url: https://www.bbcgoodfood.com/recipes/overnight-oats
+  ingredients:
+  - alim_code: 32140
+    grams: 50.0
+  - alim_code: 19593
+    grams: 30.0
+  - alim_code: 13028
+    grams: 50.0
+  - alim_code: 31008
+    grams: 7.0
+- name: Omelette au fromage
+  name_en: Cheese omelette
+  cuisine: Gym staple
+  source_url: https://www.bbcgoodfood.com/recipes/cheese-omelette
+  ingredients:
+  - alim_code: 22000
+    grams: 100.0
+  - alim_code: 17270
+    grams: 6.8
+  - alim_code: 16400
+    grams: 14.2
+  - alim_code: 12726
+    grams: 15.0
+- name: Chili con carne
+  name_en: Chilli con carne
+  cuisine: Mexican
+  source_url: https://www.bbcgoodfood.com/recipes/chilli-con-carne-recipe
+  ingredients:
+  - alim_code: 20034
+    grams: 27.5
+  - alim_code: 20041
+    grams: 29.8
+  - alim_code: 11000
+    grams: 1.5
+  - alim_code: 17440
+    grams: 3.4
+  - alim_code: 6254
+    grams: 125.0
+  - alim_code: 20048
+    grams: 100.0
+  - alim_code: 20068
+    grams: 8.0
+  - alim_code: 20503
+    grams: 60.0
+  - alim_code: 31016
+    grams: 1.1
+- name: Burritos au boeuf
+  name_en: Beef burritos
+  cuisine: Mexican
+  source_url: https://www.bbcgoodfood.com/recipes/easy-beef-burritos
+  ingredients:
+  - alim_code: 17440
+    grams: 6.8
+  - alim_code: 20034
+    grams: 27.5
+  - alim_code: 11000
+    grams: 3.0
+  - alim_code: 6254
+    grams: 125.0
+  - alim_code: 20048
+    grams: 100.0
+  - alim_code: 20503
+    grams: 60.0
+  - alim_code: 7815
+    grams: 98.0
+  - alim_code: 9104
+    grams: 125.0
+- name: Gratin de pates au thon
+  name_en: Tuna pasta bake
+  cuisine: Gym staple
+  source_url: https://www.bbcgoodfood.com/recipes/tuna-pasta-bake
+  ingredients:
+  - alim_code: 9810
+    grams: 100.0
+  - alim_code: 16400
+    grams: 8.3
+  - alim_code: 9435
+    grams: 8.3
+  - alim_code: 19016
+    grams: 103.0
+  - alim_code: 12726
+    grams: 41.7
+  - alim_code: 26039
+    grams: 40.0
+  - alim_code: 20066
+    grams: 41.7
+- name: Wraps au poulet
+  name_en: Chicken wraps
+  cuisine: Gym staple
+  source_url: https://www.bbcgoodfood.com/recipes/chicken-wraps
+  ingredients:
+  - alim_code: 20053
+    grams: 75.0
+  - alim_code: 20034
+    grams: 13.8
+  - alim_code: 17270
+    grams: 3.4
+  - alim_code: 19593
+    grams: 7.5
+  - alim_code: 15203
+    grams: 3.8
+  - alim_code: 36017
+    grams: 87.5
+  - alim_code: 17440
+    grams: 3.4
+  - alim_code: 7815
+    grams: 49.0
+  - alim_code: 20385
+    grams: 123.0
+  - alim_code: 13004
+    grams: 34.0
+- name: Tortilla espagnole
+  name_en: Spanish tortilla
+  cuisine: Spanish
+  source_url: https://www.bbcgoodfood.com/recipes/spanish-tortilla
+  ingredients:
+  - alim_code: 20034
+    grams: 37.5
+  - alim_code: 17270
+    grams: 13.5
+  - alim_code: 16400
+    grams: 6.2
+  - alim_code: 4008
+    grams: 100.0
+  - alim_code: 11000
+    grams: 4.5
+  - alim_code: 22000
+    grams: 100.0
+  - alim_code: 7001
+    grams: 62.5
+  - alim_code: 20385
+    grams: 123.0
+- name: Falafels
+  name_en: Falafel
+  cuisine: Middle Eastern
+  source_url: https://www.bbcgoodfood.com/recipes/falafel
+  ingredients:
+  - alim_code: 17440
+    grams: 4.5
+  - alim_code: 20034
+    grams: 11.7
+  - alim_code: 11000
+    grams: 0.5
+  - alim_code: 20507
+    grams: 40.0
+  - alim_code: 22000
+    grams: 8.3
+- name: Soupe de tomates
+  name_en: Tomato soup
+  cuisine: French
+  source_url: https://www.bbcgoodfood.com/recipes/tomato-soup
+  ingredients:
+  - alim_code: 20385
+    grams: 275.0
+  - alim_code: 20034
+    grams: 27.5
+  - alim_code: 20009
+    grams: 15.2
+  - alim_code: 20023
+    grams: 10.0
+  - alim_code: 17270
+    grams: 6.8
+  - alim_code: 20068
+    grams: 2.8
+  - alim_code: 25948
+    grams: 300.0
+- name: Risotto aux champignons
+  name_en: Mushroom risotto
+  cuisine: Italian
+  source_url: https://www.bbcgoodfood.com/recipes/mushroom-risotto
+  ingredients:
+  - alim_code: 17270
+    grams: 6.8
+  - alim_code: 20034
+    grams: 27.5
+  - alim_code: 11000
+    grams: 1.5
+  - alim_code: 20010
+    grams: 62.5
+  - alim_code: 9100
+    grams: 75.0
+  - alim_code: 5215
+    grams: 43.8
+  - alim_code: 16400
+    grams: 6.2
+  - alim_code: 12120
+    grams: 12.5
+- name: Pancakes
+  name_en: Pancakes (3 per serving)
+  cuisine: Gym staple
+  source_url: https://www.bbcgoodfood.com/recipes/easy-pancakes
+  ingredients:
+  - alim_code: 9435
+    grams: 25.0
+  - alim_code: 22000
+    grams: 25.0
+  - alim_code: 19016
+    grams: 77.2
+  - alim_code: 17440
+    grams: 3.4
+- name: Pain perdu
+  name_en: French toast
+  cuisine: French
+  source_url: https://www.bbcgoodfood.com/recipes/french-toast
+  ingredients:
+  - alim_code: 22000
+    grams: 25.0
+  - alim_code: 19016
+    grams: 20.5
+  - alim_code: 19417
+    grams: 10.0
+  - alim_code: 7210
+    grams: 40.0
+  - alim_code: 16400
+    grams: 7.0
+  - alim_code: 17440
+    grams: 6.8
+- name: Hachis parmentier d'agneau
+  name_en: Shepherd's pie
+  cuisine: British
+  source_url: https://www.bbcgoodfood.com/recipes/shepherds-pie
+  ingredients:
+  - alim_code: 17440
+    grams: 3.4
+  - alim_code: 20034
+    grams: 27.5
+  - alim_code: 20009
+    grams: 37.5
+  - alim_code: 21502
+    grams: 125.0
+  - alim_code: 20068
+    grams: 8.0
+  - alim_code: 25930
+    grams: 125.0
+  - alim_code: 4008
+    grams: 225.0
+  - alim_code: 16400
+    grams: 21.2
+  - alim_code: 19016
+    grams: 11.5
+- name: Hachis parmentier
+  name_en: Cottage pie
+  cuisine: British
+  source_url: https://www.bbcgoodfood.com/recipes/cottage-pie
+  ingredients:
+  - alim_code: 17270
+    grams: 4.0
+  - alim_code: 6254
+    grams: 150.0
+  - alim_code: 20034
+    grams: 22.0
+  - alim_code: 20009
+    grams: 18.3
+  - alim_code: 20023
+    grams: 12.0
+  - alim_code: 11000
+    grams: 0.6
+  - alim_code: 9435
+    grams: 2.4
+  - alim_code: 20068
+    grams: 1.6
+  - alim_code: 25930
+    grams: 85.0
+  - alim_code: 4008
+    grams: 180.0
+  - alim_code: 19016
+    grams: 23.2
+  - alim_code: 16400
+    grams: 2.5
+  - alim_code: 12726
+    grams: 20.0
+- name: Gratin de macaronis
+  name_en: Macaroni cheese
+  cuisine: British
+  source_url: https://www.bbcgoodfood.com/recipes/ultimate-macaroni-cheese
+  ingredients:
+  - alim_code: 12726
+    grams: 43.8
+  - alim_code: 12113
+    grams: 12.5
+  - alim_code: 12120
+    grams: 12.5
+  - alim_code: 7000
+    grams: 12.5
+  - alim_code: 20385
+    grams: 92.2
+  - alim_code: 9810
+    grams: 70.0
+  - alim_code: 19016
+    grams: 180.2
+  - alim_code: 16400
+    grams: 12.5
+  - alim_code: 9435
+    grams: 12.2
+- name: Soupe de nouilles au poulet
+  name_en: Chicken noodle soup
+  cuisine: Gym staple
+  source_url: https://www.bbcgoodfood.com/recipes/chicken-noodle-soup
+  ingredients:
+  - alim_code: 25947
+    grams: 450.0
+  - alim_code: 36017
+    grams: 87.5
+  - alim_code: 11000
+    grams: 1.5
+  - alim_code: 9900
+    grams: 25.0
+  - alim_code: 20066
+    grams: 15.0
+  - alim_code: 20010
+    grams: 25.0
+- name: Houmous
+  name_en: Hummus
+  cuisine: Middle Eastern
+  source_url: https://www.bbcgoodfood.com/recipes/hummus
+  ingredients:
+  - alim_code: 20507
+    grams: 60.0
+  - alim_code: 17270
+    grams: 13.8
+  - alim_code: 11000
+    grams: 0.8
+  - alim_code: 2007
+    grams: 7.5
+  - alim_code: 15203
+    grams: 11.2
+- name: O'classic (M)
+  name_en: O'classic tacos, size M
+  cuisine: French tacos
+  chain: O'Tacos
+  estimate: true
+  source_url: https://o-tacos.com/fr/products/oclassic
+  ingredients:
+  - alim_code: 7815
+    grams: 130.0
+  - alim_code: 36027
+    grams: 100.0
+  - alim_code: 12726
+    grams: 25.0
+  - alim_code: 4032
+    grams: 130.0
+  - alim_code: 11189
+    grams: 50.0
+  - alim_code: 11054
+    grams: 5.0
+- name: Le Typik (M)
+  name_en: Le Typik tacos, size M
+  cuisine: French tacos
+  chain: Chamas Tacos
+  estimate: true
+  source_url: https://chamas-tacos.com/carte
+  ingredients:
+  - alim_code: 7815
+    grams: 140.0
+  - alim_code: 36036
+    grams: 120.0
+  - alim_code: 28727
+    grams: 25.0
+  - alim_code: 4032
+    grams: 110.0
+  - alim_code: 11189
+    grams: 60.0
+  - alim_code: 11054
+    grams: 10.0
+- name: L'Indien (M)
+  name_en: L'Indien tacos, size M
+  cuisine: French tacos
+  chain: Chamas Tacos
+  estimate: true
+  source_url: https://chamas-tacos.com/carte
+  ingredients:
+  - alim_code: 7815
+    grams: 140.0
+  - alim_code: 36017
+    grams: 70.0
+  - alim_code: 36036
+    grams: 40.0
+  - alim_code: 4032
+    grams: 130.0
+  - alim_code: 11189
+    grams: 60.0
+  - alim_code: 11054
+    grams: 25.0
+- name: Le Veggie (M)
+  name_en: Le Veggie tacos, size M
+  cuisine: French tacos
+  chain: Chamas Tacos
+  estimate: true
+  source_url: https://chamas-tacos.com/carte
+  ingredients:
+  - alim_code: 7815
+    grams: 140.0
+  - alim_code: 20385
+    grams: 30.0
+  - alim_code: 20031
+    grams: 20.0
+  - alim_code: 20041
+    grams: 20.0
+  - alim_code: 4032
+    grams: 140.0
+  - alim_code: 11189
+    grams: 110.0
+  - alim_code: 12726
+    grams: 40.0
+  - alim_code: 11054
+    grams: 20.0
+- name: Cheese Burger
+  name_en: Cheeseburger
+  cuisine: Fast food
+  chain: G La Dalle
+  estimate: true
+  source_url: https://g-ladalle.com/product/g1/
+  ingredients:
+  - alim_code: 7000
+    grams: 60.0
+  - alim_code: 6254
+    grams: 45.0
+  - alim_code: 12726
+    grams: 20.0
+  - alim_code: 11008
+    grams: 10.0
+  - alim_code: 11013
+    grams: 5.0
+  - alim_code: 20034
+    grams: 10.0
+- name: Big
+  name_en: Big (double burger)
+  cuisine: Fast food
+  chain: G La Dalle
+  estimate: true
+  source_url: https://g-ladalle.com/product/big/
+  ingredients:
+  - alim_code: 7000
+    grams: 80.0
+  - alim_code: 6254
+    grams: 90.0
+  - alim_code: 20031
+    grams: 20.0
+  - alim_code: 12726
+    grams: 40.0
+  - alim_code: 20034
+    grams: 10.0
+  - alim_code: 11054
+    grams: 20.0
+- name: Crousty poulet
+  name_en: Crispy chicken rice box
+  cuisine: Fast food
+  chain: Tasty Crousty
+  estimate: true
+  source_url: https://tastycrousty.io/menu
+  ingredients:
+  - alim_code: 9104
+    grams: 210.0
+  - alim_code: 36036
+    grams: 160.0
+  - alim_code: 11054
+    grams: 35.0
+  - alim_code: 20322
+    grams: 20.0
+- name: Texan Steakhouse (SUB 15cm)
+  name_en: Texan Steakhouse sub, 15 cm
+  cuisine: Fast food
+  chain: Subway
+  estimate: true
+  source_url: https://sasubwaystrapiprod.blob.core.windows.net/strapi-uploads/assets/A2_NUTRISCORE_ALLERGENNES_2024_Dec_20708559b2.pdf
+  ingredients:
+  - alim_code: 7000
+    grams: 70.0
+  - alim_code: 6110
+    grams: 50.0
+  - alim_code: 28727
+    grams: 10.0
+  - alim_code: 12726
+    grams: 20.0
+  - alim_code: 20034
+    grams: 15.0
+  - alim_code: 20031
+    grams: 15.0
+  - alim_code: 20385
+    grams: 30.0
+  - alim_code: 11008
+    grams: 20.0
+- name: Supreme Steak & Cheese (SUB 15cm)
+  name_en: Supreme Steak & Cheese sub, 15 cm
+  cuisine: Fast food
+  chain: Subway
+  estimate: true
+  source_url: https://sasubwaystrapiprod.blob.core.windows.net/strapi-uploads/assets/A2_NUTRISCORE_ALLERGENNES_2024_Dec_20708559b2.pdf
+  ingredients:
+  - alim_code: 7000
+    grams: 65.0
+  - alim_code: 6110
+    grams: 55.0
+  - alim_code: 19590
+    grams: 20.0
+  - alim_code: 12726
+    grams: 15.0
+  - alim_code: 20034
+    grams: 20.0
+  - alim_code: 20041
+    grams: 20.0
+  - alim_code: 11054
+    grams: 8.0
+- name: Chicken Bella Mozza (SUB 15cm)
+  name_en: Chicken Bella Mozza sub, 15 cm
+  cuisine: Fast food
+  chain: Subway
+  estimate: true
+  source_url: https://sasubwaystrapiprod.blob.core.windows.net/strapi-uploads/assets/A2_NUTRISCORE_ALLERGENNES_2024_Dec_20708559b2.pdf
+  ingredients:
+  - alim_code: 7000
+    grams: 65.0
+  - alim_code: 36017
+    grams: 60.0
+  - alim_code: 30350
+    grams: 10.0
+  - alim_code: 19590
+    grams: 25.0
+  - alim_code: 12120
+    grams: 3.0
+  - alim_code: 20031
+    grams: 15.0
+  - alim_code: 20385
+    grams: 30.0
+  - alim_code: 20034
+    grams: 10.0
+  - alim_code: 20041
+    grams: 10.0
+  - alim_code: 11054
+    grams: 10.0
+- name: Deli Pastrami (SUB 15cm)
+  name_en: Deli Pastrami sub, 15 cm
+  cuisine: Fast food
+  chain: Subway
+  estimate: true
+  source_url: https://sasubwaystrapiprod.blob.core.windows.net/strapi-uploads/assets/A2_NUTRISCORE_ALLERGENNES_2024_Dec_20708559b2.pdf
+  ingredients:
+  - alim_code: 7000
+    grams: 60.0
+  - alim_code: 6110
+    grams: 30.0
+  - alim_code: 28900
+    grams: 10.0
+  - alim_code: 12726
+    grams: 10.0
+  - alim_code: 20031
+    grams: 15.0
+  - alim_code: 20385
+    grams: 30.0
+  - alim_code: 20322
+    grams: 5.0
+  - alim_code: 11013
+    grams: 5.0
+  - alim_code: 31008
+    grams: 5.0
+- name: Classic Gourmet
+  name_en: Classic Gourmet burger
+  cuisine: Fast food
+  chain: Chick'n Beef
+  estimate: true
+  source_url: https://chicknbeef.com/burger-gourmet/
+  checked_on: '2026-10-15'
+  ingredients:
+  - alim_code: 6201
+    grams: 150.0
+  - alim_code: 7225
+    grams: 80.0
+  - alim_code: 12726
+    grams: 20.0
+  - alim_code: 20031
+    grams: 10.0
+  - alim_code: 20238
+    grams: 15.0
+  - alim_code: 11054
+    grams: 15.0
+- name: Street Deal - Little Tenders
+  name_en: Street Deal - Little Tenders
+  cuisine: Fast food
+  chain: Chicken Street
+  estimate: true
+  source_url: https://restaurants.chickenstreet.fr/burger-lille-flandres/
+  checked_on: '2026-10-15'
+  ingredients:
+  - alim_code: 36027
+    grams: 150.0
+  - alim_code: 4032
+    grams: 100.0
+  - alim_code: 18326
+    grams: 500.0
+- name: Black & Marquise Baguette
+  name_en: Black & Marquise Baguette
+  cuisine: Fast food
+  chain: Black & White Burger
+  estimate: true
+  source_url: https://restaurants.bnwburger.com/toulouse-capitole/
+  checked_on: '2026-10-15'
+  ingredients:
+  - alim_code: 7001
+    grams: 120.0
+  - alim_code: 6259
+    grams: 180.0
+  - alim_code: 12726
+    grams: 25.0
+  - alim_code: 20035
+    grams: 25.0
+  - alim_code: 20217
+    grams: 5.0
+  - alim_code: 11054
+    grams: 20.0

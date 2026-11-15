@@ -1,0 +1,170 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2026-10-12",
+    "2026-10-13",
+    "2026-10-14",
+    "2026-10-15",
+    "2026-10-16",
+    "2026-10-17",
+    "2026-10-18"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "above",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Orchard Peach Drink",
+          "share": [
+            "1.00",
+            "1.00"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-12",
+        "2026-10-13",
+        "2026-10-14",
+        "2026-10-15",
+        "2026-10-16",
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 2400 kcal a day over Mon 12 Oct, Tue 13 Oct, Wed 14 Oct, Thu 15 Oct, Fri 16 Oct, Sat 17 Oct and Sun 18 Oct, above your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "2400",
+        "recorded_upper": "2400",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "below",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Orchard Peach Drink",
+          "share": [
+            "1.00",
+            "1.00"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-12",
+        "2026-10-13",
+        "2026-10-14",
+        "2026-10-15",
+        "2026-10-16",
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "id": "F2",
+      "message": "Based on your completed log, your recorded protein averaged 80 g a day over Mon 12 Oct, Tue 13 Oct, Wed 14 Oct, Thu 15 Oct, Fri 16 Oct, Sat 17 Oct and Sun 18 Oct, below your target of 120 g.",
+      "rule": "protein_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "80",
+        "recorded_upper": "80",
+        "target": "120",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Orchard Peach Drink",
+          "share": [
+            "1.00",
+            "1.00"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-12",
+        "2026-10-13",
+        "2026-10-14",
+        "2026-10-15",
+        "2026-10-16",
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO total sugars (a proxy) guideline of 50 g (at least 84 g recorded on Mon 12 Oct, the highest of 7 days: Mon 12 Oct, Tue 13 Oct, Wed 14 Oct, Thu 15 Oct, Fri 16 Oct, Sat 17 Oct and Sun 18 Oct).",
+      "rule": "sugars_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "84",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Orchard Peach Drink",
+          "share": [
+            "1.00",
+            "1.00"
+          ]
+        }
+      ],
+      "days": [
+        "2026-10-12",
+        "2026-10-13",
+        "2026-10-14",
+        "2026-10-15",
+        "2026-10-16",
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "id": "F4",
+      "message": "Your recorded values exceed the WHO salt guideline of 5 g (at least 7 g recorded on Mon 12 Oct, the highest of 7 days: Mon 12 Oct, Tue 13 Oct, Wed 14 Oct, Thu 15 Oct, Fri 16 Oct, Sat 17 Oct and Sun 18 Oct).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "7",
+        "recorded_lower": "7",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "1dcc647e4d2bf02c3430af87d2896fd6d4187a8f83f5e97b044ff29572d12c4c",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "72.1",
+    "kg_start": "72.6"
+  },
+  "week": "2026-W42"
+}

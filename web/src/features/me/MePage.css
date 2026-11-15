@@ -1,0 +1,15 @@
+.me-page { display: grid; gap: 24px; min-width: 0; text-align: left; max-width: 880px; margin-inline: auto; }
+.me-page h2 { margin: 0; font-size: 1.2rem; color: var(--text-h); }
+.me-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.me-link, .me-destination { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; color: var(--accent-text); font-weight: 600; text-decoration: none; border-radius: 8px; }
+.me-link:hover, .me-destination:hover { text-decoration: underline; }
+.me-destination { display: flex; justify-content: space-between; gap: 16px; color: var(--text-h); }
+.me-advanced-link { padding-inline: 24px; color: var(--text-secondary); }
+.me-targets { display: flex; flex-wrap: wrap; gap: 24px 48px; margin-block: 16px 0; }
+.me-targets dt { color: var(--text-secondary); font-size: .875rem; }
+.me-targets dd { margin: 4px 0 0; color: var(--text-h); font-size: 1.5rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+.your-data { display: grid; gap: 16px; }
+.your-data-dialog { display: grid; gap: 16px; border-top: 1px solid var(--border); padding-top: 16px; }
+.your-data-dialog p { margin: 0; }
+.your-data-dialog label { display: grid; gap: 8px; }
+.your-data-dialog input { min-height: 44px; box-sizing: border-box; width: 100%; padding: 10px 12px; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 8px; }

@@ -1,0 +1,47 @@
+[project]
+name = "app"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "azure-identity>=1.17",
+    "azure-storage-blob>=12.20",
+    "fastapi>=0.115",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.5",
+    "sqlalchemy>=2.0",
+    "alembic>=1.13",
+    "psycopg[binary]>=3.2",
+    "httpx>=0.27",
+    "PyJWT[crypto]>=2.9",
+    "openpyxl>=3.1",
+    "uvicorn>=0.30",
+    "openai>=1.50,<2.0",
+    "pyyaml>=6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "respx>=0.21",
+    "ruff>=0.6",
+    # scripts/build_knowledge.py only:
+    "pypdf>=5",
+    "beautifulsoup4>=4.12",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]  # tests import the scripts and evals packages
+markers = [
+    "integration: marks tests that require a real database",
+    "infra: compiles Bicep templates with the az CLI",
+]
+
+[tool.ruff]
+line-length = 100
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]

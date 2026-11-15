@@ -1,0 +1,4 @@
+.ui-tabs { display: flex; gap: 4px; padding: 4px; border-radius: var(--radius-pill); background: var(--track); max-width: 100%; overflow-x: auto; }
+.ui-tab { flex: 1; min-height: 44px; min-width: 44px; padding: 10px 16px; border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--text-secondary); font: inherit; font-size: 14px; font-weight: 600; white-space: nowrap; cursor: pointer; }
+.ui-tab[aria-selected='true'] { background: var(--surface); color: var(--text-h); box-shadow: var(--shadow-card); }
+.ui-tab:hover { color: var(--text-h); }

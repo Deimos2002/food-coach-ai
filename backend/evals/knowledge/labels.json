@@ -1,0 +1,14 @@
+[
+  {"query": "how to reduce sugars: sugary drinks, snacks and sweets. Foods: Orchard Peach Drink, Millbrook Crunchy Cereal", "relevant": ["who-emro-limit#13", "who-healthyathome#9", "who-behealthy#11", "who-healthy-diet#10", "who-healthy-diet#14"]},
+  {"query": "how to reduce sugars: sugary drinks, snacks and sweets. Foods: Bistro Chocolate Cake", "relevant": ["who-emro-limit#13", "who-healthyathome#9", "who-behealthy#11", "who-healthy-diet#10", "who-healthy-diet#14"]},
+  {"query": "my fizzy drinks and desserts are too sweet, what could I have instead", "relevant": ["who-emro-limit#13", "who-healthyathome#9", "who-behealthy#11", "who-healthy-diet#10"]},
+  {"query": "is fruit juice a good replacement for soda", "relevant": ["who-healthy-diet#10", "who-emro-limit#13"]},
+  {"query": "how to reduce salt and sodium in food and cooking. Foods: Copper Pot Tomato Soup, Bakehouse Seeded Bread", "relevant": ["who-sodium-reduction#17", "who-healthy-diet#31", "who-healthyathome#6", "who-healthy-diet#29", "who-emro-limit#8"]},
+  {"query": "how to reduce salt and sodium in food and cooking. Foods: Hearthstone Frozen Pizza", "relevant": ["who-sodium-reduction#17", "who-healthy-diet#31", "who-healthyathome#6", "who-healthy-diet#29", "who-emro-limit#8"]},
+  {"query": "meals taste bland without the shaker, how else can I add flavour", "relevant": ["who-sodium-reduction#17", "who-healthyathome#6", "who-healthy-diet#31"]},
+  {"query": "which everyday products hide the most sodium", "relevant": ["who-healthy-diet#29", "who-emro-limit#8", "who-sodium-reduction#11"]},
+  {"query": "energy balance: fats, portion sizes and energy-dense foods. Foods: Chicken Rice Bowl, Hearthstone Frozen Pizza", "relevant": ["who-healthy-diet#23", "who-emro-limit#5", "who-healthyathome#7", "who-behealthy#9", "who-healthy-diet#19"]},
+  {"query": "lighter ways to cook instead of frying", "relevant": ["who-healthy-diet#23", "who-emro-limit#5", "who-healthyathome#7"]},
+  {"query": "protein foods: pulses, nuts, fish, eggs, dairy and meat. Foods: Garden Chicken Salad", "relevant": ["who-healthy-diet#26", "who-healthy-diet#38", "who-healthy-diet#40", "who-healthyathome#4"]},
+  {"query": "plant sources that give the body its building blocks", "relevant": ["who-healthy-diet#26", "who-healthy-diet#40", "who-healthy-diet#24", "who-healthy-diet#38", "who-healthyathome#4"]}
+]

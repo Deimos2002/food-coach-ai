@@ -1,0 +1,156 @@
+{
+  "coverage": "7 complete days.",
+  "days_included": [
+    "2027-01-11",
+    "2027-01-12",
+    "2027-01-13",
+    "2027-01-14",
+    "2027-01-15",
+    "2027-01-16",
+    "2027-01-17"
+  ],
+  "days_missing": [],
+  "facts": [
+    {
+      "additions_undeclared": [],
+      "card_id": null,
+      "claim": "above",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C1",
+          "name": "Bol Riz Poulet",
+          "share": [
+            "0.30",
+            "0.30"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C2",
+          "name": "Fournil Pizza Surgelée",
+          "share": [
+            "0.22",
+            "0.22"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C3",
+          "name": "Sentier Barre aux Noix",
+          "share": [
+            "0.19",
+            "0.19"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-11",
+        "2027-01-12",
+        "2027-01-13",
+        "2027-01-14",
+        "2027-01-15",
+        "2027-01-16",
+        "2027-01-17"
+      ],
+      "id": "F1",
+      "message": "Based on your completed log, your recorded energy averaged 2171-2172 kcal a day over Mon 11 Jan, Tue 12 Jan, Wed 13 Jan, Thu 14 Jan, Fri 15 Jan, Sat 16 Jan and Sun 17 Jan, above your target of 2000 kcal.",
+      "rule": "energy_vs_target",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_lower": "2171",
+        "recorded_upper": "2172",
+        "target": "2000",
+        "unit": "kcal"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_free_sugars",
+      "claim": "within",
+      "contributors": [],
+      "days": [
+        "2027-01-11",
+        "2027-01-12",
+        "2027-01-13",
+        "2027-01-14",
+        "2027-01-15",
+        "2027-01-16",
+        "2027-01-17"
+      ],
+      "id": "F2",
+      "message": "Based on your completed log, your recorded total sugars (a proxy) was within the WHO guideline of 50 g on each of Mon 11 Jan, Tue 12 Jan, Wed 13 Jan, Thu 14 Jan, Fri 15 Jan, Sat 16 Jan and Sun 17 Jan (at most 43 g recorded).",
+      "rule": "sugars_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "recorded_upper": "43",
+        "threshold": "50",
+        "unit": "g"
+      }
+    },
+    {
+      "additions_undeclared": [],
+      "card_id": "who_salt",
+      "claim": "exceeds",
+      "contributors": [
+        {
+          "additions_undeclared": false,
+          "id": "C4",
+          "name": "Fournil Pizza Surgelée",
+          "share": [
+            "0.61",
+            "0.61"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C5",
+          "name": "Fournée Pain aux Graines",
+          "share": [
+            "0.19",
+            "0.19"
+          ]
+        },
+        {
+          "additions_undeclared": false,
+          "id": "C6",
+          "name": "Bol Riz Poulet",
+          "share": [
+            "0.13",
+            "0.13"
+          ]
+        }
+      ],
+      "days": [
+        "2027-01-11",
+        "2027-01-12",
+        "2027-01-13",
+        "2027-01-14"
+      ],
+      "id": "F3",
+      "message": "Your recorded values exceed the WHO salt guideline of 5 g (at least 6.7 g recorded on Mon 11 Jan, the highest of 4 days: Mon 11 Jan, Tue 12 Jan, Wed 13 Jan and Thu 14 Jan).",
+      "rule": "salt_daily",
+      "swaps": [],
+      "unknown_for": [],
+      "values": {
+        "days_exceeding": "4",
+        "recorded_lower": "6.7",
+        "threshold": "5",
+        "unit": "g"
+      }
+    }
+  ],
+  "goal": {
+    "pace_pct_per_week": "0.5",
+    "type": "lose"
+  },
+  "hash": "eee0c857fb70eb15ff15cd985d51e3710280c77ad5d26105c56a16027c2efbc3",
+  "schema_version": 1,
+  "trend": {
+    "kg_end": "72.9",
+    "kg_start": "72.6"
+  },
+  "week": "2027-W02"
+}
