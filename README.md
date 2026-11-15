@@ -8,9 +8,15 @@ checker, or none.
 
 FastAPI · PostgreSQL · React PWA · Azure OpenAI · Azure Container Apps (Bicep)
 
+**[Try the coach playground](https://foodcoach-demo.ashyisland-fb3eded8.italynorth.azurecontainerapps.io)**: pick a
+sample week, see the facts the backend computed, and get a live AI review with its WHO sources and the
+checker's verdict. Live calls are capped per day; past the cap a stored review is shown and labelled.
+
 > **Status.** Built for one user (the API accepts a single Entra account). The application, the
-> infrastructure code and the deploy pipeline are complete and run locally. The Azure go-live described in
-> [docs/deploy.md](docs/deploy.md) has not been executed yet, so there is no public instance.
+> infrastructure code and the deploy pipeline are complete and run locally. The full app's Azure go-live
+> described in [docs/deploy.md](docs/deploy.md) has not been executed; the public instance is the coach
+> playground above ([`backend/app/demo.py`](backend/app/demo.py)), which runs the product's own retrieval,
+> prompt, validator and ordering on synthetic weeks, with no database or login.
 
 ## The problem
 
