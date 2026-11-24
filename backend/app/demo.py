@@ -31,8 +31,8 @@ from app.config import Settings
 PAGE = Path(__file__).resolve().parent / "demo_static" / "index.html"
 CACHE_PATH = EVAL_ROOT / "demo_cache.json"
 DAILY_CAP_ENV = "COACH_DEMO_DAILY_REVIEWS"
-# shortcut: flags live in memory plus an optional JSONL file; without a mounted volume they are
-# lost on restart. Move to a table if reviewers start relying on them.
+# shortcut: flags are a JSONL file (on an Azure Files share in the deployed playground) read
+# whole at startup. Move to a table if reviewers start relying on them.
 FLAGS_PATH_ENV = "COACH_DEMO_FLAGS_PATH"
 MAX_FLAGS = 1000
 FLAG_REASONS = ("wrong_fact", "wrong_food", "bad_advice", "unsupported_source", "other")

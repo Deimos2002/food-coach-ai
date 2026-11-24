@@ -960,6 +960,23 @@ recovery is verified), explicitly clean up. Do not clean up during a partial rot
 cleanup_runbook
 ```
 
+## Coach playground
+
+The public playground is a separate Container App (`foodcoach-demo` in `rg-copilot`) running
+`uvicorn app.demo:create_demo_app --factory` from the image the `Demo image` workflow publishes for each
+commit on `main` (`ghcr.io/deimos2002/food-coach-ai:sha-<commit>`). It has no database and no login.
+
+- Deploy: `az containerapp update -n foodcoach-demo -g rg-copilot --image ghcr.io/deimos2002/food-coach-ai:sha-<commit>`.
+- Scale: one replica kept running (`--min-replicas 1 --max-replicas 1`, 0.25 vCPU / 0.5 GiB). From zero
+  replicas the first page load took 25 s; the app's peak use over a week was 84 MB and 0.012 cores.
+- Settings: `AZURE_OPENAI_*` (key as the secret `azure-openai-key`), `COACH_PRICE_IN_PER_1K`,
+  `COACH_PRICE_OUT_PER_1K`, `COACH_DEMO_DAILY_REVIEWS` (live calls per day, default 30).
+- Reviewer flags: `COACH_DEMO_FLAGS_PATH=/data/flags/flags.jsonl`, on the Azure Files share `flags` of
+  the storage account `foodcoachflags41344`, registered in the environment as `foodcoach-flags` and
+  mounted at `/data/flags` with `uid=10001,gid=10001,dir_mode=0700,file_mode=0600` (the image runs as
+  uid 10001). The flags survive restarts and deploys; to clear them, delete `flags.jsonl` from the
+  share and restart the revision.
+
 ## Verification limits
 
 Resource names, outputs, secret references, script flags and workflow triggers were
