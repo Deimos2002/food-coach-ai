@@ -82,3 +82,19 @@ def test_flag_copies_the_card_from_the_review_on_show(monkeypatch, tmp_path):
     assert client.post("/api/flags", json={**ok, "reason": "spam"}).status_code == 422
     assert client.post("/api/flags", json={**ok, "note": "x" * 281}).status_code == 422
     assert client.post("/api/flags", json={**ok, "week": "nope"}).status_code == 404
+
+
+def test_intro_figures_match_the_committed_run_files():
+    runs = demo.PAGE.parents[3] / "docs" / "evals" / "runs-2026-11-24"
+    records = [json.loads(line) for split in ("test", "test_mixed", "test_random")
+               for line in (runs / f"{split}.jsonl").read_text(encoding="utf-8").splitlines()]
+    sent = [r for r in records if r["status"] == "ok" and "first_try_ok" in r]
+    reviewed = [r for r in sent if not r["hard_failure"]]
+    first_try = sum(r["first_try_ok"] for r in sent)
+    summary = json.loads((runs / "test.summary.json").read_text(encoding="utf-8"))
+    page = demo.PAGE.read_text(encoding="utf-8")
+    assert len(records) == 41 and len(sent) == len(reviewed) == 39 and first_try == 30
+    assert summary["seeded_catch_rate"] == "1.00" and len(list(
+        (demo.EVAL_ROOT / "seeded_bad").glob("*.json"))) == 20
+    assert "over 41 held-out weeks: all <b>39</b>" in page and "<b>30</b> on the first try" in page
+    assert "<b>20 of 20</b>" in page

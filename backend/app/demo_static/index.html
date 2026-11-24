@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Food Coach playground</title>
 <style>
-:root{--bg:#f6f5f1;--panel:#fff;--ink:#1c1b19;--dim:#6b6861;--line:#e2dfd6;--accent:#1f6f54;--warn:#a05a00;--bad:#a32d2d;--ok:#1f6f54}
+:root{color-scheme:light dark;--bg:#f6f5f1;--panel:#fff;--ink:#1c1b19;--dim:#6b6861;--line:#e2dfd6;--accent:#1f6f54;--warn:#a05a00;--bad:#a32d2d;--ok:#1f6f54}
 @media (prefers-color-scheme:dark){:root{--bg:#161614;--panel:#1f1f1c;--ink:#ecebe6;--dim:#a3a097;--line:#34332e;--accent:#6fcfaa;--warn:#e0a458;--bad:#ee8a8a;--ok:#6fcfaa}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,Segoe UI,sans-serif}
 header{padding:20px 16px 8px;max-width:1180px;margin:auto}h1{font-size:22px;margin:0}header p{margin:4px 0 0;color:var(--dim);max-width:70ch}
@@ -31,12 +31,13 @@ details{margin-top:12px;font-size:13px}summary{cursor:pointer;color:var(--dim)}
 .err{color:var(--bad)}.pass{color:var(--ok)}blockquote{margin:8px 0;padding-left:10px;border-left:3px solid var(--line);color:var(--dim)}
 /* Phones: weeks become a swipeable row and the review comes before the facts it cites. */
 @media (max-width:900px){main{grid-template-columns:1fr}
-  #weeks{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}
+  #weeks{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px;scrollbar-width:thin}
   .week{flex:0 0 78%;scroll-snap-align:start;border-color:var(--line)}
   #review{order:1}#factsec{order:2}#weeksec{order:0}}
 </style></head><body>
 <header><h1>Food Coach playground</h1>
-<p>A weekly AI food coach that may only say what its data supports. Pick a sample week: the backend has already computed the facts; the model words the advice from retrieved WHO guidance, and a deterministic checker accepts or rejects it. All weeks are synthetic.</p></header>
+<p>A weekly AI food coach that may only say what its data supports. Pick a sample week: the backend has already computed the facts; the model words the advice from retrieved WHO guidance, and a deterministic checker accepts or rejects it. All weeks are synthetic.</p>
+<p class="figures">Measured on 24 Nov 2026 over 41 held-out weeks: all <b>39</b> weeks sent to the model got a review that passed the checker (<b>30</b> on the first try, the rest on the retry), and the checker rejected <b>20 of 20</b> planted bad outputs. <a href="https://github.com/Deimos2002/food-coach-ai/tree/main/docs/evals/runs-2026-11-24" target="_blank" rel="noreferrer">Run files</a></p></header>
 <main>
 <section id="weeksec"><h2>Sample weeks</h2><div id="weeks"></div><p class="meta" id="left"></p>
 <details id="flagsbox"><summary>Flags from reviewers (<span id="nflags">0</span>)</summary><div id="flags"></div></details></section>
