@@ -11,8 +11,8 @@ FastAPI · PostgreSQL · React PWA · Azure OpenAI · Azure Container Apps (Bice
 **[Try the coach playground](https://foodcoach-demo.ashyisland-fb3eded8.italynorth.azurecontainerapps.io)**: pick a
 sample week, see the facts the backend computed, and get a live AI review with its WHO sources and the
 checker's verdict. The page opens on a stored review; live calls are capped per day, and past the cap
-the stored review is shown, labelled. Any card can be flagged as wrong, with a reason, and the flags are
-listed on the page.
+the stored review is shown, labelled. Any card can be flagged as wrong, with a reason; the flags are
+listed on the page and kept on an Azure Files share ([setup](docs/deploy.md#coach-playground)).
 
 > **Status.** Built for one user (the API accepts a single Entra account). The application, the
 > infrastructure code and the deploy pipeline are complete and run locally. The full app's Azure go-live
