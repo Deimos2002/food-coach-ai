@@ -1,0 +1,23 @@
+{
+  "source": "llm",
+  "n": 20,
+  "skipped_insufficient_data": 0,
+  "skipped_no_suggestions": 0,
+  "rate_limited": 0,
+  "content_filtered": 0,
+  "hard_failures": 0,
+  "first_try_pass_rate": "0.80",
+  "seeded_catch_rate": "1.00",
+  "tokens_in": 140883,
+  "tokens_out": 5648,
+  "cost_eur_per_review": "0.0030",
+  "latency_p50_ms": 2342,
+  "latency_p95_ms": 5026,
+  "usefulness": {
+    "suggestions": 47,
+    "keep_going_share": "0.04",
+    "problem_first_rate": "0.95",
+    "top_contributor_named_rate": "1.00",
+    "sourced_advice_rate": "0.09"
+  }
+}

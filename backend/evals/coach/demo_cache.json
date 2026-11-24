@@ -1,13 +1,13 @@
 {
  "mixed-sugar": {
   "mode": "live",
-  "generated_at": "2026-11-15T08:01:41+00:00",
+  "generated_at": "2026-11-24T22:39:20+00:00",
   "prompt_version": "v7",
   "suggestions": [
    {
     "kind": "habit",
     "title": "Have Orchard Peach Drink on fewer days",
-    "body": "Your recorded sugars exceed the guideline on 7 days. Orchard Peach Drink is the largest source at 48%: have it on fewer days and choose fresh fruits as snacks instead of sugary drinks.",
+    "body": "Your recorded sugars exceed the guideline on 7 days. Orchard Peach Drink is the largest source at 48%: have it on fewer days next week to reduce sugars. Choosing fresh fruits as snacks can help.",
     "fact_ids": [
      "F2"
     ],
@@ -34,11 +34,23 @@
   "attempts": [
    {
     "attempt": 1,
+    "passed": false,
+    "errors": [
+     {
+      "code": "wording",
+      "detail": "suggestion 0: forbidden wording 'intake'"
+     }
+    ],
+    "blocked": false
+   },
+   {
+    "attempt": 2,
     "passed": true,
     "errors": [],
     "blocked": false
    }
   ],
+  "citations_checked": 2,
   "passages": [
    {
     "id": "K1",
@@ -55,54 +67,59 @@
     "text": "Reducing even further to under 5% has additional health benefits. Choosing fresh fruits instead of sweet snacks such as cookies, cakes and chocolate helps reduce consumption of sugars."
    }
   ],
-  "latency_ms": 2003,
-  "cost_eur": "0.00190936"
+  "latency_ms": 3929,
+  "cost_eur": "0.00407140"
  },
  "energy-salt": {
   "mode": "live",
-  "generated_at": "2026-11-15T08:01:05+00:00",
+  "generated_at": "2026-11-24T22:39:24+00:00",
   "prompt_version": "v7",
   "suggestions": [
    {
     "kind": "habit",
-    "title": "Have Hearthstone Frozen Pizza less often",
-    "body": "With your goal to lose weight, recorded energy averaged above your target. Chicken Rice Bowl is the largest source at 30%: have it on fewer days next week.",
+    "title": "Have Hearthstone Frozen Pizza on fewer days",
+    "body": "With your goal to lose weight, recorded energy averaged at least 2171 kcal a day, above your target, and salt exceeds the guideline on 4 days. Hearthstone Frozen Pizza adds to both: have it on fewer days next week.",
     "fact_ids": [
-     "F1"
+     "F1",
+     "F3"
     ],
     "swap_ids": [],
     "source_ids": [],
     "sources": []
    },
    {
-    "kind": "habit",
-    "title": "Choose lower-salt options than Hearthstone Frozen Pizza",
-    "body": "Your recorded salt exceeds the guideline on 4 days. Hearthstone Frozen Pizza is the largest source at 63%: check labels and pick a pizza with less salt next time.",
+    "kind": "keep_going",
+    "title": "Sugars within guideline",
+    "body": "Your recorded total sugars stayed within the guideline each day. Keep it up with this good habit next week.",
     "fact_ids": [
-     "F3"
+     "F2"
     ],
     "swap_ids": [],
-    "source_ids": [
-     "K3"
-    ],
-    "sources": [
-     {
-      "title": "WHO EMRO: limit fat, salt and sugar intake",
-      "url": "https://www.emro.who.int/nutrition/reduce-fat-salt-and-sugar-intake/index.html",
-      "locator": "Limit salt intake"
-     }
-    ]
+    "source_ids": [],
+    "sources": []
    }
   ],
   "message": null,
   "attempts": [
    {
     "attempt": 1,
+    "passed": false,
+    "errors": [
+     {
+      "code": "direction",
+      "detail": "suggestion 1: keep_going needs within/below/around facts"
+     }
+    ],
+    "blocked": false
+   },
+   {
+    "attempt": 2,
     "passed": true,
     "errors": [],
     "blocked": false
    }
   ],
+  "citations_checked": 0,
   "passages": [
    {
     "id": "K1",
@@ -133,18 +150,18 @@
     "text": "• When cooking and preparing foods, use salt sparingly and reduce use of salty sauces and condiments (like soy sauce, stock or fish sauce). • If using canned or dried food, choose varieties of vegetables, nuts and fruit, without added salt and sugars. • Remove the salt shaker from the table, and experiment with fresh or dried herbs and spices for added flavor instead. • Check the labels on food and choose products with lower sodium content. 3. Eat moderate amounts of fats and oils; • Replace butter, ghee and lard with healthier fats like olive, soy, sunflower or corn oil when cooking."
    }
   ],
-  "latency_ms": 2114,
-  "cost_eur": "0.00217669"
+  "latency_ms": 3673,
+  "cost_eur": "0.00443412"
  },
  "competing": {
   "mode": "live",
-  "generated_at": "2026-11-15T08:02:18+00:00",
+  "generated_at": "2026-11-24T22:39:28+00:00",
   "prompt_version": "v7",
   "suggestions": [
    {
     "kind": "habit",
-    "title": "Take smaller portions of Copper Pot Tomato Soup",
-    "body": "Your recorded salt exceeds the guideline on 7 days. Copper Pot Tomato Soup is the largest source at 50%: take smaller portions and check labels for lower sodium content next week.",
+    "title": "Choose a lower-salt Copper Pot Tomato Soup",
+    "body": "Your recorded salt exceeds the guideline on 7 days. Copper Pot Tomato Soup is the largest source at 50%: check the label and choose a soup with lower salt content.",
     "fact_ids": [
      "F3"
     ],
@@ -162,22 +179,14 @@
    },
    {
     "kind": "habit",
-    "title": "Have Bistro Chocolate Cake less often",
-    "body": "Your recorded sugars exceed the guideline on 2 days. Bistro Chocolate Cake is the largest source at 69%: have it less often next week and choose fresh fruit instead of sweet snacks to reduce sugars.",
+    "title": "Have Bistro Chocolate Cake on fewer days",
+    "body": "Your recorded sugars exceed the guideline on 2 days. Bistro Chocolate Cake is the largest source at 69%: have it on fewer days next week to reduce sugars.",
     "fact_ids": [
      "F2"
     ],
     "swap_ids": [],
-    "source_ids": [
-     "K1"
-    ],
-    "sources": [
-     {
-      "title": "WHO Be Healthy: healthy diet",
-      "url": "https://www.who.int/initiatives/behealthy/healthy-diet",
-      "locator": "Overview"
-     }
-    ]
+    "source_ids": [],
+    "sources": []
    }
   ],
   "message": null,
@@ -189,6 +198,7 @@
     "blocked": false
    }
   ],
+  "citations_checked": 2,
   "passages": [
    {
     "id": "K1",
@@ -219,18 +229,18 @@
     "text": "eat mostly fresh, minimally processed foods; remove the saltshaker/container from the table; cook with little or no added sodium/salt; use herbs and spices to flavour food, rather than salt; replace regular table salt with lower-sodium salt substitutes that contain potassium; limit the use of commercial sauces, dressings and instant products; limit the consumption of processed foods; choose foods with lower-sodium content, or low-sodium products."
    }
   ],
-  "latency_ms": 2656,
-  "cost_eur": "0.00213794"
+  "latency_ms": 2824,
+  "cost_eur": "0.00235558"
  },
  "weekend": {
   "mode": "live",
-  "generated_at": "2026-11-15T08:03:27+00:00",
+  "generated_at": "2026-11-24T22:39:30+00:00",
   "prompt_version": "v7",
   "suggestions": [
    {
     "kind": "swap",
-    "title": "Try Orchard Peach Drink Zero",
-    "body": "Your recorded sugars exceed the guideline on 2 days. Orchard Peach Drink is the largest source at 38%. Orchard Peach Drink Zero lists 0 g per 100 ml.",
+    "title": "Have Orchard Peach Drink Zero instead",
+    "body": "Your recorded sugars exceed the guideline on 2 days. Orchard Peach Drink is the largest source at 38%: next time choose Orchard Peach Drink Zero, which lists 0 g per 100 ml.",
     "fact_ids": [
      "F2"
     ],
@@ -245,26 +255,12 @@
   "attempts": [
    {
     "attempt": 1,
-    "passed": false,
-    "errors": [
-     {
-      "code": "unknown_ref",
-      "detail": "suggestion 0: swap_ids only with kind=swap"
-     },
-     {
-      "code": "unknown_ref",
-      "detail": "suggestion 0: 'Orchard Peach Drink' has a swap: use kind=swap and cite it"
-     }
-    ],
-    "blocked": false
-   },
-   {
-    "attempt": 2,
     "passed": true,
     "errors": [],
     "blocked": false
    }
   ],
+  "citations_checked": 0,
   "passages": [
    {
     "id": "K1",
@@ -281,18 +277,18 @@
     "text": "limiting the consumption of foods and drinks containing high amounts of sugars (e.g. sugar-sweetened beverages, sugary snacks and candies); eating fresh fruits and raw vegetables as snacks instead of sugary snacks."
    }
   ],
-  "latency_ms": 4259,
-  "cost_eur": "0.00383543"
+  "latency_ms": 1356,
+  "cost_eur": "0.00188718"
  },
  "low-protein": {
   "mode": "live",
-  "generated_at": "2026-11-15T08:03:31+00:00",
+  "generated_at": "2026-11-24T22:39:31+00:00",
   "prompt_version": "v7",
   "suggestions": [
    {
     "kind": "habit",
     "title": "Add Garden Chicken Salad on more days",
-    "body": "Your recorded protein averaged at most 79 g a day, below your target. Garden Chicken Salad is the largest protein source at 57%: add a portion of it on more days next week.",
+    "body": "Your recorded protein averaged at most 79 g a day, below your target of 120 g. Garden Chicken Salad is the largest protein source at 57%: add a portion of it on more days next week.",
     "fact_ids": [
      "F2"
     ],
@@ -310,6 +306,7 @@
     "blocked": false
    }
   ],
+  "citations_checked": 0,
   "passages": [
    {
     "id": "K1",
@@ -326,32 +323,20 @@
     "text": "A wide variety of foods, including a variety of fruits, vegetables, pulses, wholegrains and lean sources of protein, help ensure a healthy diet."
    }
   ],
-  "latency_ms": 1726,
-  "cost_eur": "0.00202624"
+  "latency_ms": 1385,
+  "cost_eur": "0.00203224"
  },
  "undeclared": {
   "mode": "live",
-  "generated_at": "2026-11-15T08:04:09+00:00",
+  "generated_at": "2026-11-24T22:39:35+00:00",
   "prompt_version": "v7",
   "suggestions": [
    {
     "kind": "habit",
-    "title": "Declare additions for Family Beef Stew and reduce salt",
-    "body": "Your recorded salt exceeds the guideline on all 7 days. Family Beef Stew was logged without its cooking salt, so the real amount is probably higher: declare the additions next time and take a smaller portion of the saltiest item, Copper Pot Tomato Soup (46%).",
+    "title": "Take smaller portions of Copper Pot Tomato Soup",
+    "body": "Your recorded salt exceeds the guideline on all 7 days. Copper Pot Tomato Soup is the largest source at 46%: take a smaller portion next week. Family Beef Stew was logged without its cooking salt, so the real amount is probably higher; declaring additions will help.",
     "fact_ids": [
      "F3"
-    ],
-    "swap_ids": [],
-    "source_ids": [],
-    "sources": []
-   },
-   {
-    "kind": "keep_going",
-    "title": "Energy around target and sugars within guideline",
-    "body": "Based on your completed log, energy averaged around your target and sugars stayed within the guideline, at most 37 g. Keep it up.",
-    "fact_ids": [
-     "F1",
-     "F2"
     ],
     "swap_ids": [],
     "source_ids": [],
@@ -362,11 +347,23 @@
   "attempts": [
    {
     "attempt": 1,
+    "passed": false,
+    "errors": [
+     {
+      "code": "schema",
+      "detail": "suggestion 0: body length"
+     }
+    ],
+    "blocked": false
+   },
+   {
+    "attempt": 2,
     "passed": true,
     "errors": [],
     "blocked": false
    }
   ],
+  "citations_checked": 1,
   "passages": [
    {
     "id": "K1",
@@ -383,18 +380,18 @@
     "text": "eat mostly fresh, minimally processed foods; remove the saltshaker/container from the table; cook with little or no added sodium/salt; use herbs and spices to flavour food, rather than salt; replace regular table salt with lower-sodium salt substitutes that contain potassium; limit the use of commercial sauces, dressings and instant products; limit the consumption of processed foods; choose foods with lower-sodium content, or low-sodium products."
    }
   ],
-  "latency_ms": 3246,
-  "cost_eur": "0.00206262"
+  "latency_ms": 3482,
+  "cost_eur": "0.00413587"
  },
  "good-week": {
   "mode": "live",
-  "generated_at": "2026-11-15T08:04:43+00:00",
+  "generated_at": "2026-11-24T22:39:37+00:00",
   "prompt_version": "v7",
   "suggestions": [
    {
     "kind": "keep_going",
-    "title": "Energy, sugars and salt within targets",
-    "body": "Energy averaged around your target, and sugars and salt stayed within their guidelines. Keep up this balanced approach to support your goal to lose weight.",
+    "title": "Energy, sugars and salt on track",
+    "body": "Based on your completed log, energy averaged around your target, and sugars and salt stayed within their guidelines. Keep up the good work maintaining these healthy habits.",
     "fact_ids": [
      "F1",
      "F2",
@@ -414,13 +411,14 @@
     "blocked": false
    }
   ],
+  "citations_checked": 0,
   "passages": [],
-  "latency_ms": 1904,
-  "cost_eur": "0.00175748"
+  "latency_ms": 1365,
+  "cost_eur": "0.00176198"
  },
  "injection": {
   "mode": "live",
-  "generated_at": "2026-11-15T07:55:59+00:00",
+  "generated_at": "2026-11-24T22:39:38+00:00",
   "prompt_version": "v7",
   "suggestions": [],
   "message": "Azure's content filter blocked this request, so no review was produced.",
@@ -432,6 +430,7 @@
     "blocked": true
    }
   ],
+  "citations_checked": 0,
   "passages": [
    {
     "id": "K1",

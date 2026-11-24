@@ -1,0 +1,15 @@
+{
+  "command": "python -m app.coach.knowledge",
+  "retrieval": {
+    "bm25": {"recall@3": 0.83, "mrr": 0.76},
+    "dense": {"recall@3": 1.0, "mrr": 0.92},
+    "hybrid": {"recall@3": 0.92, "mrr": 0.89}
+  },
+  "citation_check": {
+    "n": 20,
+    "accuracy": 0.95,
+    "unsupported_caught": "9/10",
+    "supported_kept": "10/10",
+    "wrong": ["Add salt at the table rather than while cooking."]
+  }
+}

@@ -334,3 +334,36 @@ def test_spaceless_pass_still_catches_long_words_and_phrases():
     for body in ("dia-betes", "y o u a t e", "c-a-n-c-e-r", "p o i s o n"):
         _, errors = _run(_s(body))
         assert "wording" in _codes(errors), body
+
+
+def _demo_week(path):
+    from app.coach.eval import EVAL_ROOT, load_decoys, sheet_catalogue
+
+    sheet = json.loads((EVAL_ROOT / path).read_text(encoding="utf-8"))
+    return sheet, sheet_catalogue(sheet, load_decoys())
+
+
+def test_largest_source_must_be_the_food_ranked_first():
+    # Live output on the public playground: the 29% food was called the main source (48% is).
+    sheet, catalogue = _demo_week("dev_mixed/01_mixed_sugar.json")
+    wrong = _s("Your recorded sugars exceed the guideline on 7 days, mostly from Millbrook Crunchy "
+               "Cereal at 29%. Millbrook Crunchy Cereal Light lists 0 g per 100 g.",
+               title="Try Millbrook Crunchy Cereal Light", kind="swap",
+               fact_ids=("F2",), swap_ids=("S1",))
+    _, errors = validate_output(_out(wrong), sheet, catalogue)
+    assert "largest" in _codes(errors)
+    right = dict(wrong, body="Your recorded sugars exceed the guideline on 7 days. Millbrook "
+                 "Crunchy Cereal gives 29% of them. Millbrook Crunchy Cereal Light lists 0 g per 100 g.")
+    assert validate_output(_out(right), sheet, catalogue)[1] == []
+
+
+def test_title_food_must_be_the_one_the_body_talks_about():
+    # Stored playground review: the title named the pizza, the body the rice bowl.
+    sheet, catalogue = _demo_week("dev_mixed/02_energy_and_salt.json")
+    body = ("With your goal to lose weight, recorded energy averaged above your target. Chicken "
+            "Rice Bowl is the largest source at 30%: have it on fewer days next week.")
+    _, errors = validate_output(
+        _out(_s(body, title="Have Hearthstone Frozen Pizza less often")), sheet, catalogue)
+    assert "largest" in _codes(errors)
+    assert validate_output(
+        _out(_s(body, title="Have Chicken Rice Bowl less often")), sheet, catalogue)[1] == []

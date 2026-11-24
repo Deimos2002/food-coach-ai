@@ -10,7 +10,9 @@ FastAPI · PostgreSQL · React PWA · Azure OpenAI · Azure Container Apps (Bice
 
 **[Try the coach playground](https://foodcoach-demo.ashyisland-fb3eded8.italynorth.azurecontainerapps.io)**: pick a
 sample week, see the facts the backend computed, and get a live AI review with its WHO sources and the
-checker's verdict. Live calls are capped per day; past the cap a stored review is shown and labelled.
+checker's verdict. The page opens on a stored review; live calls are capped per day, and past the cap
+the stored review is shown, labelled. Any card can be flagged as wrong, with a reason, and the flags are
+listed on the page.
 
 > **Status.** Built for one user (the API accepts a single Entra account). The application, the
 > infrastructure code and the deploy pipeline are complete and run locally. The full app's Azure go-live
@@ -65,8 +67,9 @@ flowchart LR
    suggestion only against the facts, swaps and passages it cites: schema, references, every number,
    every product name, forbidden wording ("you ate", disease words, uncited guideline claims, cooking
    additions nobody left undeclared, a nutrient the week has no fact about) and claim direction. Advice
-   may not treat energy that is in line with the goal as a problem, and a swap on offer for the named
-   food must be used. A cited passage must belong to a cited fact; one
+   may not treat energy that is in line with the goal as a problem, a swap on offer for the named
+   food must be used, a food called the largest source must be the one ranked first, and a food named
+   in the title must be the one the body is about. A cited passage must belong to a cited fact; one
    the text does not draw on is dropped, and a second model call withdraws any citation the passage
    does not actually support. Slips with one right answer are repaired first; a failed output is
    retried once with the validator errors.
@@ -79,6 +82,38 @@ flowchart LR
    the reserved budget with the actual cost. Concurrent requests produce exactly one model call.
 
 ## Evaluation
+
+### Current code, measured 24 Nov 2026
+
+One live run of prompt v7 with the current validator, on the `gpt-4.1-mini` deployment the public
+playground uses, over every split. Each figure below comes from a summary file in
+[`docs/evals/runs-2026-11-24/`](docs/evals/runs-2026-11-24/), next to the per-week outputs it was computed
+from (`<split>.jsonl`). Reproduce with `python -m app.coach.eval --split <split> --source llm`.
+
+| | single-food (`test`) | realistic (`test_mixed`) | random (`test_random`) |
+|---|---:|---:|---:|
+| Held-out weeks | 15 | 6 | 20 |
+| Weeks with a checked review / weeks sent to the model | 13 / 13 | 6 / 6 | 20 / 20 |
+| Hard failures (no review after the retry) | 0 | 0 | 0 |
+| First-try pass rate | 0.85 | 0.50 | 0.80 |
+| Problem comes first | 1.00 | 1.00 | 0.95 |
+| Largest source named | 1.00 | 1.00 | 1.00 |
+| Advice citing a guideline passage | 0.55 | 0.38 | 0.09 |
+| Cost per review | €0.0023 | €0.0033 | €0.0030 |
+| Latency p95 | 3.3 s | 4.8 s | 5.0 s |
+
+Two `test` weeks are not sent to the model by design: one has too little data, and the prompt-injection
+week is blocked by Azure's content filter. The validator rejected all 20 seeded bad outputs. Across the
+41 held-out weeks, 30 of the 39 sent to the model passed the checker first try, and the other 9 passed on
+the retry. The dev splits (`dev`, `dev_mixed`, `dev_random`) are in the same folder: 0 hard failures,
+first-try 0.90 / 0.67 / 0.70. On the 20 labelled citation pairs the second-call check got 19 right: it
+kept one unsupported passage (`knowledge.json`). Retrieval on the 12 labelled queries reproduced the
+table below exactly.
+
+### How the design got here
+
+The tables in this section record the development history. Their run files were not kept, so they can
+be read but not re-checked; the figures above replace them where they differ.
 
 Everything below is measured on synthetic fact sheets with live calls to `gpt-4.1-mini` in the Azure EU
 data zone, one run per cell. Two dev sets are used: 25 single-food weeks across 14 scenarios (including
@@ -165,7 +200,7 @@ decoration: see the next paragraph.
 model call now checks each cited passage and withdraws the citation when it does not
 ([`knowledge.drop_unsupported`](backend/app/coach/knowledge.py)); the advice stays. On 20 labelled pairs
 ([`evals/knowledge/faithfulness.json`](backend/evals/knowledge/faithfulness.json): 10 supported, 10 not,
-including contradictions and wrong-topic passages) the check got 20 right. Applied to the coach, it cut
+including contradictions and wrong-topic passages) the check got 20 right (19 in the 24 Nov re-run). Applied to the coach, it cut
 advice citing a passage from about 0.65 to about 0.10: the model was usually giving a plain action
 ("have it on fewer days") and attaching a passage that says nothing of the sort. Retrieval therefore
 adds a verified source to roughly one suggestion in ten today, which is the honest size of its
@@ -265,11 +300,12 @@ python -m app.coach.eval --split test --source llm --replay
 ## Limitations
 
 - Single user by design. Multi-tenancy would need per-user authorisation beyond the one allowed account.
-- Not yet deployed; the go-live checks in the runbook are open.
+- The full app is not deployed (the go-live checks in the runbook are open); only the coach playground
+  is public.
 - No distributed tracing or metrics export. Each model call is recorded in the database (tokens, cost,
   latency, outcome), and Azure alerts cover the platform, but there is no OpenTelemetry instrumentation.
 - The validator's wording and direction checks are pattern based. They are tuned to fail closed, so a
-  correct suggestion can be rejected and replaced by the template.
+  correct suggestion can be rejected; a week whose retry also fails gets no review.
 - The catalogue targets food sold in France.
 - With no static fallback, a week whose request Azure blocks (for example a product name that looks
   like a prompt injection) gets no review, only the reason.

@@ -16,10 +16,11 @@ import os
 import threading
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
+from pydantic import BaseModel, Field
 
 from app.coach.eval import EVAL_ROOT, load_decoys, run_retrying, sheet_catalogue
 from app.coach.knowledge import attach_knowledge, query_embedder, with_sources
@@ -30,6 +31,19 @@ from app.config import Settings
 PAGE = Path(__file__).resolve().parent / "demo_static" / "index.html"
 CACHE_PATH = EVAL_ROOT / "demo_cache.json"
 DAILY_CAP_ENV = "COACH_DEMO_DAILY_REVIEWS"
+# shortcut: flags live in memory plus an optional JSONL file; without a mounted volume they are
+# lost on restart. Move to a table if reviewers start relying on them.
+FLAGS_PATH_ENV = "COACH_DEMO_FLAGS_PATH"
+MAX_FLAGS = 1000
+FLAG_REASONS = ("wrong_fact", "wrong_food", "bad_advice", "unsupported_source", "other")
+
+
+class FlagIn(BaseModel):
+    week: str
+    card: int = Field(ge=0, le=10)
+    reason: Literal[FLAG_REASONS]  # type: ignore[valid-type]
+    note: str = Field(default="", max_length=280)
+    generated_at: str  # which review the card belongs to: a newer live review may have replaced it
 # id: (file under evals/coach, title, what the week is designed to show)
 WEEKS = {
     "mixed-sugar": ("dev_mixed/01_mixed_sugar.json", "Sugar from several foods",
@@ -70,6 +84,10 @@ def create_demo_app(client: LlmClient | None = None, settings: Settings | None =
     )
     used = {"day": "", "count": 0}
     lock = threading.Lock()
+    flags: list[dict] = []
+    if (path := os.environ.get(FLAGS_PATH_ENV)) and Path(path).exists():
+        flags += [json.loads(line) for line in Path(path).read_text(encoding="utf-8").splitlines()
+                  if line.strip()][-MAX_FLAGS:]
 
     def live_left() -> int:
         cap = int(os.environ.get(DAILY_CAP_ENV, "30"))
@@ -99,6 +117,40 @@ def create_demo_app(client: LlmClient | None = None, settings: Settings | None =
     @app.get("/api/weeks/{week_id}")
     def week(week_id: str) -> dict[str, Any]:
         return _sheet(week_id)
+
+    @app.get("/api/weeks/{week_id}/review")
+    def stored(week_id: str) -> dict[str, Any]:
+        _sheet(week_id)
+        if week_id not in cache:
+            raise HTTPException(status_code=404, detail="no stored review for this week")
+        return {**cache[week_id], "mode": "cached"}
+
+    @app.post("/api/flags", status_code=201)
+    def flag(body: FlagIn) -> dict[str, Any]:
+        _sheet(body.week)
+        shown = cache.get(body.week, {})
+        if shown.get("generated_at") != body.generated_at:
+            raise HTTPException(status_code=409, detail="That review has been replaced by a newer one.")
+        cards = shown.get("suggestions", [])
+        if body.card >= len(cards):
+            raise HTTPException(status_code=404, detail="no such card in the review on show")
+        card = cards[body.card]
+        # The card is copied from the server's review, so a flag cannot carry made-up advice.
+        entry = {"at": datetime.now(UTC).isoformat(timespec="seconds"), "week": body.week,
+                 "reason": body.reason, "note": body.note.strip(), "title": card["title"],
+                 "body": card["body"], "generated_at": body.generated_at}
+        with lock:
+            if len(flags) >= MAX_FLAGS:
+                raise HTTPException(status_code=429, detail="The flag list is full.")
+            flags.append(entry)
+            if path := os.environ.get(FLAGS_PATH_ENV):
+                with open(path, "a", encoding="utf-8") as f:
+                    f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+        return entry
+
+    @app.get("/api/flags")
+    def list_flags() -> list[dict[str, Any]]:
+        return flags[::-1][:50]
 
     @app.post("/api/weeks/{week_id}/review")
     def review(week_id: str) -> dict[str, Any]:
