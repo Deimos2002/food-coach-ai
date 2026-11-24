@@ -37,6 +37,7 @@ FORBIDDEN_PATTERNS = (
 _FORBIDDEN = re.compile("|".join(FORBIDDEN_PATTERNS))
 # Guideline wording needs a cited fact with a card. Agency acronyms are matched
 # case-sensitively on the raw text so the pronoun "who" is not mistaken for WHO.
+_LARGEST = re.compile(r"\b(?:largest|biggest|main|mostly|most of|saltiest|sweetest)\b")
 _UNDECLARED = re.compile(r"cooking (?:salt|fat|addition)|undeclared|\bdeclar")
 # Matched after cited product names are removed, so "Sugarfree" in a name is not a claim.
 _NUTRIENT_WORDS = {
@@ -359,6 +360,27 @@ def _check_suggestion(
                     errors.append(ValidationError(
                         "unknown_ref",
                         f"suggestion {i}: {c['name']!r} has a swap: use kind=swap and cite it"))
+
+    # "X is the largest source" must name the food ranked first (a tie counts either), and a
+    # food named in the title must be the one the body talks about.
+    for sentence in re.split(r"[.!?:;\n]", raw_text):
+        norm_sentence = normalize(sentence)
+        if not _LARGEST.search(norm_sentence):
+            continue
+        for f in cited_facts:
+            ranked = f.get("contributors") or []
+            named = [c for c in ranked if (n := normalize(_canon(str(c.get("name", ""))))) and
+                     re.search(r"(?<!\w)" + re.escape(n) + r"(?!\w)", norm_sentence)]
+            if named and not any(c.get("share") == ranked[0].get("share") for c in named):
+                errors.append(ValidationError(
+                    "largest", f"suggestion {i}: {named[0]['name']!r} is not the largest source; "
+                    f"{ranked[0]['name']!r} is"))
+    norm_title = normalize(_canon(s["title"]))
+    norm_body = normalize(_canon(s["body"]))
+    for n in {normalize(n) for n in names}:
+        if n and re.search(r"(?<!\w)" + re.escape(n) + r"(?!\w)", norm_title) and n not in norm_body:
+            errors.append(ValidationError(
+                "largest", f"suggestion {i}: the title names {n!r} but the body does not"))
 
     # Undeclared cooking additions may only be mentioned where a cited fact lists some.
     if _UNDECLARED.search(norm_raw) and not any(f.get("additions_undeclared") for f in cited_facts):
