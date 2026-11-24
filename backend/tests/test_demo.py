@@ -52,3 +52,33 @@ def test_blocked_request_yields_no_review(monkeypatch, tmp_path):
         "/api/weeks/injection/review").json()
     assert body["suggestions"] == [] and "content filter" in body["message"]
     assert body["attempts"][0]["blocked"] is True
+
+
+def test_stored_review_is_served_without_a_model_call():
+    client = TestClient(demo.create_demo_app(FakeLlmClient(responses=[]), SETTINGS))
+    stored = client.get("/api/weeks/good-week/review").json()
+    assert stored["mode"] == "cached" and stored["suggestions"] and stored["generated_at"]
+    assert client.get("/api/weeks/nope/review").status_code == 404
+
+
+def test_flag_copies_the_card_from_the_review_on_show(monkeypatch, tmp_path):
+    flags_file = tmp_path / "flags.jsonl"
+    monkeypatch.setenv(demo.FLAGS_PATH_ENV, str(flags_file))
+    client = TestClient(demo.create_demo_app(FakeLlmClient(responses=[]), SETTINGS))
+    shown = client.get("/api/weeks/competing/review").json()
+    ok = {"week": "competing", "card": 1, "reason": "wrong_food", "note": " salt ",
+          "generated_at": shown["generated_at"]}
+
+    entry = client.post("/api/flags", json=ok).json()
+    assert entry["title"] == shown["suggestions"][1]["title"] and entry["note"] == "salt"
+    assert client.get("/api/flags").json()[0] == entry
+    assert json.loads(flags_file.read_text(encoding="utf-8")) == entry
+    # Survives a restart when the file is on a volume.
+    restarted = TestClient(demo.create_demo_app(FakeLlmClient(responses=[]), SETTINGS))
+    assert restarted.get("/api/flags").json() == [entry]
+
+    assert client.post("/api/flags", json={**ok, "card": 9}).status_code == 404
+    assert client.post("/api/flags", json={**ok, "generated_at": "older"}).status_code == 409
+    assert client.post("/api/flags", json={**ok, "reason": "spam"}).status_code == 422
+    assert client.post("/api/flags", json={**ok, "note": "x" * 281}).status_code == 422
+    assert client.post("/api/flags", json={**ok, "week": "nope"}).status_code == 404
