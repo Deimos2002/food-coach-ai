@@ -100,7 +100,8 @@ def create_demo_app(client: LlmClient | None = None, settings: Settings | None =
 
     @app.get("/")
     def page() -> FileResponse:
-        return FileResponse(PAGE)
+        # Revalidate on every visit, or browsers keep showing the page from before a deploy.
+        return FileResponse(PAGE, headers={"Cache-Control": "no-cache"})
 
     @app.get("/healthz")
     def healthz() -> dict[str, str]:
