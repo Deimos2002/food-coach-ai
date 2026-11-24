@@ -27,7 +27,8 @@ def test_live_review_is_checked_then_capped_and_served_from_the_store(monkeypatc
     fake = FakeLlmClient(responses=["not json", _valid(), _valid()])
     client = TestClient(demo.create_demo_app(fake, SETTINGS))
 
-    assert "Food Coach playground" in client.get("/").text
+    home = client.get("/")
+    assert "Food Coach playground" in home.text and home.headers["cache-control"] == "no-cache"
     listing = client.get("/api/weeks").json()
     assert listing["live_left"] == 2 and len(listing["weeks"]) == len(demo.WEEKS)
     assert client.get("/api/weeks/competing").json()["facts"]
