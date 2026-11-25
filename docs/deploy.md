@@ -976,6 +976,10 @@ commit on `main` (`ghcr.io/deimos2002/food-coach-ai:sha-<commit>`). It has no da
   mounted at `/data/flags` with `uid=10001,gid=10001,dir_mode=0700,file_mode=0600` (the image runs as
   uid 10001). The flags survive restarts and deploys; to clear them, delete `flags.jsonl` from the
   share and restart the revision.
+- Reading flags: `GET /api/flags` with the header `X-Admin-Token` set to the app's secret
+  `coach-admin-token` (env `COACH_DEMO_ADMIN_TOKEN`). Without that secret configured the list is closed to
+  everyone. Read the token with
+  `az containerapp secret show -n foodcoach-demo -g rg-copilot --secret-name coach-admin-token`.
 
 ## Verification limits
 

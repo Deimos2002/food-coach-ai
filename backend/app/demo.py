@@ -11,15 +11,16 @@ labelled as such.
 
 from __future__ import annotations
 
+import hmac
 import json
 import logging
 import os
 import threading
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Literal
+from typing import Annotated, Any, Literal
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Header, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
@@ -36,6 +37,7 @@ DAILY_CAP_ENV = "COACH_DEMO_DAILY_REVIEWS"
 # shortcut: flags are a JSONL file (on an Azure Files share in the deployed playground) read
 # whole at startup. Move to a table if reviewers start relying on them.
 FLAGS_PATH_ENV = "COACH_DEMO_FLAGS_PATH"
+ADMIN_TOKEN_ENV = "COACH_DEMO_ADMIN_TOKEN"  # sent as X-Admin-Token to list flags
 MAX_FLAGS = 1000
 FLAG_REASONS = ("wrong_fact", "wrong_food", "bad_advice", "unsupported_source", "other")
 
@@ -167,7 +169,11 @@ def create_demo_app(client: LlmClient | None = None, settings: Settings | None =
         return entry
 
     @app.get("/api/flags")
-    def list_flags() -> list[dict[str, Any]]:
+    def list_flags(x_admin_token: Annotated[str | None, Header()] = None) -> list[dict[str, Any]]:
+        # Flags are for the maintainer only. Unset token: nobody can list them (fail closed).
+        expected = os.environ.get(ADMIN_TOKEN_ENV, "")
+        if not expected or not hmac.compare_digest((x_admin_token or "").encode(), expected.encode()):
+            raise HTTPException(status_code=401, detail="admin token required")
         return flags[::-1][:50]
 
     @app.post("/api/weeks/{week_id}/review")

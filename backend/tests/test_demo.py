@@ -65,6 +65,8 @@ def test_stored_review_is_served_without_a_model_call():
 def test_flag_copies_the_card_from_the_review_on_show(monkeypatch, tmp_path):
     flags_file = tmp_path / "flags.jsonl"
     monkeypatch.setenv(demo.FLAGS_PATH_ENV, str(flags_file))
+    monkeypatch.setenv(demo.ADMIN_TOKEN_ENV, "admin-only")
+    admin = {"X-Admin-Token": "admin-only"}
     client = TestClient(demo.create_demo_app(FakeLlmClient(responses=[]), SETTINGS))
     shown = client.get("/api/weeks/competing/review").json()
     ok = {"week": "competing", "card": 1, "reason": "wrong_food", "note": " salt ",
@@ -72,11 +74,14 @@ def test_flag_copies_the_card_from_the_review_on_show(monkeypatch, tmp_path):
 
     entry = client.post("/api/flags", json=ok).json()
     assert entry["title"] == shown["suggestions"][1]["title"] and entry["note"] == "salt"
-    assert client.get("/api/flags").json()[0] == entry
+    assert client.get("/api/flags", headers=admin).json()[0] == entry
+    # Visitors can send a flag but never read the list.
+    assert client.get("/api/flags").status_code == 401
+    assert client.get("/api/flags", headers={"X-Admin-Token": "guess"}).status_code == 401
     assert json.loads(flags_file.read_text(encoding="utf-8")) == entry
     # Survives a restart when the file is on a volume.
     restarted = TestClient(demo.create_demo_app(FakeLlmClient(responses=[]), SETTINGS))
-    assert restarted.get("/api/flags").json() == [entry]
+    assert restarted.get("/api/flags", headers=admin).json() == [entry]
 
     assert client.post("/api/flags", json={**ok, "card": 9}).status_code == 404
     assert client.post("/api/flags", json={**ok, "generated_at": "older"}).status_code == 409
@@ -119,3 +124,10 @@ def test_each_review_and_flag_writes_one_log_line_without_visitor_text(monkeypat
     assert lines[1] == "review week=competing mode=cached reason=daily_cap stored=True"
     assert lines[2] == "flag week=competing card=0 reason=wrong_fact note_len=16 total=1"
     assert not any("private" in line for line in lines)
+
+
+def test_flag_list_is_closed_when_no_admin_token_is_configured(monkeypatch):
+    monkeypatch.delenv(demo.ADMIN_TOKEN_ENV, raising=False)
+    client = TestClient(demo.create_demo_app(FakeLlmClient(responses=[]), SETTINGS))
+    assert client.get("/api/flags", headers={"X-Admin-Token": ""}).status_code == 401
+    assert "api/flags')" not in client.get("/").text  # the page no longer lists flags
