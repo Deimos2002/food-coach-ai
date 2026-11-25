@@ -99,3 +99,23 @@ def test_intro_figures_match_the_committed_run_files():
         (demo.EVAL_ROOT / "seeded_bad").glob("*.json"))) == 20
     assert "over 41 held-out weeks: all <b>39</b>" in page and "<b>30</b> on the first try" in page
     assert "<b>20 of 20</b>" in page
+
+
+def test_each_review_and_flag_writes_one_log_line_without_visitor_text(monkeypatch, tmp_path, caplog):
+    monkeypatch.setattr(demo, "CACHE_PATH", tmp_path / "none.json")
+    monkeypatch.setenv(demo.DAILY_CAP_ENV, "1")
+    monkeypatch.delenv(demo.FLAGS_PATH_ENV, raising=False)
+    client = TestClient(demo.create_demo_app(FakeLlmClient(responses=["not json", _valid()]), SETTINGS))
+    caplog.set_level("INFO", logger="app.demo")
+
+    live = client.post("/api/weeks/competing/review").json()
+    client.post("/api/weeks/competing/review")  # over the cap: the stored review
+    client.post("/api/flags", json={"week": "competing", "card": 0, "reason": "wrong_fact",
+                                    "note": "my private words", "generated_at": live["generated_at"]})
+
+    lines = [r.getMessage() for r in caplog.records if r.name == "app.demo"]
+    assert lines[0].startswith("review week=competing mode=live outcome=reviewed attempts=fail,pass errors=schema")
+    assert "cards=1" in lines[0] and "cost_eur=" in lines[0]
+    assert lines[1] == "review week=competing mode=cached reason=daily_cap stored=True"
+    assert lines[2] == "flag week=competing card=0 reason=wrong_fact note_len=16 total=1"
+    assert not any("private" in line for line in lines)
