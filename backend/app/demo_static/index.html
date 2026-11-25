@@ -39,8 +39,7 @@ details{margin-top:12px;font-size:13px}summary{cursor:pointer;color:var(--dim)}
 <p>A weekly AI food coach that may only say what its data supports. Pick a sample week: the backend has already computed the facts; the model words the advice from retrieved WHO guidance, and a deterministic checker accepts or rejects it. All weeks are synthetic.</p>
 <p class="figures">Measured on 24 Nov 2026 over 41 held-out weeks: all <b>39</b> weeks sent to the model got a review that passed the checker (<b>30</b> on the first try, the rest on the retry), and the checker rejected <b>20 of 20</b> planted bad outputs. <a href="https://github.com/Deimos2002/food-coach-ai/tree/main/docs/evals/runs-2026-11-24" target="_blank" rel="noreferrer">Run files</a></p></header>
 <main>
-<section id="weeksec"><h2>Sample weeks</h2><div id="weeks"></div><p class="meta" id="left"></p>
-<details id="flagsbox"><summary>Flags from reviewers (<span id="nflags">0</span>)</summary><div id="flags"></div></details></section>
+<section id="weeksec"><h2>Sample weeks</h2><div id="weeks"></div><p class="meta" id="left"></p></section>
 <section id="factsec"><h2>What the backend computed</h2><div id="facts">Pick a week.</div></section>
 <section id="review"><h2>AI review</h2><button class="go" id="go" disabled>Generate a new live review</button><div id="out"></div></section>
 </main>
@@ -54,11 +53,6 @@ async function loadWeeks(){
   $('weeks').innerHTML=d.weeks.map(w=>`<button class="week" data-id="${w.id}" aria-pressed="${w.id===current}">${esc(w.title)}<small>${esc(w.about)}</small></button>`).join('');
   document.querySelectorAll('.week').forEach(b=>b.onclick=()=>pick(b.dataset.id));
   return d.weeks;
-}
-async function loadFlags(){
-  const f=await (await fetch('api/flags')).json();
-  $('nflags').textContent=f.length;
-  $('flags').innerHTML=f.length?f.map(x=>`<blockquote><b>${esc(REASONS[x.reason]||x.reason)}</b> · ${esc(x.week)}<br>“${esc(x.title)}”${x.note?`<br>${esc(x.note)}`:''}</blockquote>`).join(''):'<p class="meta">None yet. Each card has a “Flag as wrong” link.</p>';
 }
 function render(d){
   shown=d;
@@ -74,8 +68,7 @@ function render(d){
   document.querySelectorAll('.flag').forEach(f=>f.onsubmit=async e=>{
     e.preventDefault();const b=f.querySelector('button');b.disabled=true;
     const r=await fetch('api/flags',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({week:current,card:+f.dataset.card,reason:f.reason.value,note:f.note.value,generated_at:shown.generated_at})});
-    f.outerHTML=r.ok?'<p class="pass">Flagged. It is listed under “Flags from reviewers”.</p>':`<p class="err">${esc((await r.json()).detail||'Could not send the flag.')}</p>`;
-    loadFlags();
+    f.outerHTML=r.ok?'<p class="pass">Flagged. Thank you: it was sent to the maintainer.</p>':`<p class="err">${esc((await r.json()).detail||'Could not send the flag.')}</p>`;
   });
 }
 async function pick(id){
@@ -97,5 +90,5 @@ $('go').onclick=async()=>{
   }catch(e){$('out').innerHTML=`<p class="note">${esc(e.message)}</p>`}
   $('go').disabled=false;$('go').textContent='Generate a new live review';loadWeeks();
 };
-loadWeeks().then(w=>pick(w[0].id));loadFlags();
+loadWeeks().then(w=>pick(w[0].id));
 </script></body></html>
