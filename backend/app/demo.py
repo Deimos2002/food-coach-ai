@@ -12,6 +12,7 @@ labelled as such.
 from __future__ import annotations
 
 import json
+import logging
 import os
 import threading
 from datetime import UTC, datetime
@@ -28,6 +29,7 @@ from app.coach.llm import LlmClient, cost_eur
 from app.coach.service import PROMPT_VERSION, UNAVAILABLE, load_prompt
 from app.config import Settings
 
+log = logging.getLogger("app.demo")
 PAGE = Path(__file__).resolve().parent / "demo_static" / "index.html"
 CACHE_PATH = EVAL_ROOT / "demo_cache.json"
 DAILY_CAP_ENV = "COACH_DEMO_DAILY_REVIEWS"
@@ -71,7 +73,19 @@ def _sheet(week_id: str) -> dict[str, Any]:
     return json.loads((EVAL_ROOT / WEEKS[week_id][0]).read_text(encoding="utf-8"))
 
 
+def _configure_logging() -> None:
+    """Uvicorn configures only its own loggers, so app.* INFO lines would be dropped. One line per
+    review and per flag goes to stdout, which Container Apps ships to Log Analytics."""
+    logger = logging.getLogger("app")
+    if not logger.handlers:
+        handler = logging.StreamHandler()
+        handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s %(message)s"))
+        logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
+
+
 def create_demo_app(client: LlmClient | None = None, settings: Settings | None = None) -> FastAPI:
+    _configure_logging()
     settings = settings or Settings()
     if client is None and settings.azure_openai_endpoint and settings.azure_openai_api_key:
         from app.coach.llm import AzureLlmClient
@@ -144,6 +158,9 @@ def create_demo_app(client: LlmClient | None = None, settings: Settings | None =
             if len(flags) >= MAX_FLAGS:
                 raise HTTPException(status_code=429, detail="The flag list is full.")
             flags.append(entry)
+            # The note is visitor free text: only its length is logged.
+            log.info("flag week=%s card=%d reason=%s note_len=%d total=%d", body.week, body.card,
+                     body.reason, len(entry["note"]), len(flags))
             if path := os.environ.get(FLAGS_PATH_ENV):
                 with open(path, "a", encoding="utf-8") as f:
                     f.write(json.dumps(entry, ensure_ascii=False) + "\n")
@@ -161,6 +178,8 @@ def create_demo_app(client: LlmClient | None = None, settings: Settings | None =
             if allowed:
                 used["count"] += 1  # counted before the call: a failed call still costs
         if not allowed or client is None:
+            reason = "no_model" if client is None else "daily_cap"
+            log.info("review week=%s mode=cached reason=%s stored=%s", week_id, reason, week_id in cache)
             if week_id in cache:
                 return {**cache[week_id], "mode": "cached"}
             raise HTTPException(status_code=429, detail="Today's live reviews are used up.")
@@ -190,6 +209,15 @@ def create_demo_app(client: LlmClient | None = None, settings: Settings | None =
             "cost_eur": str(sum((cost_eur(a.result, settings) for a in attempts if a.result),
                                 start=0)),
         }
+        outcome = ("blocked" if filtered else "rate_limited" if rate_limited
+                   else "reviewed" if suggestions else "no_review")
+        log.info("review week=%s mode=live outcome=%s attempts=%s errors=%s cards=%d citation_checks=%d "
+                 "latency_ms=%d cost_eur=%s prompt=%s", week_id, outcome,
+                 ",".join("pass" if a["passed"] else "blocked" if a["blocked"] else "fail"
+                          for a in result["attempts"]),
+                 ",".join(sorted({e["code"] for a in result["attempts"] for e in a["errors"]})) or "-",
+                 len(result["suggestions"]), result["citations_checked"], result["latency_ms"],
+                 result["cost_eur"], PROMPT_VERSION)
         if not rate_limited:
             with lock:
                 cache[week_id] = result
